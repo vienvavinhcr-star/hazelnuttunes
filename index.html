@@ -994,7 +994,8 @@ $("#wGet").onclick = () => {
   store.set("hzn_discount", discountCode);
   store.set("hzn_email", email);
   // gửi email về cho shop nếu đã cấu hình webhook / send lead if webhook configured
-  fetch(CONFIG.emailWebhook, {
+   if (CONFIG.emailWebhook){
+   fetch(CONFIG.emailWebhook, {
       method:"POST", mode:"no-cors", headers:{ "Content-Type":"text/plain" },
       body: JSON.stringify({ email, code: discountCode, lang, date: new Date().toISOString() })
     }).catch(()=>{});

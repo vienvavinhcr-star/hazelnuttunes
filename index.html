@@ -1004,7 +1004,6 @@ $("#wGet").onclick = () => {
       method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain" },
       body: JSON.stringify({ type: "order", code, product: cur.name[lang], plan: pl.label[lang], price: money(finalPrice), name, phone, note, discount: hasDisc ? discountCode : "", date: new Date().toISOString() })
     }).catch(() => {});
-  }
   $("#wGiftCode").textContent = discountCode;
   $("#wGift").classList.add("show");
   $("#wEmail").style.display = "none"; $("#wGet").style.display = "none";

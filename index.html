@@ -946,6 +946,19 @@ ${t("mProduct")}: ${cur.name[lang]} — ${pl.label[lang]} (${money(finalPrice)})
 ${t("mName")}: ${name}
 ${t("mPhone")}: ${phone}${note ? `\n${t("mNote")}: ${note}` : ""}`;
 
+
+// Gửi thông tin đơn hàng về Google Sheets
+  if (CONFIG.emailWebhook) {
+    fetch(CONFIG.emailWebhook, {
+      method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain" },
+      body: JSON.stringify({ type: "order", code, product: cur.name[lang], plan: pl.label[lang], price: money(finalPrice), name, phone, note, discount: hasDisc ? discountCode : "", date: new Date().toISOString() })
+    }).catch(() => {});
+  }
+
+  mBody.innerHTML = `
+    <h3 id="mTitle">${t("ready")}</h3>
+
+  
   mBody.innerHTML = `
     <h3 id="mTitle">${t("ready")}</h3>
     <p class="sub">${t("readySub")}</p>

@@ -16,10 +16,11 @@
    MÀU SẮC & KIỂU CHỮ (COLORS & TYPE) — sửa ở đây để đổi màu
    ============================================================ */
 :root{
-  --midnight:#0A1128; --panel:#141E48; --panel-2:#1B2757;
-  --line:rgba(233,180,76,.22);
+  --midnight:#070B18; --panel:#111936; --panel-2:#17214A;
+  --line:rgba(233,180,76,.18);
   --gold:#E9B44C; --gold-deep:#C68A2E;
-  --cream:#F7ECD7; --ink:#2B1D0E; --muted:#A9B4D8; --ok:#7BD88F;
+  --cream:#FFF4DD; --ink:#241706; --muted:#9EABD2; --ok:#7BD88F;
+  --glass:rgba(17,25,54,.68); --glow:rgba(233,180,76,.20);
   --radius:18px;
   --display:'Baloo 2',system-ui,sans-serif;
   --body:'Be Vietnam Pro',system-ui,sans-serif;
@@ -28,10 +29,11 @@
 html{scroll-behavior:smooth}
 body{font-family:var(--body);color:var(--cream);background:var(--midnight);
   background-image:
-    radial-gradient(900px 500px at 85% -10%, rgba(233,180,76,.14), transparent 60%),
-    radial-gradient(700px 420px at -10% 30%, rgba(60,90,200,.20), transparent 60%),
-    radial-gradient(800px 600px at 50% 110%, rgba(233,180,76,.08), transparent 55%);
+    radial-gradient(760px 460px at 82% -12%, rgba(233,180,76,.16), transparent 64%),
+    radial-gradient(620px 420px at 4% 22%, rgba(65,111,255,.16), transparent 62%),
+    linear-gradient(180deg, rgba(255,255,255,.025), transparent 260px);
   min-height:100vh;line-height:1.6}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:58px 58px;mask-image:linear-gradient(180deg,#000,transparent 78%)}
 img{max-width:100%;display:block}
 a{color:var(--gold);text-decoration:none}
 button{font-family:inherit;cursor:pointer}
@@ -39,14 +41,14 @@ button{font-family:inherit;cursor:pointer}
 .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
 
 /* ---------- top bar ---------- */
-.topbar{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(10,17,40,.78);border-bottom:1px solid var(--line)}
+.topbar{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:rgba(7,11,24,.78);border-bottom:1px solid rgba(255,255,255,.08)}
 .topbar .wrap{display:flex;align-items:center;gap:10px;padding:10px 20px}
 .brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;letter-spacing:.04em;font-size:1.02rem;color:var(--cream)}
 .brand img{width:38px;height:38px}
 .topbar nav{margin-left:auto;display:flex;gap:8px;align-items:center}
-.pillbtn{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;font-weight:600;font-size:.9rem;border:1px solid var(--line);color:var(--cream);background:transparent;transition:.2s}
-.pillbtn:hover{background:var(--panel-2)}
-.pillbtn.gold{background:linear-gradient(180deg,#F3C868,var(--gold-deep));color:var(--ink);border:none;box-shadow:0 4px 14px rgba(233,180,76,.35)}
+.pillbtn{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;font-weight:600;font-size:.9rem;border:1px solid rgba(255,255,255,.10);color:var(--cream);background:rgba(255,255,255,.035);transition:.2s}
+.pillbtn:hover{background:rgba(255,255,255,.075);border-color:rgba(233,180,76,.30)}
+.pillbtn.gold{background:linear-gradient(180deg,#FFD978,var(--gold-deep));color:var(--ink);border:none;box-shadow:0 8px 24px rgba(233,180,76,.28), inset 0 1px 0 rgba(255,255,255,.45)}
 .pillbtn.gold:hover{filter:brightness(1.06)}
 .langbtn{border:1px solid var(--line);background:var(--panel);color:var(--cream);border-radius:999px;padding:7px 14px;font-weight:700;font-size:.82rem;letter-spacing:.05em}
 .langbtn:hover{background:var(--panel-2)}
@@ -56,7 +58,7 @@ button{font-family:inherit;cursor:pointer}
 .hero{padding:60px 0 36px;text-align:center;position:relative}
 .coin{width:165px;height:165px;margin:0 auto 18px;filter:drop-shadow(0 14px 30px rgba(233,180,76,.35));animation:bob 5s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.eyebrow{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);border-radius:999px;padding:6px 16px;margin-bottom:16px;background:rgba(233,180,76,.06)}
+.eyebrow{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(233,180,76,.28);border-radius:999px;padding:6px 16px;margin-bottom:16px;background:rgba(233,180,76,.07);box-shadow:0 0 28px rgba(233,180,76,.08)}
 h1{font-family:var(--display);font-weight:800;font-size:clamp(2rem,5.5vw,3.3rem);line-height:1.12}
 h1 .g{background:linear-gradient(180deg,#F7DFA5,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
 .tagline{color:var(--muted);max-width:580px;margin:14px auto 26px;font-size:1.02rem}
@@ -66,7 +68,7 @@ h1 .g{background:linear-gradient(180deg,#F7DFA5,var(--gold));-webkit-background-
 
 /* ---------- steps ---------- */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:42px 0 6px}
-.step{background:rgba(20,30,72,.6);border:1px solid var(--line);border-radius:var(--radius);padding:20px 18px;text-align:left}
+.step{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:20px 18px;text-align:left;box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}
 .step b{font-family:var(--display);font-size:1.02rem;display:block;margin:8px 0 4px}
 .step p{font-size:.9rem;color:var(--muted)}
 .stepnum{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,#F3C868,var(--gold-deep));color:var(--ink);font-family:var(--display);font-weight:800}
@@ -77,11 +79,16 @@ section{padding:40px 0}
 h2{font-family:var(--display);font-weight:800;font-size:clamp(1.4rem,3vw,1.85rem)}
 .sec-head span{color:var(--muted);font-size:.92rem}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
-.card{background:linear-gradient(180deg,var(--panel),rgba(20,30,72,.55));border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:10px;transition:.22s;position:relative;overflow:hidden}
-.card:hover{transform:translateY(-4px);border-color:rgba(233,180,76,.5);box-shadow:0 14px 34px rgba(0,0,0,.35)}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(17,25,54,.50));border:1px solid rgba(255,255,255,.085);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:10px;transition:.22s;position:relative;overflow:hidden;box-shadow:0 18px 48px rgba(0,0,0,.20), inset 0 1px 0 rgba(255,255,255,.05)}
+.card:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.07),transparent 32%);opacity:.55}
+.card:hover{transform:translateY(-5px);border-color:rgba(233,180,76,.42);box-shadow:0 22px 52px rgba(0,0,0,.38),0 0 0 1px rgba(233,180,76,.08)}
 .card .icon{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;font-size:1.5rem;background:rgba(233,180,76,.12);border:1px solid var(--line);overflow:hidden}
 .card .icon svg{width:30px;height:30px}
-.card .icon.brand{border:none;box-shadow:0 6px 16px rgba(0,0,0,.35)}
+.card .icon.brand{border:none;box-shadow:0 8px 22px rgba(0,0,0,.36)}
+.trust-tags{display:flex;flex-wrap:wrap;gap:6px;min-height:28px}
+.trust-tag{display:inline-flex;align-items:center;gap:5px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.045);color:#DDE6FF;border-radius:999px;padding:4px 9px;font-size:.72rem;font-weight:700;line-height:1.2}
+.trust-tag:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ok);box-shadow:0 0 12px rgba(123,216,143,.72)}
+.modal-trust{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0 14px}
 
 /* ---------- banner "còn nhiều app nữa" ---------- */
 .more-banner{margin-top:20px;border:1px solid var(--line);border-radius:var(--radius);
@@ -97,10 +104,10 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(1.4rem,3vw,1.85rem
 .card.featured{
   grid-column:span 2;
   background:
-    linear-gradient(180deg, rgba(30,18,20,.92), rgba(20,30,72,.9)) padding-box,
-    linear-gradient(135deg,#FF4E45,#F3C868,#FF4E45) border-box;
+    linear-gradient(180deg, rgba(43,27,32,.92), rgba(15,22,48,.92)) padding-box,
+    linear-gradient(135deg,#FF4E45,#F3C868,#7C5CFF) border-box;
   border:2px solid transparent;
-  box-shadow:0 18px 44px rgba(255,60,60,.22), 0 0 0 1px rgba(233,180,76,.15);
+  box-shadow:0 22px 60px rgba(255,60,60,.18), 0 0 0 1px rgba(233,180,76,.12);
 }
 .card.featured:before{content:"";position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(420px 200px at 85% 0%, rgba(255,70,60,.22), transparent 65%)}
@@ -122,10 +129,10 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(1.4rem,3vw,1.85rem
 
 /* ---------- hero social proof & app marquee ---------- */
 .hero-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:720px;margin:28px auto 0}
-.hero-stat{background:rgba(20,30,72,.58);border:1px solid var(--line);border-radius:16px;padding:14px 12px;box-shadow:inset 0 1px 0 rgba(255,255,255,.03)}
+.hero-stat{background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.018));border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:14px 12px;box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 12px 34px rgba(0,0,0,.18)}
 .hero-stat strong{display:block;font-family:var(--display);font-size:1.45rem;line-height:1.1;color:var(--gold)}
 .hero-stat span{display:block;color:var(--muted);font-size:.76rem;margin-top:4px}
-.app-marquee{max-width:880px;margin:26px auto 0;overflow:hidden;position:relative;border:1px solid var(--line);border-radius:16px;background:rgba(20,30,72,.42);padding:12px 0}
+.app-marquee{max-width:880px;margin:26px auto 0;overflow:hidden;position:relative;border:1px solid rgba(255,255,255,.08);border-radius:16px;background:rgba(255,255,255,.03);padding:12px 0;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
 .app-marquee:before,.app-marquee:after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
 .app-marquee:before{left:0;background:linear-gradient(90deg,var(--midnight),transparent)}
 .app-marquee:after{right:0;background:linear-gradient(-90deg,var(--midnight),transparent)}
@@ -170,10 +177,16 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(1.4rem,3vw,1.85rem
 .back-top{position:fixed;right:18px;bottom:28px;z-index:70;background:var(--panel-2);font-size:1.1rem;opacity:0;visibility:hidden;transform:translateY(8px);cursor:pointer}
 .back-top.show{opacity:1;visibility:visible;transform:none}
 .mobile-cta{display:none}
+.recent-order{position:fixed;left:18px;bottom:22px;z-index:72;display:flex;align-items:center;gap:11px;max-width:min(340px,calc(100vw - 36px));padding:12px 14px;border-radius:16px;background:rgba(9,13,28,.86);border:1px solid rgba(255,255,255,.10);box-shadow:0 18px 42px rgba(0,0,0,.38), inset 0 1px 0 rgba(255,255,255,.06);backdrop-filter:blur(16px);opacity:0;transform:translateY(12px);pointer-events:none;transition:.28s}
+.recent-order.show{opacity:1;transform:translateY(0)}
+.recent-dot{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold),#7C5CFF);color:#10162F;font-family:var(--display);font-weight:800;box-shadow:0 8px 22px rgba(0,0,0,.28)}
+.recent-copy{font-size:.82rem;line-height:1.35;color:var(--cream)}
+.recent-copy b{display:block;color:var(--gold);font-size:.86rem}
+.recent-copy span{color:var(--muted)}
 
 /* ---------- benefits ---------- */
 .trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
-.trust .t{background:rgba(20,30,72,.5);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.trust .t{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
 .trust .t b{font-family:var(--display)}
 .trust .t p{color:var(--muted);font-size:.88rem;margin-top:4px}
 
@@ -192,14 +205,14 @@ footer .brand{justify-content:center;margin-bottom:8px}
 /* ---------- modal ---------- */
 .overlay{position:fixed;inset:0;background:rgba(5,9,24,.74);backdrop-filter:blur(6px);display:none;align-items:flex-end;justify-content:center;z-index:100;padding:0}
 .overlay.open{display:flex}
-.modal{background:linear-gradient(180deg,#18234F,var(--panel));border:1px solid var(--line);border-radius:22px 22px 0 0;width:min(560px,100%);max-height:92vh;overflow:auto;padding:26px 24px 30px;position:relative;animation:slideup .28s ease}
+.modal{background:linear-gradient(180deg,#141D3F,#0D142D);border:1px solid rgba(255,255,255,.10);border-radius:22px 22px 0 0;width:min(560px,100%);max-height:92vh;overflow:auto;padding:26px 24px 30px;position:relative;animation:slideup .28s ease;box-shadow:0 28px 80px rgba(0,0,0,.48)}
 @keyframes slideup{from{transform:translateY(40px);opacity:0}to{transform:translateY(0);opacity:1}}
 @media(min-width:640px){.overlay{align-items:center;padding:20px}.modal{border-radius:22px}}
 .modal .close{position:absolute;top:14px;right:14px;background:var(--panel-2);border:1px solid var(--line);color:var(--cream);width:36px;height:36px;border-radius:50%;font-size:1rem;z-index:2}
 .modal h3{font-family:var(--display);font-size:1.32rem;margin-bottom:4px}
 .modal .sub{color:var(--muted);font-size:.9rem;margin-bottom:16px}
 .dline{font-size:.88rem;margin:4px 0}
-.plan{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:10px;background:rgba(10,17,40,.4);cursor:pointer;transition:.15s}
+.plan{display:flex;align-items:center;gap:12px;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:12px 14px;margin-bottom:10px;background:rgba(255,255,255,.035);cursor:pointer;transition:.15s}
 .plan:hover{border-color:rgba(233,180,76,.5)}
 .plan.sel{border-color:var(--gold);background:rgba(233,180,76,.1)}
 .plan input{accent-color:var(--gold);width:18px;height:18px;flex-shrink:0}
@@ -229,7 +242,7 @@ label{display:block;font-weight:600;font-size:.88rem;margin:14px 0 6px}
 /* ---------- welcome popup ---------- */
 .welcome{position:fixed;inset:0;background:rgba(5,9,24,.85);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;z-index:200;padding:20px}
 .welcome.open{display:flex}
-.wbox{background:linear-gradient(180deg,#18234F,var(--panel));border:1px solid var(--line);border-radius:22px;width:min(430px,100%);padding:30px 26px;text-align:center;animation:slideup .3s ease}
+.wbox{background:linear-gradient(180deg,#141D3F,#0D142D);border:1px solid rgba(255,255,255,.10);border-radius:22px;width:min(430px,100%);padding:30px 26px;text-align:center;animation:slideup .3s ease;box-shadow:0 28px 80px rgba(0,0,0,.44)}
 .wbox img{width:110px;height:110px;margin:0 auto 12px}
 .wbox h3{font-family:var(--display);font-size:1.3rem;margin-bottom:6px}
 .wbox p{color:var(--muted);font-size:.9rem;margin-bottom:16px}
@@ -250,6 +263,7 @@ label{display:block;font-weight:600;font-size:.88rem;margin:14px 0 6px}
   .product-meta{grid-column:1}
   .floating-contact{right:14px;bottom:88px}
   .back-top{right:14px;bottom:146px}
+  .recent-order{left:12px;right:12px;bottom:82px;max-width:none}
   .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:75;display:grid;grid-template-columns:1fr 1.1fr;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(10,17,40,.92);backdrop-filter:blur(14px);border-top:1px solid var(--line)}
   .mobile-cta .pillbtn{justify-content:center;padding:11px 10px;font-size:.82rem}
 }
@@ -339,6 +353,10 @@ label{display:block;font-weight:600;font-size:.88rem;margin:14px 0 6px}
 <div class="floating-contact" aria-label="Liên hệ nhanh">
   <a class="float-btn messenger" id="floatingMessenger" href="#" target="_blank" rel="noopener" aria-label="Nhắn Facebook Messenger">M</a>
   <a class="float-btn zalo-float" id="floatingZalo" href="#" target="_blank" rel="noopener" aria-label="Nhắn Zalo">Z</a>
+</div>
+<div class="recent-order" id="recentOrder" aria-live="polite">
+  <div class="recent-dot" id="recentDot">H</div>
+  <div class="recent-copy"><b id="recentTitle"></b><span id="recentMeta"></span></div>
 </div>
 <button class="back-top" id="backTop" type="button" aria-label="Về đầu trang">↑</button>
 <div class="mobile-cta">
@@ -979,6 +997,26 @@ function renderMarquee(){
 let productQuery = "";
 let productSort = "default";
 const cheapestPlan = p => p.plans.reduce((best, pl) => pl.price < best.price ? pl : best, p.plans[0]);
+function trustLabels(product){
+  const text = [
+    product.name.vi, product.name.en, product.desc.vi, product.desc.en,
+    ...(product.details?.vi || []), ...(product.details?.en || [])
+  ].join(" ").toLowerCase();
+  const tags = [];
+  const add = (vi, en) => { if (!tags.some(t => t.vi === vi)) tags.push({ vi, en }); };
+  if (text.includes("chính chủ") || text.includes("own account")) add("Up chính chủ", "Own account");
+  if (text.includes("không cần log") || text.includes("no login") || text.includes("không cần mật khẩu") || text.includes("no password")) add("Không cần mật khẩu", "No password");
+  if (text.includes("account riêng") || text.includes("private account") || text.includes("không share")) add("Tài khoản riêng", "Private account");
+  if (text.includes("bảo hành full") || text.includes("full warranty") || text.includes("bảo hành 1 năm")) add("Full bảo hành", "Full warranty");
+  if (text.includes("mã pin") || text.includes("pin")) add("Có mã PIN", "PIN protected");
+  if (text.includes("2tb") || text.includes("1tb")) add("Kèm lưu trữ", "Storage included");
+  if (text.includes("5 thiết bị") || text.includes("multiple devices")) add("Nhiều thiết bị", "Multi-device");
+  if (!tags.length) add("Shop hỗ trợ", "Shop support");
+  return tags.slice(0, 3);
+}
+function trustTagHtml(product){
+  return `<div class="trust-tags">${trustLabels(product).map(tag => `<span class="trust-tag">${tag[lang]}</span>`).join("")}</div>`;
+}
 function renderProductTools(){
   const search = $("#productSearch");
   const sort = $("#productSort");
@@ -1024,6 +1062,7 @@ function renderProducts(){
       ${p.badge[lang] ? `<span class="badge">${p.badge[lang]}</span>` : ""}
       ${iconTile(p.icon)}
       <h3>${p.name[lang]}</h3>
+      ${trustTagHtml(p)}
       <p class="desc">${p.desc[lang]}</p>
       <div class="price-row">
         <span class="per">${t("from")}</span><span class="price">${money(plan.price)}</span>
@@ -1112,6 +1151,7 @@ function renderStep1(){
       <h3 id="mTitle" style="margin:0">${cur.name[lang]}</h3>
     </div>
     <p class="sub">${cur.desc[lang]}</p>
+    <div class="modal-trust">${trustLabels(cur).map(tag => `<span class="trust-tag">${tag[lang]}</span>`).join("")}</div>
     ${cur.details[lang].map(d => `<p class="dline">✔️ ${d}</p>`).join("")}
     <label style="margin-top:18px">${t("choosePlan")}</label>
     ${cur.plans.map((pl, idx) => `
@@ -1293,6 +1333,27 @@ function observeReveals(){
 const backTop = $("#backTop");
 window.addEventListener("scroll", () => backTop.classList.toggle("show", window.scrollY > 650), { passive:true });
 backTop.addEventListener("click", () => window.scrollTo({ top:0, behavior:reduceMotion ? "auto" : "smooth" }));
+
+/* ---------- mini social proof badge ---------- */
+const recentNames = ["Minh A.", "Thảo N.", "Gia B.", "Quang H.", "Linh P.", "Khánh V."];
+let recentIndex = 0;
+function showRecentOrder(){
+  if (document.body.style.overflow === "hidden") return;
+  const box = $("#recentOrder");
+  const product = CONFIG.products[(recentIndex * 3 + 1) % CONFIG.products.length];
+  const name = recentNames[recentIndex % recentNames.length];
+  const plan = cheapestPlan(product);
+  $("#recentDot").textContent = name.replace(".", "").split(/\s+/).map(x => x[0]).join("").slice(0,2).toUpperCase();
+  $("#recentTitle").textContent = lang === "vi" ? `${name} vừa đặt ${product.name[lang]}` : `${name} just ordered ${product.name[lang]}`;
+  $("#recentMeta").textContent = lang === "vi"
+    ? `${plan.label[lang]} · shop đang xử lý`
+    : `${plan.label[lang]} · processing now`;
+  box.classList.add("show");
+  recentIndex++;
+  setTimeout(() => box.classList.remove("show"), 5200);
+}
+setTimeout(showRecentOrder, 9000);
+setInterval(showRecentOrder, 26000);
 
 /* ---------- khởi động / boot ---------- */
 renderLang();

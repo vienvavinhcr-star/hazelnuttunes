@@ -1163,6 +1163,16 @@ function makeCode(prefix){
   return `${prefix}-${ymd}-${rand}`;
 }
 
+function sendToSheet(payload){
+  if (!CONFIG.emailWebhook) return;
+  fetch(CONFIG.emailWebhook, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify(payload)
+  }).catch(() => {});
+}
+
 function renderStep3(name, phone, note){
   const pl = cur.plans[curPlan];
   const code = makeCode(CONFIG.invoicePrefix);
@@ -1176,6 +1186,19 @@ function renderStep3(name, phone, note){
 ${t("mProduct")}: ${cur.name[lang]} — ${pl.label[lang]} (${money(finalPrice)})${hasDisc ? `\n${t("mDiscount")}: ${discountCode} (-${CONFIG.discountPercent}%)` : ""}
 ${t("mName")}: ${name}
 ${t("mPhone")}: ${phone}${note ? `\n${t("mNote")}: ${note}` : ""}`;
+
+  sendToSheet({
+    type: "order",
+    code,
+    product: cur.name[lang],
+    plan: pl.label[lang],
+    price: money(finalPrice),
+    name,
+    phone,
+    note,
+    discount: hasDisc ? discountCode : "",
+    date: new Date().toISOString()
+  });
 
   mBody.innerHTML = `
     <h3 id="mTitle">${t("ready")}</h3>
@@ -1229,15 +1252,14 @@ $("#wGet").onclick = () => {
   discountCode = makeCode(CONFIG.invoicePrefix + CONFIG.discountPercent);
   store.set("hzn_discount", discountCode);
   store.set("hzn_email", email);
-  // gửi email về cho shop nếu đã cấu hình webhook / send lead if webhook configured
-// Gửi thông tin đơn hàng về Google Sheets
-  if (CONFIG.emailWebhook) {
-    fetch(CONFIG.emailWebhook, {
-      method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain" },
-      body: JSON.stringify({ type: "order", code, product: cur.name[lang], plan: pl.label[lang], price: money(finalPrice), name, phone, note, discount: hasDisc ? discountCode : "", date: new Date().toISOString() })
-    }).catch(() => {});
-  }
-    
+  sendToSheet({
+    type: "email",
+    email,
+    code: discountCode,
+    lang,
+    date: new Date().toISOString()
+  });
+
   $("#wGiftCode").textContent = discountCode;
   $("#wGift").classList.add("show");
   $("#wEmail").style.display = "none"; $("#wGet").style.display = "none";

@@ -1237,9 +1237,6 @@ $("#wGet").onclick = () => {
       body: JSON.stringify({ type: "order", code, product: cur.name[lang], plan: pl.label[lang], price: money(finalPrice), name, phone, note, discount: hasDisc ? discountCode : "", date: new Date().toISOString() })
     }).catch(() => {});
   }
-
-    mBody.innerHTML = `
-    <h3 id="mTitle">${t("ready")}</h3>
     
   $("#wGiftCode").textContent = discountCode;
   $("#wGift").classList.add("show");

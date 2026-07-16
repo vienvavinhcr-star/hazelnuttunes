@@ -190,6 +190,21 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(1.4rem,3vw,1.85rem
 .trust .t b{font-family:var(--display)}
 .trust .t p{color:var(--muted);font-size:.88rem;margin-top:4px}
 
+/* ---------- confidence section ---------- */
+.confidence-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:16px;align-items:stretch}
+.explain-card,.warranty-card{border:1px solid rgba(255,255,255,.09);border-radius:var(--radius);background:linear-gradient(180deg,rgba(20,30,72,.72),rgba(12,18,40,.52));padding:20px;box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}
+.explain-card h3,.warranty-card h3{font-family:var(--display);font-size:1.12rem;margin-bottom:8px}
+.explain-card p,.warranty-card p{color:var(--muted);font-size:.9rem}
+.reason-list{display:grid;gap:10px;margin-top:16px}
+.reason-item{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start;padding:12px;border-radius:14px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07)}
+.reason-icon{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;background:rgba(233,180,76,.13);color:var(--gold);font-weight:800}
+.reason-item b{display:block;font-size:.92rem}
+.reason-item span{display:block;color:var(--muted);font-size:.8rem;margin-top:2px}
+.warranty-steps{display:grid;gap:10px;margin-top:16px}
+.warranty-step{display:flex;gap:10px;align-items:flex-start;color:var(--cream);font-size:.88rem}
+.warranty-step i{font-style:normal;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:rgba(123,216,143,.12);color:var(--ok);font-size:.78rem;font-weight:800;flex-shrink:0}
+.warranty-note{margin-top:16px;border:1px dashed rgba(123,216,143,.34);background:rgba(123,216,143,.08);color:#DDFBE5;border-radius:14px;padding:12px;font-size:.85rem;font-weight:700}
+
 /* ---------- FAQ ---------- */
 .faq details{border:1px solid var(--line);border-radius:14px;background:rgba(20,30,72,.5);margin-bottom:10px;overflow:hidden}
 .faq summary{cursor:pointer;list-style:none;padding:16px 18px;font-weight:600;font-size:.98rem;display:flex;align-items:center;gap:10px}
@@ -219,6 +234,9 @@ footer .brand{justify-content:center;margin-bottom:8px}
 .plan .pl-name{font-weight:600;font-size:.95rem}
 .plan .pl-note{color:var(--muted);font-size:.8rem}
 .plan .pl-price{margin-left:auto;font-family:var(--display);font-weight:800;color:var(--gold);text-align:right;white-space:nowrap}
+.plan-value-badge{display:inline-flex;align-items:center;margin-left:7px;vertical-align:middle;border:1px solid rgba(123,216,143,.35);background:rgba(123,216,143,.10);color:var(--ok);border-radius:999px;padding:3px 7px;font-size:.66rem;font-weight:800;line-height:1}
+.plan.best-value{border-color:rgba(123,216,143,.38);background:linear-gradient(135deg,rgba(123,216,143,.07),rgba(255,255,255,.035))}
+.plan.best-value.sel{border-color:var(--gold);background:rgba(233,180,76,.1)}
 .combo-box{border:1px solid rgba(233,180,76,.26);border-radius:16px;background:linear-gradient(135deg,rgba(233,180,76,.10),rgba(124,92,255,.08));padding:14px;margin:14px 0}
 .combo-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px}
 .combo-top b{font-family:var(--display);font-size:1rem}
@@ -245,6 +263,25 @@ label{display:block;font-weight:600;font-size:.88rem;margin:14px 0 6px}
 .ticket .tk-code{font-family:var(--display);font-weight:800;font-size:1.85rem;letter-spacing:.05em;line-height:1.2}
 .ticket .tk-body{margin-top:30px;font-size:.9rem;display:grid;gap:4px}
 .copybtn{background:var(--ink);color:var(--cream);border:none;border-radius:999px;padding:9px 18px;font-weight:600;font-size:.85rem;margin-top:14px}
+.order-summary{border:1px solid rgba(255,255,255,.10);border-radius:20px;background:linear-gradient(180deg,rgba(20,30,72,.82),rgba(9,13,28,.62));padding:16px;margin:6px 0 16px;box-shadow:0 18px 46px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.06)}
+.order-summary-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.order-summary-head b{font-family:var(--display);font-size:1.05rem}
+.order-summary-head span{display:block;color:var(--muted);font-size:.78rem}
+.order-status{color:var(--ok);border:1px solid rgba(123,216,143,.34);background:rgba(123,216,143,.1);border-radius:999px;padding:5px 9px;font-size:.72rem;font-weight:800;white-space:nowrap}
+.summary-lines{display:grid;gap:8px;margin:12px 0}
+.summary-row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid rgba(255,255,255,.07);padding-bottom:8px;color:var(--muted);font-size:.86rem}
+.summary-row b{color:var(--cream);text-align:right}
+.summary-total{display:flex;align-items:center;justify-content:space-between;gap:14px;background:rgba(233,180,76,.09);border:1px solid rgba(233,180,76,.22);border-radius:14px;padding:12px;margin-top:10px}
+.summary-total span{color:var(--muted);font-size:.82rem}
+.summary-total b{font-family:var(--display);font-size:1.22rem;color:var(--gold)}
+.summary-warranty{margin-top:10px;color:#DDFBE5;background:rgba(123,216,143,.08);border:1px dashed rgba(123,216,143,.28);border-radius:12px;padding:10px;font-size:.82rem}
+.send-guide{border:1px solid rgba(233,180,76,.26);border-radius:18px;background:linear-gradient(135deg,rgba(233,180,76,.11),rgba(255,255,255,.035));padding:15px;margin:12px 0 14px}
+.send-guide h4{font-family:var(--display);font-size:1rem;margin-bottom:5px;color:var(--gold)}
+.send-guide p{color:var(--muted);font-size:.86rem;margin-bottom:12px}
+.send-steps{display:grid;gap:8px}
+.send-step{display:flex;gap:10px;align-items:flex-start;font-size:.86rem;color:var(--cream)}
+.send-step i{font-style:normal;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:rgba(233,180,76,.16);color:var(--gold);font-size:.76rem;font-weight:800;flex-shrink:0}
+.send-alert{margin-top:12px;border:1px dashed rgba(255,156,156,.36);background:rgba(255,156,156,.08);color:#FFD9D9;border-radius:12px;padding:10px;font-size:.82rem;font-weight:700}
 .contact-btns{display:grid;gap:10px;margin-top:6px}
 .contact-btns .pillbtn{justify-content:center;padding:13px;font-size:.98rem}
 .fb{background:#1877F2;color:#fff;border:none}.fb:hover{filter:brightness(1.08);background:#1877F2}
@@ -276,6 +313,7 @@ label{display:block;font-weight:600;font-size:.88rem;margin:14px 0 6px}
   .floating-contact{right:14px;bottom:88px}
   .back-top{right:14px;bottom:146px}
   .recent-order{left:12px;right:12px;bottom:82px;max-width:none}
+  .confidence-grid{grid-template-columns:1fr}
   .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:75;display:grid;grid-template-columns:1fr 1.1fr;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(10,17,40,.92);backdrop-filter:blur(14px);border-top:1px solid var(--line)}
   .mobile-cta .pillbtn{justify-content:center;padding:11px 10px;font-size:.82rem}
 }
@@ -337,6 +375,24 @@ label{display:block;font-weight:600;font-size:.88rem;margin:14px 0 6px}
   <section id="quyenloi">
     <div class="sec-head"><h2 data-t="secBenefits"></h2><span data-t="secBenefitsSub"></span></div>
     <div class="trust" id="benefitGrid"></div>
+  </section>
+
+  <!-- ================= CONFIDENCE ================= -->
+  <section id="tin-cay">
+    <div class="sec-head reveal"><h2 data-t="secConfidence"></h2><span data-t="secConfidenceSub"></span></div>
+    <div class="confidence-grid">
+      <div class="explain-card reveal">
+        <h3 data-t="whyCheapTitle"></h3>
+        <p data-t="whyCheapIntro"></p>
+        <div class="reason-list" id="reasonList"></div>
+      </div>
+      <div class="warranty-card reveal">
+        <h3 data-t="warrantyClearTitle"></h3>
+        <p data-t="warrantyClearIntro"></p>
+        <div class="warranty-steps" id="warrantySteps"></div>
+        <div class="warranty-note" data-t="warrantyNote"></div>
+      </div>
+    </div>
   </section>
 
   <!-- ================= TESTIMONIALS ================= -->
@@ -492,7 +548,7 @@ const CONFIG = {
       },
       plans: [
         { label: { vi: "VIP · 12 tháng", en: "VIP · 12 months" }, note: { vi: "Share profile với 1 bạn", en: "Profile shared with 1 person" }, price: 39, oldPrice: 0 },
-        { label: { vi: "Premium · 12 tháng", en: "Premium · 12 months" }, note: { vi: "1 profile riêng + mã PIN", en: "Private profile + PIN" }, price: 59, oldPrice: 0 }
+        { label: { vi: "Premium · 12 tháng", en: "Premium · 12 months" }, note: { vi: "1 profile riêng + mã PIN", en: "Private profile + PIN" }, price: 59, oldPrice: 0, bestValue: true }
       ]
     },
     {
@@ -520,7 +576,7 @@ const CONFIG = {
       },
       plans: [
         { label: { vi: "6 tháng", en: "6 months" }, note: { vi: "Full bảo hành", en: "Full warranty" }, price: 35, oldPrice: 0 },
-        { label: { vi: "12 tháng", en: "12 months" }, note: { vi: "Full bảo hành", en: "Full warranty" }, price: 59, oldPrice: 0 },
+        { label: { vi: "12 tháng", en: "12 months" }, note: { vi: "Full bảo hành", en: "Full warranty" }, price: 59, oldPrice: 0, bestValue: true },
         { label: { vi: "Deal 2 acc · 12 tháng", en: "Deal 2 accounts · 12 months" }, note: { vi: "Chỉ $55 mỗi acc", en: "Only $55 per account" }, price: 110, oldPrice: 118 },
         { label: { vi: "Deal 3 acc · 12 tháng", en: "Deal 3 accounts · 12 months" }, note: { vi: "Chỉ $50 mỗi acc", en: "Only $50 per account" }, price: 150, oldPrice: 177 },
         { label: { vi: "Deal 4 acc · 12 tháng", en: "Deal 4 accounts · 12 months" }, note: { vi: "Chỉ $45 mỗi acc", en: "Only $45 per account" }, price: 180, oldPrice: 236 }
@@ -548,7 +604,7 @@ const CONFIG = {
       },
       plans: [
         { label: { vi: "6 tháng", en: "6 months" }, note: { vi: "Chính chủ", en: "Your own account" }, price: 25, oldPrice: 0 },
-        { label: { vi: "12 tháng", en: "12 months" }, note: { vi: "Chính chủ", en: "Your own account" }, price: 35, oldPrice: 0 }
+        { label: { vi: "12 tháng", en: "12 months" }, note: { vi: "Chính chủ", en: "Your own account" }, price: 39, oldPrice: 0, bestValue: true }
       ]
     },
     {
@@ -835,6 +891,21 @@ const CONFIG = {
       p: { vi: "Nhân viên trực Facebook & Zalo, hướng dẫn cài đặt miễn phí từ A đến Z.", en: "Our team is on Facebook & Zalo daily, with free step-by-step setup help." } }
   ],
 
+  priceReasons: [
+    { icon: "1", t: { vi: "Tối ưu theo gói dài hạn", en: "Long-term plan savings" },
+      p: { vi: "Shop ưu tiên các gói 6–12 tháng và combo nên chi phí mỗi tháng thấp hơn mua lẻ từng tháng.", en: "We focus on 6–12 month plans and bundles, so the monthly cost is lower than buying month by month." } },
+    { icon: "2", t: { vi: "Ghép nhu cầu thành combo", en: "Smart bundle matching" },
+      p: { vi: "YouTube, Netflix và Spotify được gợi ý mua kèm đúng lúc để khách tiết kiệm mà không bị ép mua.", en: "YouTube, Netflix and Spotify are bundled at the right moment so customers save without feeling pushed." } },
+    { icon: "3", t: { vi: "Giữ quy trình gọn", en: "Lean order flow" },
+      p: { vi: "Khách tự chọn gói, nhận mã đơn và nhắn trực tiếp. Ít bước thừa hơn nên shop giữ được giá mềm.", en: "Customers choose a plan, get a code and message us directly. Fewer extra steps helps keep pricing softer." } }
+  ],
+
+  warrantySteps: [
+    { vi: "Gửi mã đơn hoặc số điện thoại đã đặt cho nhân viên.", en: "Send your order code or order phone number to our staff." },
+    { vi: "Nhân viên kiểm tra gói, tình trạng tài khoản và xử lý lỗi.", en: "Our staff checks the plan, account status and issue." },
+    { vi: "Nếu lỗi thuộc gói bảo hành, shop hỗ trợ nâng lại hoặc đổi phương án miễn phí.", en: "If the issue is covered, we re-upgrade or provide a replacement option for free." }
+  ],
+
   /* ---------- FAQ ---------- */
   faq: [
     { q: { vi: "Tôi thanh toán như thế nào và khi nào?", en: "How and when do I pay?" },
@@ -866,10 +937,15 @@ const T = {
     s3t:"Nhắn mã cho nhân viên", s3p:"Gửi mã đơn qua Facebook hoặc Zalo — nâng cấp trước, trả tiền sau.",
     secProducts:"Bảng giá nâng cấp", secProductsSub:"Nâng cấp trước · Trả sau · Full bảo hành",
     secBenefits:"Quyền lợi khi mua hàng", secBenefitsSub:"Áp dụng cho mọi sản phẩm của shop",
+    secConfidence:"Minh bạch & bảo hành", secConfidenceSub:"Giá mềm nhưng quy trình vẫn rõ ràng",
+    whyCheapTitle:"Vì sao giá rẻ hơn?", whyCheapIntro:"Shop không làm giá rẻ bằng cách cắt bớt hỗ trợ. Giá tốt đến từ cách tối ưu gói, combo và quy trình đặt hàng.",
+    warrantyClearTitle:"Bảo hành rõ ràng hơn", warrantyClearIntro:"Trong thời gian gói còn hiệu lực, nếu có lỗi sử dụng bạn chỉ cần nhắn lại mã đơn để được kiểm tra.",
+    warrantyNote:"Không cần trả thêm phí cho lỗi thuộc gói bảo hành. Nhân viên sẽ hướng dẫn đến khi bạn dùng được.",
     secFaq:"Câu hỏi thường gặp", secTestimonials:"Khách hàng nói gì", secTestimonialsSub:"Chỉ hiển thị đánh giá thật đã được bạn nhập",
     searchPh:"Tìm Netflix, YouTube, Spotify...", sortDefault:"Sắp xếp mặc định", sortLow:"Giá thấp đến cao", sortHigh:"Giá cao đến thấp", productCount:"Hiển thị {n}/{total} sản phẩm", noResults:"Không tìm thấy ứng dụng phù hợp. Thử từ khóa khác hoặc nhắn shop để hỏi thêm.",
     save:"Tiết kiệm", mobilePrices:"Xem bảng giá", mobileChat:"Nhắn tư vấn",
     from:"Chỉ từ", order:"Đặt nâng cấp", choosePlan:"Chọn gói", cont:"Tiếp tục →",
+    bestValue:"Best value",
     payLater:"<b>Nâng cấp trước, trả sau:</b> bạn chưa cần thanh toán bây giờ. Nhân viên nâng cấp xong, bạn kiểm tra rồi mới trả tiền.",
     yourInfo:"Thông tin của bạn", fullName:"Họ và tên", namePh:"Ví dụ: Nguyễn Văn A",
     phone:"Số điện thoại", phonePh:"Ví dụ: 0901 234 567",
@@ -877,6 +953,10 @@ const T = {
     getCode:"Nhận mã đơn hàng 🎫", privacy:"Thông tin chỉ dùng để nhân viên xác nhận đơn của bạn.",
     errName:"Vui lòng nhập họ tên.", errPhone:"Vui lòng nhập số điện thoại hợp lệ (9–11 số).",
     ready:"Đơn của bạn đã sẵn sàng 🎉", readySub:"Bước cuối: gửi mã đơn cho nhân viên để được nâng cấp.",
+    summaryTitle:"Phiếu xác nhận đơn", summarySub:"Đã tạo mã, chờ gửi cho nhân viên", summaryStatus:"Sẵn sàng gửi", totalDue:"Tổng cần thanh toán", warrantyMini:"Đơn này được giữ mã để đối chiếu bảo hành trong suốt thời gian gói.",
+    sendGuideTitle:"Chưa hoàn tất đơn đâu nhé", sendGuideIntro:"Bạn cần gửi phiếu này cho nhân viên qua Messenger hoặc Zalo thì shop mới xác nhận và bắt đầu nâng cấp.",
+    sendStep1:"Bấm “Sao chép nội dung tin nhắn” ở trên.", sendStep2:"Chọn Messenger hoặc Zalo bên dưới.", sendStep3:"Dán tin nhắn vừa sao chép và gửi cho nhân viên.",
+    sendGuideAlert:"Nếu chỉ dừng ở màn hình này mà chưa nhắn cho shop, nhân viên sẽ chưa nhận được đơn để xử lý.",
     orderCode:"Mã đơn hàng", copy:"📋 Sao chép nội dung tin nhắn", copied:"✅ Đã sao chép!",
     msgFb:"💬 Nhắn qua Facebook Messenger", msgZalo:"💬 Nhắn qua Zalo", msgPage:"📘 Xem Facebook Page",
     finalHint:'Bấm "Sao chép" → mở Facebook hoặc Zalo → dán tin nhắn và gửi.<br>Nhân viên sẽ nâng cấp trước, bạn kiểm tra rồi mới thanh toán.',
@@ -898,10 +978,15 @@ const T = {
     s3t:"Message us the code", s3p:"Send your code via Facebook or Zalo — we upgrade first, you pay after.",
     secProducts:"Upgrade pricing", secProductsSub:"Upgrade first · Pay later · Full warranty",
     secBenefits:"What every order includes", secBenefitsSub:"Applies to every product in the shop",
+    secConfidence:"Transparent pricing & warranty", secConfidenceSub:"Soft prices with a clear support process",
+    whyCheapTitle:"Why is it cheaper?", whyCheapIntro:"We do not lower prices by cutting support. Better pricing comes from optimized plans, bundles and a lean order flow.",
+    warrantyClearTitle:"Clearer warranty", warrantyClearIntro:"While your plan is active, message us your order code whenever something needs checking.",
+    warrantyNote:"No extra fee for covered issues. Our staff will guide you until the plan works properly.",
     secFaq:"Frequently asked questions", secTestimonials:"What customers say", secTestimonialsSub:"Only real reviews you add are displayed",
     searchPh:"Search Netflix, YouTube, Spotify...", sortDefault:"Default sorting", sortLow:"Price: low to high", sortHigh:"Price: high to low", productCount:"Showing {n}/{total} products", noResults:"No matching app found. Try another keyword or message us for more options.",
     save:"Save", mobilePrices:"See pricing", mobileChat:"Chat with us",
     from:"From", order:"Order upgrade", choosePlan:"Choose a plan", cont:"Continue →",
+    bestValue:"Best value",
     payLater:"<b>Upgrade first, pay later:</b> no payment needed now. We upgrade your account, you check it, then you pay.",
     yourInfo:"Your details", fullName:"Full name", namePh:"e.g. John Smith",
     phone:"Phone number", phonePh:"e.g. 0901 234 567",
@@ -909,6 +994,10 @@ const T = {
     getCode:"Get my order code 🎫", privacy:"Your details are only used to confirm your order.",
     errName:"Please enter your name.", errPhone:"Please enter a valid phone number (9–11 digits).",
     ready:"Your order is ready 🎉", readySub:"Last step: send your code to our staff to get upgraded.",
+    summaryTitle:"Order confirmation", summarySub:"Code created, ready to send to staff", summaryStatus:"Ready to send", totalDue:"Total due", warrantyMini:"This order code is kept for warranty lookup throughout your plan.",
+    sendGuideTitle:"Your order is not finished yet", sendGuideIntro:"Please send this confirmation to our staff on Messenger or Zalo so we can confirm and start the upgrade.",
+    sendStep1:"Tap “Copy message” above.", sendStep2:"Choose Messenger or Zalo below.", sendStep3:"Paste the copied message and send it to our staff.",
+    sendGuideAlert:"If you stop on this screen without messaging us, our staff will not receive the order yet.",
     orderCode:"Order code", copy:"📋 Copy message", copied:"✅ Copied!",
     msgFb:"💬 Message us on Messenger", msgZalo:"💬 Message us on Zalo", msgPage:"📘 View Facebook Page",
     finalHint:'Tap "Copy" → open Facebook or Zalo → paste and send.<br>We upgrade first — you check, then you pay.',
@@ -980,7 +1069,7 @@ function renderLang(){
   $("#taglineText").textContent = CONFIG.tagline[lang];
   $("#langToggle").textContent = lang === "vi" ? "🌐 EN" : "🌐 VI";
   $("#footText").textContent = "© " + new Date().getFullYear() + " " + CONFIG.shopName + " · " + CONFIG.footerText[lang];
-  renderProductTools(); renderProducts(); renderBenefits(); renderFaq(); renderDiscountStrip();
+  renderProductTools(); renderProducts(); renderBenefits(); renderConfidence(); renderFaq(); renderDiscountStrip();
   renderHeroStats(); renderMarquee(); renderTestimonials();
   observeReveals();
 }
@@ -1122,6 +1211,16 @@ function renderBenefits(){
     `<div class="t reveal"><b>${b.icon} ${b.t[lang]}</b><p>${b.p[lang]}</p></div>`).join("");
 }
 
+function renderConfidence(){
+  $("#reasonList").innerHTML = CONFIG.priceReasons.map(r => `
+    <div class="reason-item">
+      <div class="reason-icon">${r.icon}</div>
+      <div><b>${r.t[lang]}</b><span>${r.p[lang]}</span></div>
+    </div>`).join("");
+  $("#warrantySteps").innerHTML = CONFIG.warrantySteps.map((step, idx) => `
+    <div class="warranty-step"><i>${idx + 1}</i><span>${step[lang]}</span></div>`).join("");
+}
+
 /* ---------- testimonials ---------- */
 function initials(name){
   return name.trim().split(/\s+/).slice(-2).map(x => x[0] || "").join("").toUpperCase();
@@ -1153,16 +1252,40 @@ const overlay = $("#overlay"), mBody = $("#mBody");
 let cur = null, curPlan = 0, selectedCombo = "";
 const COMBO_DEALS = {
   netflixPremium: {
+    triggers: ["youtube", "netflix"],
     title: { vi: "Thêm Netflix Premium", en: "Add Netflix Premium" },
     note: { vi: "YouTube còn $55 · Netflix Premium còn $55", en: "YouTube becomes $55 · Netflix Premium becomes $55" },
     plan: { vi: "Combo YouTube 12 tháng + Netflix Premium 12 tháng", en: "Combo YouTube 12 months + Netflix Premium 12 months" },
-    youtubePrice: 55, netflixPrice: 55, original: 118
+    product: "YouTube Premium + Netflix",
+    items: [
+      { name: "YouTube", price: 55 },
+      { name: "Netflix Premium", price: 55 }
+    ],
+    original: 118
   },
   netflixVip: {
+    triggers: ["youtube", "netflix"],
     title: { vi: "Thêm Netflix VIP", en: "Add Netflix VIP" },
     note: { vi: "YouTube còn $55 · Netflix VIP còn $35", en: "YouTube becomes $55 · Netflix VIP becomes $35" },
     plan: { vi: "Combo YouTube 12 tháng + Netflix VIP 12 tháng", en: "Combo YouTube 12 months + Netflix VIP 12 months" },
-    youtubePrice: 55, netflixPrice: 35, original: 98
+    product: "YouTube Premium + Netflix",
+    items: [
+      { name: "YouTube", price: 55 },
+      { name: "Netflix VIP", price: 35 }
+    ],
+    original: 98
+  },
+  spotifyYoutube: {
+    triggers: ["youtube", "spotify"],
+    title: { vi: "Thêm Spotify Premium", en: "Add Spotify Premium" },
+    note: { vi: "Spotify 12 tháng còn $35 · YouTube 12 tháng còn $55", en: "Spotify 12 months becomes $35 · YouTube 12 months becomes $55" },
+    plan: { vi: "Combo Spotify 12 tháng + YouTube 12 tháng", en: "Combo Spotify 12 months + YouTube 12 months" },
+    product: "Spotify Premium + YouTube Premium",
+    items: [
+      { name: "Spotify", price: 35 },
+      { name: "YouTube", price: 55 }
+    ],
+    original: 98
   }
 };
 function openOrder(i){ cur = CONFIG.products[i]; curPlan = 0; selectedCombo = ""; renderStep1(); overlay.classList.add("open"); document.body.style.overflow = "hidden"; }
@@ -1175,33 +1298,67 @@ function isYoutubeAnnual(){
   const plan = cur?.plans?.[curPlan];
   return cur?.icon === "youtube" && Number(plan?.price) === 59 && /12/.test(plan?.label?.vi || "");
 }
+function isSpotifyAnnual(){
+  const plan = cur?.plans?.[curPlan];
+  return cur?.icon === "spotify" && Number(plan?.price) === 39 && /12/.test(plan?.label?.vi || "");
+}
+function isNetflixAnnual(){
+  const plan = cur?.plans?.[curPlan];
+  return cur?.icon === "netflix" && /12/.test(plan?.label?.vi || "");
+}
+function availableComboDeals(){
+  if (!isYoutubeAnnual() && !isSpotifyAnnual() && !isNetflixAnnual()) return [];
+  const planLabel = cur?.plans?.[curPlan]?.label?.vi || "";
+  return Object.entries(COMBO_DEALS).filter(([key, deal]) => {
+    if (!deal.triggers.includes(cur.icon)) return false;
+    if (cur.icon === "netflix") {
+      if (/Premium/.test(planLabel)) return key === "netflixPremium";
+      if (/VIP/.test(planLabel)) return key === "netflixVip";
+      return false;
+    }
+    return true;
+  });
+}
+function comboDealTitle(key, deal){
+  if ((cur.icon === "spotify" && key === "spotifyYoutube") || cur.icon === "netflix") {
+    return lang === "vi" ? "Thêm YouTube Premium" : "Add YouTube Premium";
+  }
+  return deal.title[lang];
+}
 function comboHtml(){
-  if (!isYoutubeAnnual()) return "";
+  const deals = availableComboDeals();
+  if (!deals.length) return "";
   const intro = lang === "vi"
-    ? { title:"Gợi ý combo tiết kiệm", sub:"Nếu khách đang cần xem phim, chọn kèm Netflix để cả 2 gói đều có giá mềm hơn.", badge:"Ưu đãi nhẹ" }
-    : { title:"Suggested bundle", sub:"If you also watch movies, add Netflix and both plans get a softer price.", badge:"Soft upsell" };
+    ? { title:"Gợi ý combo tiết kiệm", sub:"Nếu khách đang dùng thêm app khác, chọn kèm để cả 2 gói đều có giá mềm hơn.", badge:"Ưu đãi nhẹ" }
+    : { title:"Suggested bundle", sub:"If you also use another app, add it and both plans get a softer price.", badge:"Soft upsell" };
   return `<div class="combo-box" id="comboBox">
     <div class="combo-top">
       <div><b>${intro.title}</b><p>${intro.sub}</p></div>
       <span class="combo-pill">${intro.badge}</span>
     </div>
-    ${Object.entries(COMBO_DEALS).map(([key, deal]) => {
-      const total = deal.youtubePrice + deal.netflixPrice;
+    ${deals.map(([key, deal]) => {
+      const total = deal.items.reduce((sum, item) => sum + item.price, 0);
       const save = deal.original - total;
       return `<label class="combo-option ${selectedCombo === key ? "sel" : ""}" data-combo="${key}">
         <input type="radio" name="comboDeal" ${selectedCombo === key ? "checked" : ""}>
-        <span><span class="combo-name">${deal.title[lang]}</span><span class="combo-note">${deal.note[lang]}</span></span>
+        <span><span class="combo-name">${comboDealTitle(key, deal)}</span><span class="combo-note">${deal.note[lang]}</span></span>
         <span class="combo-price">${money(total)}<br><span class="saving">${t("save")} ${money(save)}</span></span>
       </label>`;
     }).join("")}
   </div>`;
 }
 function bindComboEvents(){
-  mBody.querySelectorAll(".combo-option").forEach(option => option.addEventListener("click", () => {
-    selectedCombo = option.dataset.combo;
+  mBody.querySelectorAll(".combo-option").forEach(option => option.addEventListener("click", (e) => {
+    e.preventDefault();
+    const clickedCombo = option.dataset.combo;
+    const shouldUnselect = selectedCombo === clickedCombo;
     mBody.querySelectorAll(".combo-option").forEach(x => x.classList.remove("sel"));
-    option.classList.add("sel");
-    option.querySelector("input").checked = true;
+    mBody.querySelectorAll(".combo-option input").forEach(input => input.checked = false);
+    selectedCombo = shouldUnselect ? "" : clickedCombo;
+    if (!shouldUnselect) {
+      option.classList.add("sel");
+      option.querySelector("input").checked = true;
+    }
   }));
 }
 function orderPricing(plan){
@@ -1215,14 +1372,15 @@ function orderPricing(plan){
     sheetProduct: cur.name[lang],
     sheetPlan: plan.label[lang]
   };
-  const total = deal.youtubePrice + deal.netflixPrice;
+  const total = deal.items.reduce((sum, item) => sum + item.price, 0);
+  const itemSummary = deal.items.map(item => `${item.name} ${money(item.price)}`).join(" + ");
   return {
     total,
     original: deal.original,
     planLabel: deal.plan[lang],
-    productLabel: "YouTube Premium + Netflix",
-    summary: `${deal.plan[lang]} · YouTube ${money(deal.youtubePrice)} + Netflix ${money(deal.netflixPrice)}`,
-    sheetProduct: "YouTube Premium + Netflix",
+    productLabel: deal.product,
+    summary: `${deal.plan[lang]} · ${itemSummary}`,
+    sheetProduct: deal.product,
     sheetPlan: deal.plan[lang]
   };
 }
@@ -1238,9 +1396,9 @@ function renderStep1(){
     ${cur.details[lang].map(d => `<p class="dline">✔️ ${d}</p>`).join("")}
     <label style="margin-top:18px">${t("choosePlan")}</label>
     ${cur.plans.map((pl, idx) => `
-      <label class="plan ${idx===0?"sel":""}" data-idx="${idx}">
+      <label class="plan ${idx===0?"sel":""} ${pl.bestValue ? "best-value" : ""}" data-idx="${idx}">
         <input type="radio" name="plan" ${idx===0?"checked":""}>
-        <span><span class="pl-name">${pl.label[lang]}</span>${pl.note[lang]?`<br><span class="pl-note">${pl.note[lang]}</span>`:""}</span>
+        <span><span class="pl-name">${pl.label[lang]}${pl.bestValue ? ` <span class="plan-value-badge">${t("bestValue")}</span>` : ""}</span>${pl.note[lang]?`<br><span class="pl-note">${pl.note[lang]}</span>`:""}</span>
         <span class="pl-price">${money(pl.price)}${pl.oldPrice?`<br><span class="oldprice">${money(pl.oldPrice)}</span><br><span class="saving">${t("save")} ${money(pl.oldPrice-pl.price)}</span>`:""}</span>
       </label>`).join("")}
     <div id="comboMount">${comboHtml()}</div>
@@ -1250,7 +1408,7 @@ function renderStep1(){
     mBody.querySelectorAll(".plan").forEach(x => x.classList.remove("sel"));
     pl.classList.add("sel"); pl.querySelector("input").checked = true;
     curPlan = +pl.dataset.idx;
-    if (!isYoutubeAnnual()) selectedCombo = "";
+    if (!availableComboDeals().some(([key]) => key === selectedCombo)) selectedCombo = "";
     $("#comboMount").innerHTML = comboHtml();
     bindComboEvents();
   }));
@@ -1333,16 +1491,39 @@ ${t("mPhone")}: ${phone}${note ? `\n${t("mNote")}: ${note}` : ""}`;
   mBody.innerHTML = `
     <h3 id="mTitle">${t("ready")}</h3>
     <p class="sub">${t("readySub")}</p>
-    <div class="ticket">
-      <div class="tk-label">${t("orderCode")} · ${CONFIG.shopName}</div>
-      <div class="tk-code">${code}</div>
-      <div class="tk-body">
-        <span><b>${pricing.productLabel}</b> — ${pricing.planLabel} · ${priceLine}</span>
-        <span>${name} · ${phone}</span>
-        ${note ? `<span>${t("mNote")}: ${note}</span>` : ""}
-        ${hasDisc ? `<span>🎁 ${t("mDiscount")}: <b>${discountCode}</b></span>` : ""}
+    <div class="order-summary">
+      <div class="order-summary-head">
+        <div><b>${t("summaryTitle")}</b><span>${t("summarySub")}</span></div>
+        <div class="order-status">${t("summaryStatus")}</div>
       </div>
+      <div class="ticket">
+        <div class="tk-label">${t("orderCode")} · ${CONFIG.shopName}</div>
+        <div class="tk-code">${code}</div>
+        <div class="tk-body">
+          <span><b>${pricing.productLabel}</b></span>
+          <span>${pricing.planLabel}</span>
+          ${hasDisc ? `<span>🎁 ${t("mDiscount")}: <b>${discountCode}</b></span>` : ""}
+        </div>
+      </div>
+      <div class="summary-lines">
+        <div class="summary-row"><span>${t("mProduct")}</span><b>${pricing.productLabel}</b></div>
+        <div class="summary-row"><span>${t("choosePlan")}</span><b>${pricing.planLabel}</b></div>
+        <div class="summary-row"><span>${t("mName")}</span><b>${name} · ${phone}</b></div>
+        ${note ? `<div class="summary-row"><span>${t("mNote")}</span><b>${note}</b></div>` : ""}
+      </div>
+      <div class="summary-total"><span>${t("totalDue")}</span><b>${priceLine}</b></div>
+      <div class="summary-warranty">✓ ${t("warrantyMini")}</div>
       <button class="copybtn" id="copyMsg">${t("copy")}</button>
+    </div>
+    <div class="send-guide">
+      <h4>${t("sendGuideTitle")}</h4>
+      <p>${t("sendGuideIntro")}</p>
+      <div class="send-steps">
+        <div class="send-step"><i>1</i><span>${t("sendStep1")}</span></div>
+        <div class="send-step"><i>2</i><span>${t("sendStep2")}</span></div>
+        <div class="send-step"><i>3</i><span>${t("sendStep3")}</span></div>
+      </div>
+      <div class="send-alert">${t("sendGuideAlert")}</div>
     </div>
     <div class="contact-btns">
       <a class="pillbtn fb" href="${CONFIG.facebookLink}" target="_blank" rel="noopener">${t("msgFb")}</a>

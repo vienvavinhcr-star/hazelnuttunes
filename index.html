@@ -547,7 +547,9 @@ const CONFIG = {
         ]
       },
       plans: [
-        { label: { vi: "VIP · 12 tháng", en: "VIP · 12 months" }, note: { vi: "Share profile với 1 bạn", en: "Profile shared with 1 person" }, price: 39, oldPrice: 0 },
+        { label: { vi: "VIP · 6 tháng", en: "VIP · 6 months" }, note: { vi: "Share profile với 1 bạn", en: "Profile shared with 1 person" }, price: 25, oldPrice: 0 },
+        { label: { vi: "VIP · 12 tháng", en: "VIP · 12 months" }, note: { vi: "Share profile với 1 bạn", en: "Profile shared with 1 person" }, price: 39, oldPrice: 0, bestValue: true },
+        { label: { vi: "Premium · 6 tháng", en: "Premium · 6 months" }, note: { vi: "1 profile riêng + mã PIN", en: "Private profile + PIN" }, price: 35, oldPrice: 0 },
         { label: { vi: "Premium · 12 tháng", en: "Premium · 12 months" }, note: { vi: "1 profile riêng + mã PIN", en: "Private profile + PIN" }, price: 59, oldPrice: 0, bestValue: true }
       ]
     },
@@ -1396,12 +1398,12 @@ function renderStep1(){
     ${cur.details[lang].map(d => `<p class="dline">✔️ ${d}</p>`).join("")}
     <label style="margin-top:18px">${t("choosePlan")}</label>
     ${cur.plans.map((pl, idx) => `
-      <label class="plan ${idx===0?"sel":""} ${pl.bestValue ? "best-value" : ""}" data-idx="${idx}">
-        <input type="radio" name="plan" ${idx===0?"checked":""}>
+      <label class="plan ${idx===curPlan?"sel":""} ${pl.bestValue ? "best-value" : ""}" data-idx="${idx}">
+        <input type="radio" name="plan" ${idx===curPlan?"checked":""}>
         <span><span class="pl-name">${pl.label[lang]}${pl.bestValue ? ` <span class="plan-value-badge">${t("bestValue")}</span>` : ""}</span>${pl.note[lang]?`<br><span class="pl-note">${pl.note[lang]}</span>`:""}</span>
         <span class="pl-price">${money(pl.price)}${pl.oldPrice?`<br><span class="oldprice">${money(pl.oldPrice)}</span><br><span class="saving">${t("save")} ${money(pl.oldPrice-pl.price)}</span>`:""}</span>
-      </label>`).join("")}
-    <div id="comboMount">${comboHtml()}</div>
+      </label>
+      ${idx === curPlan ? `<div id="comboMount">${comboHtml()}</div>` : ""}`).join("")}
     <div class="note-box">🤝 ${t("payLater")}</div>
     <button class="pillbtn gold wide" id="toStep2">${t("cont")}</button>`;
   mBody.querySelectorAll(".plan").forEach(pl => pl.addEventListener("click", () => {
@@ -1409,8 +1411,7 @@ function renderStep1(){
     pl.classList.add("sel"); pl.querySelector("input").checked = true;
     curPlan = +pl.dataset.idx;
     if (!availableComboDeals().some(([key]) => key === selectedCombo)) selectedCombo = "";
-    $("#comboMount").innerHTML = comboHtml();
-    bindComboEvents();
+    renderStep1();
   }));
   bindComboEvents();
   $("#toStep2").onclick = renderStep2;
@@ -1450,6 +1451,24 @@ function makeCode(prefix){
   return `${prefix}-${ymd}-${rand}`;
 }
 
+function melbourneTimestamp(date = new Date()){
+  const parts = new Intl.DateTimeFormat("en-AU", {
+    timeZone: "Australia/Melbourne",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hourCycle: "h23",
+    timeZoneName: "short"
+  }).formatToParts(date).reduce((acc, part) => {
+    acc[part.type] = part.value;
+    return acc;
+  }, {});
+  return `${parts.year}-${parts.month}-${parts.day} ${parts.hour}:${parts.minute}:${parts.second} ${parts.timeZoneName || "Melbourne"} (Melbourne)`;
+}
+
 function sendToSheet(payload){
   if (!CONFIG.emailWebhook) return;
   fetch(CONFIG.emailWebhook, {
@@ -1485,7 +1504,7 @@ ${t("mPhone")}: ${phone}${note ? `\n${t("mNote")}: ${note}` : ""}`;
     phone,
     note,
     discount: hasDisc ? discountCode : "",
-    date: new Date().toISOString()
+    date: melbourneTimestamp()
   });
 
   mBody.innerHTML = `
@@ -1568,7 +1587,7 @@ $("#wGet").onclick = () => {
     email,
     code: discountCode,
     lang,
-    date: new Date().toISOString()
+    date: melbourneTimestamp()
   });
 
   $("#wGiftCode").textContent = discountCode;

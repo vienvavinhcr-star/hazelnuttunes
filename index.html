@@ -52,6 +52,11 @@ button{font-family:inherit;cursor:pointer}
 .pillbtn.gold:hover{filter:brightness(1.06)}
 .langbtn{border:1px solid var(--line);background:var(--panel);color:var(--cream);border-radius:999px;padding:7px 14px;font-weight:700;font-size:.82rem;letter-spacing:.05em}
 .langbtn:hover{background:var(--panel-2)}
+.nav-search-btn{height:36px;border:1px solid var(--line);background:var(--panel);color:var(--cream);border-radius:999px;display:inline-flex;align-items:center;gap:8px;padding:7px 13px;font-weight:800;transition:.2s;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
+.nav-search-icon{position:relative;width:15px;height:15px;border:2px solid var(--gold);border-radius:50%;display:block;flex:0 0 auto}
+.nav-search-icon:after{content:"";position:absolute;width:7px;height:2px;background:var(--gold);border-radius:999px;right:-5px;bottom:-3px;transform:rotate(45deg);transform-origin:left center}
+.nav-search-text{font-size:.78rem;line-height:1;color:var(--cream);font-weight:800;letter-spacing:0}
+.nav-search-btn:hover{background:var(--panel-2);border-color:rgba(233,180,76,.38);transform:translateY(-1px);box-shadow:0 8px 22px rgba(0,0,0,.20)}
 @media(max-width:560px){.topbar .navtext{display:none}}
 
 /* ---------- hero ---------- */
@@ -343,8 +348,8 @@ label{display:block;font-weight:600;font-size:.88rem;margin:14px 0 6px}
   <div class="wrap">
     <span class="brand"><img id="logoTop" alt="Logo HAZELNUTTUNES"><span class="navtext">HAZELNUTTUNES</span></span>
     <nav>
-      <a class="pillbtn navtext" href="#sanpham" data-t="navPrices"></a>
       <a class="pillbtn navtext" href="#faq">FAQ</a>
+      <button class="nav-search-btn" id="navSearch" type="button" aria-label="Tìm ứng dụng"><span class="nav-search-icon" aria-hidden="true"></span><span class="nav-search-text">Search</span></button>
       <button class="langbtn" id="langToggle" aria-label="Change language">🌐 VI</button>
       <a class="pillbtn gold" id="zaloTop" href="#" target="_blank" rel="noopener">💬 Zalo</a>
     </nav>
@@ -1040,7 +1045,7 @@ const T = {
     warrantyClearTitle:"Bảo hành rõ ràng hơn", warrantyClearIntro:"Trong thời gian gói còn hiệu lực, nếu có lỗi sử dụng bạn chỉ cần nhắn lại mã đơn để được kiểm tra.",
     warrantyNote:"Không cần trả thêm phí cho lỗi thuộc gói bảo hành. Nhân viên sẽ hướng dẫn đến khi bạn dùng được.",
     secFaq:"Câu hỏi thường gặp", secTestimonials:"Khách hàng nói gì", secTestimonialsSub:"Chỉ hiển thị đánh giá thật đã được bạn nhập",
-    searchPh:"Tìm Netflix, YouTube, Spotify...", sortDefault:"Sắp xếp mặc định", sortLow:"Giá thấp đến cao", sortHigh:"Giá cao đến thấp", productCount:"Hiển thị {n}/{total} sản phẩm", noResults:"Không tìm thấy ứng dụng phù hợp. Thử từ khóa khác hoặc nhắn shop để hỏi thêm.",
+    searchPh:"Tìm Netflix, YouTube, Spotify...", navSearch:"Tìm ứng dụng", sortDefault:"Sắp xếp mặc định", sortLow:"Giá thấp đến cao", sortHigh:"Giá cao đến thấp", productCount:"Hiển thị {n}/{total} sản phẩm", noResults:"Không tìm thấy ứng dụng phù hợp. Thử từ khóa khác hoặc nhắn shop để hỏi thêm.",
     needAll:"Tất cả", needMovies:"Xem phim", needMusic:"Nghe nhạc", needEnglish:"Học tiếng Anh", needAi:"AI / học tập", needCreative:"Edit ảnh/video", needOffice:"Làm việc",
     save:"Tiết kiệm", mobilePrices:"Xem bảng giá", mobileChat:"Nhắn tư vấn",
     from:"Chỉ từ", order:"Đặt nâng cấp", choosePlan:"Chọn gói", cont:"Tiếp tục →",
@@ -1084,7 +1089,7 @@ const T = {
     warrantyClearTitle:"Clearer warranty", warrantyClearIntro:"While your plan is active, message us your order code whenever something needs checking.",
     warrantyNote:"No extra fee for covered issues. Our staff will guide you until the plan works properly.",
     secFaq:"Frequently asked questions", secTestimonials:"What customers say", secTestimonialsSub:"Only real reviews you add are displayed",
-    searchPh:"Search Netflix, YouTube, Spotify...", sortDefault:"Default sorting", sortLow:"Price: low to high", sortHigh:"Price: high to low", productCount:"Showing {n}/{total} products", noResults:"No matching app found. Try another keyword or message us for more options.",
+    searchPh:"Search Netflix, YouTube, Spotify...", navSearch:"Search apps", sortDefault:"Default sorting", sortLow:"Price: low to high", sortHigh:"Price: high to low", productCount:"Showing {n}/{total} products", noResults:"No matching app found. Try another keyword or message us for more options.",
     needAll:"All", needMovies:"Movies", needMusic:"Music", needEnglish:"English learning", needAi:"AI / study", needCreative:"Photo/video editing", needOffice:"Work",
     save:"Save", mobilePrices:"See pricing", mobileChat:"Chat with us",
     from:"From", order:"Order upgrade", choosePlan:"Choose a plan", cont:"Continue →",
@@ -1172,12 +1177,24 @@ function renderLang(){
   $("#heroTitle").innerHTML = t("heroTitle");
   $("#taglineText").textContent = CONFIG.tagline[lang];
   $("#langToggle").textContent = lang === "vi" ? "🌐 EN" : "🌐 VI";
+  $("#navSearch").setAttribute("aria-label", t("navSearch"));
+  $("#navSearch").title = t("navSearch");
+  $(".nav-search-text").textContent = lang === "vi" ? "Tìm" : "Search";
   $("#footText").textContent = "© " + new Date().getFullYear() + " " + CONFIG.shopName + " · " + CONFIG.footerText[lang];
   renderProductTools(); renderProducts(); renderOrderProcess(); renderBenefits(); renderConfidence(); renderFaq(); renderDiscountStrip();
   renderHeroStats(); renderMarquee(); renderTestimonials();
   observeReveals();
 }
 $("#langToggle").onclick = () => { lang = lang === "vi" ? "en" : "vi"; store.set("hzn_lang", lang); renderLang(); };
+$("#navSearch").onclick = () => {
+  const search = $("#productSearch");
+  const tools = document.querySelector(".product-tools");
+  (tools || $("#sanpham")).scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+  window.setTimeout(() => {
+    search.focus({ preventScroll: true });
+    search.select();
+  }, reduceMotion ? 0 : 360);
+};
 
 function renderDiscountStrip(){
   const s = $("#discountStrip");

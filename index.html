@@ -966,6 +966,56 @@ footer{padding:38px 0 108px;border-color:rgba(255,255,255,.09)}
   .floating-contact{right:14px}
   .mobile-cta{padding:9px 12px calc(9px + env(safe-area-inset-bottom))}
   .modal{padding:26px 18px 30px}
+  .order-summary{padding:12px}
+  .order-summary-head{gap:8px;margin-bottom:10px}
+  .order-summary-head b{font-size:.92rem}
+  .order-summary-head span{font-size:.7rem}
+  .order-status{padding:4px 7px;font-size:.64rem}
+  .ticket{padding:16px 14px}
+  .ticket .tk-label{font-size:.65rem}
+  .ticket .tk-code{font-size:1.4rem;overflow-wrap:anywhere}
+  .ticket .tk-body{font-size:.8rem}
+  .summary-row{
+    display:grid;
+    grid-template-columns:72px minmax(0,1fr);
+    gap:8px;
+    font-size:.76rem;
+    line-height:1.45;
+  }
+  .summary-row b{font-size:.78rem;overflow-wrap:anywhere}
+  .summary-total{gap:8px;padding:10px}
+  .summary-total span{font-size:.75rem}
+  .summary-total b{font-size:1.05rem;white-space:nowrap}
+  .summary-warranty{padding:9px;font-size:.74rem;line-height:1.5}
+  .copy-action{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) max-content;
+    align-items:center;
+    gap:7px;
+    flex-wrap:nowrap;
+    margin-top:12px;
+  }
+  .copybtn{
+    width:100%;
+    min-width:0;
+    padding:9px 10px;
+    font-size:.74rem;
+    line-height:1.25;
+    white-space:nowrap;
+  }
+  .copy-hint{
+    gap:4px;
+    padding:8px 7px;
+    font-size:.7rem;
+    line-height:1;
+    white-space:nowrap;
+  }
+  .copy-hint:before{font-size:1rem}
+  .send-guide{padding:13px}
+  .send-guide h4{font-size:.9rem;line-height:1.4}
+  .send-guide p,
+  .send-step{font-size:.78rem;line-height:1.55}
+  .send-alert{font-size:.74rem;line-height:1.5}
 }
 .product-tools{
   max-height:340px;
@@ -1801,9 +1851,9 @@ const T = {
     ready:"Phiếu đơn hàng đã được tạo", readySub:"Bước cuối: sao chép nội dung và gửi cho nhân viên để bắt đầu xử lý.",
     summaryTitle:"Phiếu xác nhận đơn", summarySub:"Đã tạo mã, chờ gửi cho nhân viên", summaryStatus:"Sẵn sàng gửi", totalDue:"Tổng cần thanh toán", warrantyMini:"Đơn này được giữ mã để đối chiếu bảo hành trong suốt thời gian gói.",
     sendGuideTitle:"Chưa hoàn tất đơn đâu nhé", sendGuideIntro:"Bạn cần gửi phiếu này cho nhân viên qua Messenger hoặc Zalo thì shop mới xác nhận và bắt đầu nâng cấp.",
-    sendStep1:"Bấm “Sao chép nội dung tin nhắn” ở trên.", sendStep2:"Chọn Messenger hoặc Zalo bên dưới.", sendStep3:"Dán tin nhắn vừa sao chép và gửi cho nhân viên.",
+    sendStep1:"Bấm “Sao chép tin nhắn” ở trên.", sendStep2:"Chọn Messenger hoặc Zalo bên dưới.", sendStep3:"Dán tin nhắn vừa sao chép và gửi cho nhân viên.",
     sendGuideAlert:"Nếu chỉ dừng ở màn hình này mà chưa nhắn cho shop, nhân viên sẽ chưa nhận được đơn để xử lý.",
-    orderCode:"Mã đơn hàng", copy:"Sao chép nội dung tin nhắn", copied:"Đã sao chép", copyHint:"Nhấp vào đây", copyToast:"Đã sao chép nội dung tin nhắn",
+    orderCode:"Mã đơn hàng", copy:"Sao chép tin nhắn", copied:"Đã sao chép", copyHint:"Nhấp vào đây", copyToast:"Đã sao chép nội dung tin nhắn",
     msgFb:"Nhắn qua Facebook Messenger", msgZalo:"Nhắn qua Zalo", msgPage:"Xem Facebook Page",
     finalHint:'Sao chép nội dung, mở Messenger hoặc Zalo, sau đó dán và gửi cho nhân viên.<br>Shop nâng cấp trước; bạn kiểm tra rồi mới thanh toán.',
     mProduct:"Sản phẩm", mName:"Họ tên", mPhone:"SĐT", mNote:"Ghi chú", mCode:"Mã đơn", mDiscount:"Mã giảm giá",

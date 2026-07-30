@@ -10,7 +10,7 @@
 <meta name="description" content="HAZELNUTTUNES — Nâng cấp YouTube Premium, Netflix, ChatGPT, Spotify giá sỉ. Uy tín để chọn, chất lượng để tin. Nâng cấp trước, trả sau.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
    MÀU SẮC & KIỂU CHỮ (COLORS & TYPE) — sửa ở đây để đổi màu
@@ -282,7 +282,14 @@ label{display:block;font-weight:600;font-size:.88rem;margin:14px 0 6px}
 .ticket .tk-label{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.75}
 .ticket .tk-code{font-family:var(--display);font-weight:800;font-size:1.85rem;letter-spacing:.05em;line-height:1.2}
 .ticket .tk-body{margin-top:30px;font-size:.9rem;display:grid;gap:4px}
-.copybtn{background:var(--ink);color:var(--cream);border:none;border-radius:999px;padding:9px 18px;font-weight:600;font-size:.85rem;margin-top:14px}
+.copy-action{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px}
+.copybtn{background:linear-gradient(180deg,#3B2305,#241706);color:var(--cream);border:1px solid rgba(233,180,76,.20);border-radius:999px;padding:11px 18px;font-weight:800;font-size:.9rem;box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.copybtn:hover{filter:brightness(1.08);border-color:rgba(233,180,76,.38)}
+.copy-hint{display:inline-flex;align-items:center;gap:7px;color:var(--gold);font-weight:800;font-size:.82rem;background:rgba(233,180,76,.09);border:1px dashed rgba(233,180,76,.34);border-radius:999px;padding:8px 11px;animation:hintPulse 1.8s ease-in-out infinite}
+.copy-hint:before{content:"←";font-family:var(--display);font-size:1.2rem;line-height:1}
+.copy-toast{position:fixed;left:50%;top:50%;z-index:260;transform:translate(-50%,-50%) scale(.96);opacity:0;pointer-events:none;background:rgba(12,18,40,.94);color:var(--cream);border:1px solid rgba(123,216,143,.34);border-radius:999px;padding:13px 18px;font-weight:800;box-shadow:0 22px 70px rgba(0,0,0,.48),0 0 0 1px rgba(255,255,255,.04);transition:opacity .18s ease,transform .18s ease}
+.copy-toast.show{opacity:1;transform:translate(-50%,-50%) scale(1)}
+@keyframes hintPulse{0%,100%{transform:translateX(0)}50%{transform:translateX(-4px)}}
 .order-summary{border:1px solid rgba(255,255,255,.10);border-radius:20px;background:linear-gradient(180deg,rgba(20,30,72,.82),rgba(9,13,28,.62));padding:16px;margin:6px 0 16px;box-shadow:0 18px 46px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.06)}
 .order-summary-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
 .order-summary-head b{font-family:var(--display);font-size:1.05rem}
@@ -337,10 +344,529 @@ label{display:block;font-weight:600;font-size:.88rem;margin:14px 0 6px}
   .confidence-grid{grid-template-columns:1fr}
   .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:75;display:grid;grid-template-columns:1fr 1.1fr;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(10,17,40,.92);backdrop-filter:blur(14px);border-top:1px solid var(--line)}
   .mobile-cta .pillbtn{justify-content:center;padding:11px 10px;font-size:.82rem}
+  .copy-action{align-items:flex-start}
+  .copy-hint{font-size:.78rem}
 }
 @media(max-width:560px){.faq-nav{padding:8px 11px;font-size:.78rem}.nav-search-btn{padding:7px 11px}.topbar .wrap{padding:10px 14px}.topbar nav{gap:7px}}
 @media(max-width:460px){.hero-stats{grid-template-columns:1fr}.hero-stat:last-child{grid-column:auto}.marquee-item{min-width:132px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.motion-ready .reveal{opacity:1!important;transform:none!important}}
+
+/* ============================================================
+   PROFESSIONAL VISUAL REFRESH
+   Giao dien phang, ro thu bac va it hieu ung trang tri hon.
+   Khong thay doi noi dung hoac logic dat hang.
+   ============================================================ */
+:root{
+  --midnight:#090A0D;
+  --panel:#121419;
+  --panel-2:#191C22;
+  --line:rgba(255,255,255,.11);
+  --gold:#D7AE61;
+  --gold-deep:#B88636;
+  --cream:#F5F2EA;
+  --ink:#17130C;
+  --muted:#A5AAB5;
+  --ok:#73C991;
+  --glass:rgba(18,20,25,.94);
+  --glow:rgba(215,174,97,.12);
+  --radius:8px;
+  --display:'Be Vietnam Pro',system-ui,sans-serif;
+  --body:'Be Vietnam Pro',system-ui,sans-serif;
+}
+html{scroll-padding-top:72px}
+body{
+  background:#090A0D;
+  background-image:linear-gradient(180deg,#0D0F13 0,#090A0D 520px);
+  color:var(--cream);
+  font-size:15px;
+  line-height:1.65;
+}
+body:before{display:none}
+.wrap{max-width:1160px;padding:0 24px}
+section{padding:68px 0}
+section+section{border-top:1px solid rgba(255,255,255,.07)}
+
+/* Navigation */
+.topbar{
+  background:rgba(9,10,13,.94);
+  border-bottom:1px solid rgba(255,255,255,.10);
+  backdrop-filter:blur(18px);
+}
+.topbar .wrap{min-height:64px;padding:10px 24px;gap:14px}
+.brand{
+  gap:10px;
+  font-family:var(--body);
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.08em;
+}
+.brand img{
+  width:36px;
+  height:36px;
+  transition:transform .24s ease,filter .24s ease;
+}
+.brand:hover img{
+  transform:rotate(-4deg) scale(1.06);
+  filter:brightness(1.05);
+}
+.topbar nav{gap:7px}
+.pillbtn,
+.langbtn,
+.nav-search-btn{
+  min-height:38px;
+  border-radius:7px;
+  border:1px solid rgba(255,255,255,.12);
+  background:#14161B;
+  color:var(--cream);
+  box-shadow:none;
+  font-size:.8rem;
+  font-weight:700;
+  letter-spacing:0;
+  transition:background .18s ease,border-color .18s ease,color .18s ease,transform .18s ease;
+}
+.pillbtn{padding:8px 14px}
+.langbtn{padding:8px 12px}
+.nav-search-btn{height:38px;padding:8px 12px}
+.pillbtn:hover,
+.langbtn:hover,
+.nav-search-btn:hover{
+  background:#1B1E25;
+  border-color:rgba(215,174,97,.55);
+  transform:translateY(-1px);
+  box-shadow:none;
+}
+.pillbtn.gold{
+  background:var(--gold);
+  color:var(--ink);
+  border:1px solid var(--gold);
+  box-shadow:none;
+}
+.pillbtn.gold:hover{
+  background:#E3BD72;
+  border-color:#E3BD72;
+  filter:none;
+}
+.faq-nav{padding:8px 12px;font-weight:700}
+.nav-search-icon{width:14px;height:14px;border-width:1.8px}
+.nav-search-icon:after{height:1.8px}
+.nav-search-text{font-size:.76rem;font-weight:700}
+
+/* Hero */
+.hero{padding:76px 0 54px}
+.coin{
+  width:122px;
+  height:122px;
+  margin-bottom:26px;
+  filter:drop-shadow(0 14px 24px rgba(215,174,97,.16));
+  transform-origin:center;
+  will-change:transform;
+  animation:heroLogoDrift 5.6s ease-in-out infinite;
+}
+@keyframes heroLogoDrift{
+  0%,100%{transform:translateY(0) rotate(-.35deg)}
+  50%{transform:translateY(-5px) rotate(.35deg)}
+}
+.eyebrow{
+  margin-bottom:20px;
+  padding:6px 12px;
+  border-radius:5px;
+  border-color:rgba(215,174,97,.34);
+  background:rgba(215,174,97,.06);
+  box-shadow:none;
+  font-size:.7rem;
+  font-weight:700;
+  letter-spacing:.16em;
+}
+h1{
+  max-width:820px;
+  margin:0 auto;
+  font-family:var(--display);
+  font-size:clamp(2.2rem,5vw,3.65rem);
+  font-weight:700;
+  line-height:1.14;
+  letter-spacing:0;
+}
+h1 .g{background:none;color:var(--gold);-webkit-text-fill-color:currentColor}
+.tagline{
+  max-width:710px;
+  margin:20px auto 30px;
+  color:#B7BBC5;
+  font-size:1rem;
+  line-height:1.8;
+}
+.hero-cta{gap:10px}
+.hero-cta .pillbtn{min-height:44px;padding:10px 18px;font-size:.85rem}
+.discount-strip{
+  max-width:620px;
+  margin-top:20px;
+  border-radius:6px;
+  border-style:solid;
+  background:rgba(115,201,145,.07);
+}
+.hero-stats{
+  max-width:780px;
+  margin-top:38px;
+  gap:0;
+  border-top:1px solid rgba(255,255,255,.10);
+  border-bottom:1px solid rgba(255,255,255,.10);
+}
+.hero-stat{
+  padding:19px 16px;
+  border:0;
+  border-right:1px solid rgba(255,255,255,.10);
+  border-radius:0;
+  background:none;
+  box-shadow:none;
+}
+.hero-stat:last-child{border-right:0}
+.hero-stat strong{
+  font-family:var(--body);
+  font-size:1.35rem;
+  font-weight:700;
+}
+.hero-stat span{margin-top:5px;font-size:.73rem}
+.app-marquee{
+  max-width:920px;
+  margin-top:26px;
+  padding:10px 0;
+  border-radius:7px;
+  background:#0E1014;
+  box-shadow:none;
+}
+.marquee-item{
+  min-width:148px;
+  padding:7px 11px;
+  border:0;
+  border-right:1px solid rgba(255,255,255,.10);
+  border-radius:0;
+  background:none;
+  font-size:.78rem;
+}
+.marquee-item .icon{border-radius:7px}
+.steps{
+  margin:54px 0 0;
+  gap:0;
+  border-top:1px solid rgba(255,255,255,.10);
+  border-bottom:1px solid rgba(255,255,255,.10);
+}
+.step{
+  min-height:160px;
+  padding:24px;
+  border:0;
+  border-right:1px solid rgba(255,255,255,.10);
+  border-radius:0;
+  background:none;
+  box-shadow:none;
+}
+.step:last-child{border-right:0}
+.stepnum{
+  width:30px;
+  height:30px;
+  border:1px solid rgba(215,174,97,.55);
+  border-radius:6px;
+  background:none;
+  color:var(--gold);
+  font-family:var(--body);
+  font-size:.78rem;
+}
+.step b{margin:13px 0 5px;font-family:var(--body);font-size:.95rem}
+.step p{font-size:.82rem;line-height:1.65}
+
+/* Sections and product catalogue */
+.sec-head{
+  align-items:flex-end;
+  justify-content:space-between;
+  margin-bottom:26px;
+  gap:18px;
+}
+h2{
+  font-family:var(--body);
+  font-size:clamp(1.45rem,2.7vw,2rem);
+  font-weight:700;
+  line-height:1.3;
+}
+.sec-head span{max-width:560px;font-size:.86rem;text-align:right}
+.grid{grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:12px}
+.card,
+.card.featured{
+  grid-column:span 1;
+  padding:21px;
+  gap:12px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:8px;
+  background:#121419;
+  box-shadow:none;
+}
+.card:after,
+.card.featured:before{display:none}
+.card:hover,
+.card.featured:hover{
+  transform:translateY(-2px);
+  border-color:rgba(215,174,97,.52);
+  box-shadow:0 14px 34px rgba(0,0,0,.22);
+}
+.card.featured{border-color:rgba(215,174,97,.48)}
+.card .icon{
+  width:50px;
+  height:50px;
+  border-radius:8px;
+  background:#191C22;
+  border-color:rgba(255,255,255,.10);
+}
+.card .icon.brand{box-shadow:none}
+.card h3,
+.card.featured h3{
+  font-family:var(--body);
+  font-size:1.04rem;
+  font-weight:700;
+}
+.card .desc{color:var(--muted);font-size:.82rem;line-height:1.7}
+.card .pillbtn{margin-top:auto}
+.trust-tags{gap:5px;min-height:27px}
+.trust-tag{
+  padding:4px 8px;
+  border-radius:4px;
+  background:#181B21;
+  color:#D8DBE3;
+  font-size:.68rem;
+  font-weight:600;
+}
+.trust-tag:before{width:5px;height:5px;box-shadow:none}
+.badge,
+.card.featured .badge{
+  top:16px;
+  right:16px;
+  padding:4px 8px;
+  border:1px solid rgba(215,174,97,.28);
+  border-radius:4px;
+  background:rgba(215,174,97,.10);
+  color:var(--gold);
+  box-shadow:none;
+  font-size:.64rem;
+  letter-spacing:0;
+}
+.price,
+.card.featured .price{
+  font-family:var(--body);
+  font-size:1.28rem;
+  font-weight:700;
+}
+.saving{border-radius:4px;padding:3px 7px;font-size:.7rem}
+.more-banner{
+  border-radius:8px;
+  background:#121419;
+}
+.more-inner{padding:22px}
+.more-inner b{font-family:var(--body)}
+
+.product-tools{
+  position:sticky;
+  top:76px;
+  z-index:20;
+  margin:0 0 22px;
+  padding:13px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:8px;
+  background:rgba(14,16,20,.94);
+  backdrop-filter:blur(16px);
+  box-shadow:0 14px 34px rgba(0,0,0,.20);
+}
+.field{
+  min-height:44px;
+  padding:11px 13px;
+  border-radius:6px;
+  border-color:rgba(255,255,255,.12);
+  background:#0B0D11;
+  font-size:.88rem;
+}
+.field:focus{outline:1px solid var(--gold);border-color:var(--gold)}
+.searchbox:before{font-size:1.1rem}
+.need-filters{gap:6px}
+.need-chip{
+  min-height:34px;
+  padding:7px 10px;
+  border-radius:5px;
+  background:#17191F;
+  font-size:.72rem;
+  font-weight:600;
+}
+.need-chip.active{
+  border-color:rgba(215,174,97,.62);
+  background:rgba(215,174,97,.10);
+}
+.no-results{border-radius:8px;background:#111319}
+
+/* Supporting content */
+.process-grid{gap:0;border-top:1px solid rgba(255,255,255,.10);border-bottom:1px solid rgba(255,255,255,.10)}
+.process-card{
+  padding:24px;
+  border:0;
+  border-right:1px solid rgba(255,255,255,.10);
+  border-radius:0;
+  background:none;
+  box-shadow:none;
+}
+.process-card:last-child{border-right:0}
+.process-num,
+.reason-icon{
+  border-radius:6px;
+  background:rgba(215,174,97,.10);
+  color:var(--gold);
+}
+.process-card b,
+.trust .t b,
+.explain-card h3,
+.warranty-card h3{font-family:var(--body)}
+.process-alert{border-radius:6px;border-style:solid;background:rgba(215,174,97,.06)}
+.trust{gap:10px}
+.trust .t{
+  padding:18px;
+  border-radius:8px;
+  background:#121419;
+  box-shadow:none;
+}
+.explain-card,
+.warranty-card,
+.review{
+  padding:22px;
+  border-radius:8px;
+  background:#121419;
+  box-shadow:none;
+}
+.reason-item{
+  padding:12px 0;
+  border:0;
+  border-top:1px solid rgba(255,255,255,.08);
+  border-radius:0;
+  background:none;
+}
+.reason-item:last-child{border-bottom:1px solid rgba(255,255,255,.08)}
+.warranty-note{border-radius:6px;border-style:solid}
+.review-avatar{border-radius:7px;background:var(--gold);border:0}
+.faq details{
+  margin-bottom:8px;
+  border-radius:6px;
+  border-color:rgba(255,255,255,.10);
+  background:#121419;
+}
+.faq summary{padding:17px 18px;font-size:.9rem}
+.faq .ans{padding-bottom:18px;font-size:.85rem}
+footer{padding:38px 0 108px;border-color:rgba(255,255,255,.09)}
+
+/* Modal and order surfaces */
+.overlay{background:rgba(0,0,0,.76);backdrop-filter:blur(10px)}
+.modal,
+.wbox{
+  border-color:rgba(255,255,255,.12);
+  background:#121419;
+  box-shadow:0 30px 80px rgba(0,0,0,.52);
+}
+.modal{border-radius:12px 12px 0 0;padding:28px 26px 32px}
+@media(min-width:640px){.modal{border-radius:12px}}
+.modal .close{border-radius:6px;background:#1A1D23}
+.modal h3,
+.order-summary-head b,
+.send-guide h4,
+.ticket .tk-code{font-family:var(--body)}
+.plan{
+  padding:13px 14px;
+  border-radius:7px;
+  background:#17191F;
+}
+.plan:hover{border-color:rgba(215,174,97,.55)}
+.plan.sel,
+.plan.best-value.sel{background:rgba(215,174,97,.09)}
+.plan.best-value{background:#17191F}
+.plan-value-badge,
+.combo-pill,
+.combo-best,
+.order-status{border-radius:4px}
+.combo-box{
+  border-radius:8px;
+  background:#15171D;
+}
+.combo-top b{font-family:var(--body)}
+.combo-option{border-radius:7px;background:#0F1115}
+.note-box,
+.summary-warranty,
+.send-alert{border-radius:6px}
+.wide{min-height:46px;border-radius:7px}
+.ticket{
+  border-radius:8px;
+  background:#DDB35F;
+  box-shadow:none;
+}
+.order-summary,
+.send-guide{
+  border-radius:8px;
+  background:#15171D;
+  box-shadow:none;
+}
+.summary-total{border-radius:6px}
+.copybtn,
+.copy-hint,
+.copy-toast{border-radius:6px}
+.copybtn{background:#20180A}
+.wbox{border-radius:10px}
+.langpick button,
+.gift{border-radius:6px}
+
+/* Floating and mobile actions */
+.recent-order{
+  border-radius:8px;
+  background:rgba(16,18,23,.96);
+  box-shadow:0 18px 46px rgba(0,0,0,.38);
+}
+.recent-dot{border-radius:6px;background:var(--gold);box-shadow:none}
+.back-top{background:#1A1D23}
+.mobile-cta{
+  background:rgba(12,14,18,.96);
+  border-color:rgba(255,255,255,.10);
+}
+
+@media(max-width:760px){
+  .wrap{padding:0 16px}
+  section{padding:50px 0}
+  .topbar .wrap{min-height:60px;padding:9px 14px}
+  .brand img{width:34px;height:34px}
+  .hero{padding:54px 0 42px}
+  .coin{width:106px;height:106px;margin-bottom:22px}
+  h1{font-size:clamp(2rem,10vw,2.75rem)}
+  .tagline{font-size:.92rem;line-height:1.75}
+  .hero-stats{margin-top:30px}
+  .steps{border-bottom:0}
+  .step{
+    min-height:auto;
+    padding:20px 4px;
+    border-right:0;
+    border-bottom:1px solid rgba(255,255,255,.10);
+  }
+  .sec-head{display:block;margin-bottom:22px}
+  .sec-head span{display:block;margin-top:6px;text-align:left}
+  .product-tools{top:68px;padding:10px}
+  .process-grid{border-bottom:0}
+  .process-card{
+    padding:20px 4px;
+    border-right:0;
+    border-bottom:1px solid rgba(255,255,255,.10);
+  }
+  .floating-contact{right:14px}
+  .mobile-cta{padding:9px 12px calc(9px + env(safe-area-inset-bottom))}
+  .modal{padding:26px 18px 30px}
+}
+@media(max-width:560px){
+  .topbar nav{gap:5px}
+  .faq-nav{padding:7px 9px;font-size:.72rem}
+  .nav-search-btn{padding:7px 9px}
+  .langbtn{padding:7px 9px;font-size:.74rem}
+  #zaloTop{padding:7px 10px;font-size:.74rem}
+  .hero-stat{padding:16px 9px}
+}
+@media(max-width:460px){
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .hero-stat:last-child{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.10)}
+  .hero-stat:nth-child(2){border-right:0}
+}
 </style>
 </head>
 <body>
@@ -469,6 +995,7 @@ label{display:block;font-weight:600;font-size:.88rem;margin:14px 0 6px}
     <div id="mBody"></div>
   </div>
 </div>
+<div class="copy-toast" id="copyToast" role="status" aria-live="polite"></div>
 
 <!-- ================= WELCOME POPUP ================= -->
 <div class="welcome" id="welcome" role="dialog" aria-modal="true">
@@ -1063,7 +1590,7 @@ const T = {
     sendGuideTitle:"Chưa hoàn tất đơn đâu nhé", sendGuideIntro:"Bạn cần gửi phiếu này cho nhân viên qua Messenger hoặc Zalo thì shop mới xác nhận và bắt đầu nâng cấp.",
     sendStep1:"Bấm “Sao chép nội dung tin nhắn” ở trên.", sendStep2:"Chọn Messenger hoặc Zalo bên dưới.", sendStep3:"Dán tin nhắn vừa sao chép và gửi cho nhân viên.",
     sendGuideAlert:"Nếu chỉ dừng ở màn hình này mà chưa nhắn cho shop, nhân viên sẽ chưa nhận được đơn để xử lý.",
-    orderCode:"Mã đơn hàng", copy:"📋 Sao chép nội dung tin nhắn", copied:"✅ Đã sao chép!",
+    orderCode:"Mã đơn hàng", copy:"📋 Sao chép nội dung tin nhắn", copied:"✅ Đã sao chép!", copyHint:"Nhấp vào đây", copyToast:"Đã sao chép nội dung tin nhắn",
     msgFb:"💬 Nhắn qua Facebook Messenger", msgZalo:"💬 Nhắn qua Zalo", msgPage:"📘 Xem Facebook Page",
     finalHint:'Bấm "Sao chép" → mở Facebook hoặc Zalo → dán tin nhắn và gửi.<br>Nhân viên sẽ nâng cấp trước, bạn kiểm tra rồi mới thanh toán.',
     mProduct:"Sản phẩm", mName:"Họ tên", mPhone:"SĐT", mNote:"Ghi chú", mCode:"Mã đơn", mDiscount:"Mã giảm giá",
@@ -1107,7 +1634,7 @@ const T = {
     sendGuideTitle:"Your order is not finished yet", sendGuideIntro:"Please send this confirmation to our staff on Messenger or Zalo so we can confirm and start the upgrade.",
     sendStep1:"Tap “Copy message” above.", sendStep2:"Choose Messenger or Zalo below.", sendStep3:"Paste the copied message and send it to our staff.",
     sendGuideAlert:"If you stop on this screen without messaging us, our staff will not receive the order yet.",
-    orderCode:"Order code", copy:"📋 Copy message", copied:"✅ Copied!",
+    orderCode:"Order code", copy:"📋 Copy message", copied:"✅ Copied!", copyHint:"Tap here", copyToast:"Message copied",
     msgFb:"💬 Message us on Messenger", msgZalo:"💬 Message us on Zalo", msgPage:"📘 View Facebook Page",
     finalHint:'Tap "Copy" → open Facebook or Zalo → paste and send.<br>We upgrade first — you check, then you pay.',
     mProduct:"Product", mName:"Name", mPhone:"Phone", mNote:"Note", mCode:"Order code", mDiscount:"Discount code",
@@ -1417,6 +1944,7 @@ function renderFaq(){
 /* ---------- modal đặt hàng / order modal ---------- */
 const overlay = $("#overlay"), mBody = $("#mBody");
 let cur = null, curPlan = 0, selectedCombo = "";
+let copyToastTimer = null;
 const COMBO_DEALS = {
   netflixPremium: {
     triggers: ["youtube", "netflix"],
@@ -1485,6 +2013,13 @@ function availableComboDeals(){
     }
     return true;
   });
+}
+function showCopyToast(){
+  const toast = $("#copyToast");
+  toast.textContent = t("copyToast");
+  toast.classList.add("show");
+  clearTimeout(copyToastTimer);
+  copyToastTimer = setTimeout(() => toast.classList.remove("show"), 1700);
 }
 function comboDealTitle(key, deal){
   if ((cur.icon === "spotify" && key === "spotifyYoutube") || cur.icon === "netflix") {
@@ -1699,7 +2234,10 @@ ${t("mPhone")}: ${phone}${note ? `\n${t("mNote")}: ${note}` : ""}`;
       </div>
       <div class="summary-total"><span>${t("totalDue")}</span><b>${priceLine}</b></div>
       <div class="summary-warranty">✓ ${t("warrantyMini")}</div>
-      <button class="copybtn" id="copyMsg">${t("copy")}</button>
+      <div class="copy-action">
+        <button class="copybtn" id="copyMsg">${t("copy")}</button>
+        <span class="copy-hint">${t("copyHint")}</span>
+      </div>
     </div>
     <div class="send-guide">
       <h4>${t("sendGuideTitle")}</h4>
@@ -1722,6 +2260,7 @@ ${t("mPhone")}: ${phone}${note ? `\n${t("mNote")}: ${note}` : ""}`;
     try { await navigator.clipboard.writeText(msg); }
     catch { const ta = document.createElement("textarea"); ta.value = msg; document.body.appendChild(ta); ta.select(); document.execCommand("copy"); ta.remove(); }
     e.target.textContent = t("copied");
+    showCopyToast();
     setTimeout(() => e.target.textContent = t("copy"), 2200);
   };
 }

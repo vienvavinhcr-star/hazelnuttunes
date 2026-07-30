@@ -51,7 +51,9 @@ button{font-family:inherit;cursor:pointer}
 .pillbtn.gold{background:linear-gradient(180deg,#FFD978,var(--gold-deep));color:var(--ink);border:none;box-shadow:0 8px 24px rgba(233,180,76,.28), inset 0 1px 0 rgba(255,255,255,.45)}
 .pillbtn.gold:hover{filter:brightness(1.06)}
 .faq-nav{padding:8px 13px;font-weight:800}
-.langbtn{border:1px solid var(--line);background:var(--panel);color:var(--cream);border-radius:999px;padding:7px 14px;font-weight:700;font-size:.82rem;letter-spacing:.05em}
+.langbtn{border:1px solid var(--line);background:var(--panel);color:var(--cream);border-radius:999px;padding:7px 12px;font-weight:700;font-size:.82rem;letter-spacing:0;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap}
+.lang-flag{font-size:1rem;line-height:1}
+.lang-code{line-height:1}
 .langbtn:hover{background:var(--panel-2)}
 .nav-search-btn{height:36px;border:1px solid var(--line);background:var(--panel);color:var(--cream);border-radius:999px;display:inline-flex;align-items:center;gap:8px;padding:7px 13px;font-weight:800;transition:.2s;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
 .nav-search-icon{position:relative;width:15px;height:15px;border:2px solid var(--gold);border-radius:50%;display:block;flex:0 0 auto}
@@ -316,7 +318,8 @@ label{display:block;font-weight:600;font-size:.88rem;margin:14px 0 6px}
 .wbox h3{font-family:var(--display);font-size:1.3rem;margin-bottom:6px}
 .wbox p{color:var(--muted);font-size:.9rem;margin-bottom:16px}
 .langpick{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
-.langpick button{padding:13px;border-radius:14px;border:1px solid var(--line);background:rgba(10,17,40,.5);color:var(--cream);font-weight:700;font-size:.95rem;transition:.15s}
+.langpick button{padding:13px;border-radius:14px;border:1px solid var(--line);background:rgba(10,17,40,.5);color:var(--cream);font-weight:700;font-size:.95rem;transition:.15s;display:flex;align-items:center;justify-content:center;gap:8px}
+.langpick .flag{font-size:1.3rem;line-height:1}
 .langpick button.sel{border-color:var(--gold);background:rgba(233,180,76,.12);color:var(--gold)}
 .wbox .field{text-align:center}
 .skip{background:none;border:none;color:var(--muted);font-size:.82rem;margin-top:12px;text-decoration:underline}
@@ -1095,7 +1098,7 @@ footer{padding:38px 0 108px;border-color:rgba(255,255,255,.09)}
     <nav>
       <a class="pillbtn faq-nav" href="#faq">FAQ</a>
       <button class="nav-search-btn" id="navSearch" type="button" aria-label="Tìm ứng dụng"><span class="nav-search-icon" aria-hidden="true"></span><span class="nav-search-text">Search</span></button>
-      <button class="langbtn" id="langToggle" aria-label="Change language">VI</button>
+      <button class="langbtn" id="langToggle" type="button" aria-label="Switch to English"><span class="lang-flag" aria-hidden="true">🇬🇧</span><span class="lang-code">EN</span></button>
       <a class="pillbtn gold" id="zaloTop" href="#" target="_blank" rel="noopener">Zalo</a>
     </nav>
   </div>
@@ -1228,10 +1231,10 @@ footer{padding:38px 0 108px;border-color:rgba(255,255,255,.09)}
     <img id="logoWelcome" alt="HAZELNUTTUNES">
     <h3 id="wTitle">Ưu đãi cho đơn đầu tiên</h3>
     <p id="wSub">Nhận mã giảm giá qua email khi bạn đã xem qua bảng giá.</p>
-    <div class="langpick">
-      <button id="pickVi" class="sel">VI · Tiếng Việt</button>
-      <button id="pickEn">EN · English</button>
-    </div>
+	    <div class="langpick">
+	      <button id="pickVi" class="sel" type="button"><span class="flag" aria-hidden="true">🇻🇳</span><span>Tiếng Việt</span></button>
+	      <button id="pickEn" type="button"><span class="flag" aria-hidden="true">🇬🇧</span><span>English</span></button>
+	    </div>
     <div id="wEmailBlock">
       <p id="wOffer" style="margin-bottom:10px"></p>
       <input class="field" id="wEmail" type="email" placeholder="email@example.com" autocomplete="email">
@@ -2006,7 +2009,12 @@ function renderLang(){
   document.querySelectorAll("[data-t]").forEach(el => { el.innerHTML = t(el.dataset.t); });
   $("#heroTitle").innerHTML = t("heroTitle");
   $("#taglineText").textContent = CONFIG.tagline[lang];
-  $("#langToggle").textContent = lang === "vi" ? "EN" : "VI";
+  const nextLanguage = lang === "vi"
+    ? { flag:"🇬🇧", code:"EN", label:"Switch to English" }
+    : { flag:"🇻🇳", code:"VI", label:"Chuyển sang tiếng Việt" };
+  $("#langToggle").innerHTML = `<span class="lang-flag" aria-hidden="true">${nextLanguage.flag}</span><span class="lang-code">${nextLanguage.code}</span>`;
+  $("#langToggle").setAttribute("aria-label", nextLanguage.label);
+  $("#langToggle").title = nextLanguage.label;
   $("#navSearch").setAttribute("aria-label", t("navSearch"));
   $("#navSearch").title = t("navSearch");
   $(".nav-search-text").textContent = lang === "vi" ? "Tìm" : "Search";

@@ -6,8 +6,8 @@
    
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HAZELNUTTUNES — Giá sỉ phần mềm bản quyền</title>
-<meta name="description" content="HAZELNUTTUNES — Nâng cấp YouTube Premium, Netflix, ChatGPT, Spotify giá sỉ. Uy tín để chọn, chất lượng để tin. Nâng cấp trước, trả sau.">
+<title>HAZELNUTTUNES — Phần mềm bản quyền cho người Việt tại Úc</title>
+<meta name="description" content="Nâng cấp YouTube Premium, Netflix, ChatGPT và Spotify cho người Việt tại Úc. Giá niêm yết bằng AUD, nâng cấp trước và thanh toán sau khi kiểm tra.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -195,13 +195,6 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(1.4rem,3vw,1.85rem
 .back-top{position:fixed;right:18px;bottom:28px;z-index:70;background:var(--panel-2);font-size:1.1rem;opacity:0;visibility:hidden;transform:translateY(8px);cursor:pointer}
 .back-top.show{opacity:1;visibility:visible;transform:none}
 .mobile-cta{display:none}
-.recent-order{position:fixed;left:18px;bottom:22px;z-index:72;display:flex;align-items:center;gap:11px;max-width:min(340px,calc(100vw - 36px));padding:12px 14px;border-radius:16px;background:rgba(9,13,28,.86);border:1px solid rgba(255,255,255,.10);box-shadow:0 18px 42px rgba(0,0,0,.38), inset 0 1px 0 rgba(255,255,255,.06);backdrop-filter:blur(16px);opacity:0;transform:translateY(12px);pointer-events:none;transition:.28s}
-.recent-order.show{opacity:1;transform:translateY(0)}
-.recent-dot{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold),#7C5CFF);color:#10162F;font-family:var(--display);font-weight:800;box-shadow:0 8px 22px rgba(0,0,0,.28)}
-.recent-copy{font-size:.82rem;line-height:1.35;color:var(--cream)}
-.recent-copy b{display:block;color:var(--gold);font-size:.86rem}
-.recent-copy span{color:var(--muted)}
-
 /* ---------- benefits ---------- */
 .trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
 .trust .t{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
@@ -340,7 +333,6 @@ label{display:block;font-weight:600;font-size:.88rem;margin:14px 0 6px}
   .process-grid{grid-template-columns:1fr}
   .floating-contact{right:14px;bottom:88px}
   .back-top{right:14px;bottom:146px}
-  .recent-order{left:12px;right:12px;bottom:82px;max-width:none}
   .confidence-grid{grid-template-columns:1fr}
   .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:75;display:grid;grid-template-columns:1fr 1.1fr;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(10,17,40,.92);backdrop-filter:blur(14px);border-top:1px solid var(--line)}
   .mobile-cta .pillbtn{justify-content:center;padding:11px 10px;font-size:.82rem}
@@ -616,11 +608,24 @@ h2{
 .card .icon.brand{box-shadow:none}
 .card h3,
 .card.featured h3{
+  display:flex;
+  align-items:flex-end;
+  min-height:2.9em;
   font-family:var(--body);
   font-size:1.04rem;
   font-weight:700;
+  line-height:1.45;
 }
-.card .desc{color:var(--muted);font-size:.82rem;line-height:1.7}
+.card .desc{
+  display:-webkit-box;
+  min-height:5.1em;
+  overflow:hidden;
+  color:var(--muted);
+  font-size:.82rem;
+  line-height:1.7;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:3;
+}
 .card .pillbtn{margin-top:auto}
 .trust-tags{gap:5px;min-height:27px}
 .trust-tag{
@@ -671,6 +676,7 @@ h2{
   backdrop-filter:blur(16px);
   box-shadow:0 14px 34px rgba(0,0,0,.20);
 }
+.product-tools-toggle{display:none}
 .field{
   min-height:44px;
   padding:11px 13px;
@@ -725,6 +731,15 @@ h2{
   background:#121419;
   box-shadow:none;
 }
+.benefit-index{
+  display:block;
+  margin-bottom:12px;
+  color:var(--gold);
+  font-size:.68rem;
+  font-weight:800;
+  letter-spacing:.08em;
+}
+.trust .t b{display:block;font-size:.9rem}
 .explain-card,
 .warranty-card,
 .review{
@@ -752,6 +767,41 @@ h2{
 .faq summary{padding:17px 18px;font-size:.9rem}
 .faq .ans{padding-bottom:18px;font-size:.85rem}
 footer{padding:38px 0 108px;border-color:rgba(255,255,255,.09)}
+.footer-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:12px}
+.footer-links a{color:var(--muted);font-size:.78rem}
+.footer-links a:hover{color:var(--gold)}
+
+.policy-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  border-top:1px solid rgba(255,255,255,.10);
+  border-bottom:1px solid rgba(255,255,255,.10);
+}
+.policy-item{
+  display:grid;
+  grid-template-columns:58px minmax(0,1fr);
+  gap:16px;
+  padding:22px;
+  border-right:1px solid rgba(255,255,255,.10);
+  border-bottom:1px solid rgba(255,255,255,.10);
+}
+.policy-item:nth-child(2n){border-right:0}
+.policy-item:nth-last-child(-n+2){border-bottom:0}
+.policy-mark{
+  height:32px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(215,174,97,.32);
+  border-radius:5px;
+  color:var(--gold);
+  background:rgba(215,174,97,.06);
+  font-size:.67rem;
+  font-weight:800;
+  letter-spacing:.03em;
+}
+.policy-item h3{font-size:.9rem;line-height:1.4;margin-bottom:5px}
+.policy-item p{color:var(--muted);font-size:.8rem;line-height:1.7}
+.policy-note{margin-top:14px;color:var(--muted);font-size:.76rem}
 
 /* Modal and order surfaces */
 .overlay{background:rgba(0,0,0,.76);backdrop-filter:blur(10px)}
@@ -768,6 +818,50 @@ footer{padding:38px 0 108px;border-color:rgba(255,255,255,.09)}
 .order-summary-head b,
 .send-guide h4,
 .ticket .tk-code{font-family:var(--body)}
+.order-progress{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+  margin:0 48px 24px 0;
+}
+.order-progress-step{
+  position:relative;
+  display:grid;
+  grid-template-columns:24px minmax(0,1fr);
+  align-items:center;
+  gap:7px;
+  color:#7F8490;
+  font-size:.66rem;
+  font-weight:600;
+  line-height:1.35;
+}
+.order-progress-step:not(:last-child):after{
+  content:"";
+  position:absolute;
+  left:31px;
+  right:-3px;
+  top:11px;
+  height:1px;
+  background:rgba(255,255,255,.12);
+}
+.progress-dot{
+  position:relative;
+  z-index:1;
+  width:24px;
+  height:24px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:50%;
+  background:#121419;
+  font-size:.65rem;
+}
+.order-progress-step.active{color:var(--cream)}
+.order-progress-step.active .progress-dot{border-color:var(--gold);background:var(--gold);color:var(--ink)}
+.order-progress-step.done{color:#9AA09F}
+.order-progress-step.done .progress-dot{border-color:rgba(115,201,145,.45);color:var(--ok)}
+.dline{display:flex;gap:9px;align-items:flex-start}
+.dline-check{color:var(--ok);font-weight:800;flex:0 0 auto}
 .plan{
   padding:13px 14px;
   border-radius:7px;
@@ -808,16 +902,11 @@ footer{padding:38px 0 108px;border-color:rgba(255,255,255,.09)}
 .copy-toast{border-radius:6px}
 .copybtn{background:#20180A}
 .wbox{border-radius:10px}
+.wbox img{width:74px;height:74px}
 .langpick button,
 .gift{border-radius:6px}
 
 /* Floating and mobile actions */
-.recent-order{
-  border-radius:8px;
-  background:rgba(16,18,23,.96);
-  box-shadow:0 18px 46px rgba(0,0,0,.38);
-}
-.recent-dot{border-radius:6px;background:var(--gold);box-shadow:none}
 .back-top{background:#1A1D23}
 .mobile-cta{
   background:rgba(12,14,18,.96);
@@ -850,9 +939,75 @@ footer{padding:38px 0 108px;border-color:rgba(255,255,255,.09)}
     border-right:0;
     border-bottom:1px solid rgba(255,255,255,.10);
   }
+  .policy-grid{grid-template-columns:1fr}
+  .policy-item,
+  .policy-item:nth-child(2n),
+  .policy-item:nth-last-child(-n+2){
+    padding:18px 4px;
+    border-right:0;
+    border-bottom:1px solid rgba(255,255,255,.10);
+  }
+  .policy-item:last-child{border-bottom:0}
+  .order-progress{margin-right:42px;gap:5px}
   .floating-contact{right:14px}
   .mobile-cta{padding:9px 12px calc(9px + env(safe-area-inset-bottom))}
   .modal{padding:26px 18px 30px}
+}
+@media(max-width:900px){
+  .product-tools{
+    max-height:340px;
+    transition:max-height .22s ease,margin .22s ease,padding .22s ease,border-color .22s ease,opacity .18s ease,transform .22s ease;
+  }
+  .product-tools.is-collapsed{
+    max-height:0;
+    height:0;
+    min-height:0;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    visibility:hidden;
+    border-color:transparent;
+    opacity:0;
+    pointer-events:none;
+    box-shadow:none;
+    transform:translateY(-8px);
+  }
+  .motion-ready .product-tools.reveal.is-collapsed{
+    opacity:0;
+    transform:translateY(-8px);
+  }
+  .product-tools-toggle{
+    position:fixed;
+    top:78px;
+    left:0;
+    z-index:24;
+    width:32px;
+    height:46px;
+    display:grid;
+    place-items:center;
+    border:1px solid rgba(215,174,97,.38);
+    border-left:0;
+    border-radius:0 7px 7px 0;
+    background:rgba(20,22,27,.96);
+    color:var(--gold);
+    font-family:var(--body);
+    font-size:1.35rem;
+    line-height:1;
+    box-shadow:0 10px 28px rgba(0,0,0,.32);
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transform:translateX(-105%);
+    transition:opacity .18s ease,transform .18s ease,background .18s ease;
+  }
+  .product-tools-toggle.visible{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    transform:none;
+  }
+  .product-tools-toggle:hover,
+  .product-tools-toggle:focus-visible{background:#1D2027}
 }
 @media(max-width:560px){
   .topbar nav{gap:5px}
@@ -878,8 +1033,8 @@ footer{padding:38px 0 108px;border-color:rgba(255,255,255,.09)}
     <nav>
       <a class="pillbtn faq-nav" href="#faq">FAQ</a>
       <button class="nav-search-btn" id="navSearch" type="button" aria-label="Tìm ứng dụng"><span class="nav-search-icon" aria-hidden="true"></span><span class="nav-search-text">Search</span></button>
-      <button class="langbtn" id="langToggle" aria-label="Change language">🌐 VI</button>
-      <a class="pillbtn gold" id="zaloTop" href="#" target="_blank" rel="noopener">💬 Zalo</a>
+      <button class="langbtn" id="langToggle" aria-label="Change language">VI</button>
+      <a class="pillbtn gold" id="zaloTop" href="#" target="_blank" rel="noopener">Zalo</a>
     </nav>
   </div>
 </header>
@@ -911,12 +1066,13 @@ footer{padding:38px 0 108px;border-color:rgba(255,255,255,.09)}
   <!-- ================= PRODUCTS ================= -->
   <section id="sanpham">
     <div class="sec-head reveal"><h2 data-t="secProducts"></h2><span data-t="secProductsSub"></span></div>
-    <div class="product-tools reveal">
+    <div class="product-tools reveal" id="productToolsPanel">
       <div class="searchbox"><input class="field" id="productSearch" type="search" autocomplete="off"></div>
       <select class="field product-sort" id="productSort" aria-label="Sắp xếp sản phẩm"></select>
       <div class="need-filters" id="needFilters" aria-label="Lọc theo nhu cầu"></div>
       <div class="product-meta" id="productCount" aria-live="polite"></div>
     </div>
+    <button class="product-tools-toggle" id="productToolsToggle" type="button" aria-controls="productToolsPanel" aria-expanded="true">‹</button>
     <div class="grid" id="productGrid"></div>
   </section>
 
@@ -951,6 +1107,13 @@ footer{padding:38px 0 108px;border-color:rgba(255,255,255,.09)}
     </div>
   </section>
 
+  <!-- ================= STORE POLICIES ================= -->
+  <section id="chinh-sach">
+    <div class="sec-head reveal"><h2 data-t="secPolicies"></h2><span data-t="secPoliciesSub"></span></div>
+    <div class="policy-grid" id="policyGrid"></div>
+    <p class="policy-note reveal" data-t="policyNote"></p>
+  </section>
+
   <!-- ================= TESTIMONIALS ================= -->
   <section id="danhgia" hidden>
     <div class="sec-head reveal"><h2 data-t="secTestimonials"></h2><span data-t="secTestimonialsSub"></span></div>
@@ -969,7 +1132,11 @@ footer{padding:38px 0 108px;border-color:rgba(255,255,255,.09)}
   <div class="wrap">
     <span class="brand"><img id="logoFoot" alt="" width="34" height="34">HAZELNUTTUNES</span>
     <p id="footText"></p>
-    <p><a id="facebookPageFoot" href="#" target="_blank" rel="noopener" data-t="footerPage"></a></p>
+    <nav class="footer-links" aria-label="Liên kết cuối trang">
+      <a href="#chinh-sach" data-t="footerPolicy"></a>
+      <a href="#faq" data-t="footerFaq"></a>
+      <a id="facebookPageFoot" href="#" target="_blank" rel="noopener" data-t="footerPage"></a>
+    </nav>
   </div>
 </footer>
 
@@ -977,10 +1144,6 @@ footer{padding:38px 0 108px;border-color:rgba(255,255,255,.09)}
 <div class="floating-contact" aria-label="Liên hệ nhanh">
   <a class="float-btn messenger" id="floatingMessenger" href="#" target="_blank" rel="noopener" aria-label="Nhắn Facebook Messenger">M</a>
   <a class="float-btn zalo-float" id="floatingZalo" href="#" target="_blank" rel="noopener" aria-label="Nhắn Zalo">Z</a>
-</div>
-<div class="recent-order" id="recentOrder" aria-live="polite">
-  <div class="recent-dot" id="recentDot">H</div>
-  <div class="recent-copy"><b id="recentTitle"></b><span id="recentMeta"></span></div>
 </div>
 <button class="back-top" id="backTop" type="button" aria-label="Về đầu trang">↑</button>
 <div class="mobile-cta">
@@ -998,14 +1161,14 @@ footer{padding:38px 0 108px;border-color:rgba(255,255,255,.09)}
 <div class="copy-toast" id="copyToast" role="status" aria-live="polite"></div>
 
 <!-- ================= WELCOME POPUP ================= -->
-<div class="welcome" id="welcome" role="dialog" aria-modal="true">
+<div class="welcome" id="welcome" role="dialog" aria-modal="true" aria-labelledby="wTitle" aria-describedby="wSub">
   <div class="wbox">
     <img id="logoWelcome" alt="HAZELNUTTUNES">
-    <h3 id="wTitle">Chào mừng! · Welcome!</h3>
-    <p id="wSub">Chọn ngôn ngữ của bạn · Choose your language</p>
+    <h3 id="wTitle">Ưu đãi cho đơn đầu tiên</h3>
+    <p id="wSub">Nhận mã giảm giá qua email khi bạn đã xem qua bảng giá.</p>
     <div class="langpick">
-      <button id="pickVi" class="sel">🇻🇳 Tiếng Việt</button>
-      <button id="pickEn">🇬🇧 English</button>
+      <button id="pickVi" class="sel">VI · Tiếng Việt</button>
+      <button id="pickEn">EN · English</button>
     </div>
     <div id="wEmailBlock">
       <p id="wOffer" style="margin-bottom:10px"></p>
@@ -1036,7 +1199,7 @@ footer{padding:38px 0 108px;border-color:rgba(255,255,255,.09)}
 ############################################################## */
 const CONFIG = {
   shopName: "HAZELNUTTUNES",
-  currency: "$",              // ký hiệu tiền tệ / currency symbol
+  currency: "A$",             // tất cả giá trên trang là đô-la Úc (AUD)
   discountPercent: 10,        // % giảm cho khách để lại email
 
   // LINK LIÊN HỆ — đổi thành link thật (change to your real links)
@@ -1051,20 +1214,19 @@ const CONFIG = {
   invoicePrefix: "HZN",
 
   tagline: {
-    vi: "Nâng cấp YouTube Premium, Netflix, ChatGPT... với giá sỉ. Chọn gói, nhận mã đơn, nhắn cho tụi mình — nâng cấp trước, trả tiền sau.",
-    en: "Upgrade YouTube Premium, Netflix, ChatGPT and more at wholesale prices. Pick a plan, get your order code, message us — we upgrade first, you pay after."
+    vi: "Nâng cấp YouTube Premium, Netflix, ChatGPT và nhiều ứng dụng khác cho người Việt tại Úc. Giá niêm yết bằng AUD, nâng cấp trước và thanh toán sau khi kiểm tra.",
+    en: "Premium app upgrades for customers in Australia. All prices are listed in AUD; we upgrade first and you pay after checking."
   },
   footerText: {
-    vi: "Uy tín để chọn, chất lượng để tin · Hỗ trợ qua Facebook & Zalo hàng ngày",
-    en: "Trusted choice, proven quality · Daily support via Facebook & Zalo"
+    vi: "Giá niêm yết bằng AUD · Hỗ trợ tiếng Việt qua Messenger và Zalo",
+    en: "Prices listed in AUD · Vietnamese and English support via Messenger and Zalo"
   },
 
-  /* SỐ LIỆU HERO — chỉ dùng dữ liệu có thể kiểm chứng.
-     Có thể đổi thành “500+ khách hàng” khi bạn có số liệu thật. */
+  /* Chỉ hiển thị thông tin có thể xác nhận, không dùng số đơn mẫu. */
   heroStats: [
-    { value: "500+", label: { vi: "Khách hàng đã phục vụ", en: "Customers served" } },
-    { value: "5–30", label: { vi: "Phút xử lý thông thường", en: "Typical processing minutes" } },
-    { value: "1000+", label: { vi: "Đơn hàng thành công", en: "Successful orders" } }
+    { value: "AUD", label: { vi: "Giá niêm yết rõ ràng", en: "Clearly listed prices" } },
+    { value: "VI / EN", label: { vi: "Hỗ trợ tiếng Việt và Anh", en: "Vietnamese and English support" } },
+    { value: "5–30", label: { vi: "Phút xử lý thông thường", en: "Typical processing minutes" } }
   ],
 
   /* ĐÁNH GIÁ KHÁCH HÀNG — thêm review thật vào đây để section tự hiện.
@@ -1083,29 +1245,29 @@ const CONFIG = {
       icon: "netflix",          // icon có sẵn: netflix, youtube, spotify, chatgpt, meitu, capcut — hoặc dán 1 emoji bất kỳ
       name: { vi: "Netflix", en: "Netflix" },
       desc: {
-        vi: "Super sale: xem phim 4K, đăng nhập được trên mọi thiết bị.",
-        en: "Super sale: 4K streaming, works on every device."
+        vi: "Xem phim 4K với lựa chọn profile dùng chung hoặc profile riêng có mã PIN.",
+        en: "Stream in 4K with a shared profile or a private PIN-protected profile."
       },
-      badge: { vi: "Super sale", en: "Super sale" },
+      badge: { vi: "Ưu đãi", en: "Offer" },
       details: {
         vi: [
-          "Netflix VIP: share profile với 1 bạn bất kỳ",
-          "Netflix Premium: 1 mình bạn 1 profile riêng, set mã PIN",
+          "Netflix VIP: dùng chung profile với một người khác",
+          "Netflix Premium: profile riêng có mã PIN",
           "Chất lượng xem phim cả 2 gói đều như nhau",
           "Đăng nhập được trên mọi thiết bị",
-          "💙 Mua kèm YouTube để có giá ưu đãi"
+          "Mua kèm YouTube để nhận giá combo"
         ],
         en: [
           "Netflix VIP: shared profile with one other person",
           "Netflix Premium: your own private profile with PIN lock",
           "Both plans stream at the same quality",
           "Log in on any device",
-          "💙 Bundle with YouTube for a better price"
+          "Bundle with YouTube for a lower combined price"
         ]
       },
       plans: [
-        { label: { vi: "VIP · 6 tháng", en: "VIP · 6 months" }, note: { vi: "Share profile với 1 bạn", en: "Profile shared with 1 person" }, price: 25, oldPrice: 0 },
-        { label: { vi: "VIP · 12 tháng", en: "VIP · 12 months" }, note: { vi: "Share profile với 1 bạn", en: "Profile shared with 1 person" }, price: 39, oldPrice: 0, bestValue: true },
+        { label: { vi: "VIP · 6 tháng", en: "VIP · 6 months" }, note: { vi: "Dùng chung profile với một người", en: "Profile shared with 1 person" }, price: 25, oldPrice: 0 },
+        { label: { vi: "VIP · 12 tháng", en: "VIP · 12 months" }, note: { vi: "Dùng chung profile với một người", en: "Profile shared with 1 person" }, price: 39, oldPrice: 0, bestValue: true },
         { label: { vi: "Premium · 6 tháng", en: "Premium · 6 months" }, note: { vi: "1 profile riêng + mã PIN", en: "Private profile + PIN" }, price: 35, oldPrice: 0 },
         { label: { vi: "Premium · 12 tháng", en: "Premium · 12 months" }, note: { vi: "1 profile riêng + mã PIN", en: "Private profile + PIN" }, price: 59, oldPrice: 0, bestValue: true }
       ]
@@ -1118,28 +1280,28 @@ const CONFIG = {
         vi: "Không quảng cáo, phát trong nền, kèm YouTube Music. Chỉ cần gửi email.",
         en: "Ad-free, background play, YouTube Music included. Just send your email."
       },
-      badge: { vi: "⭐ Bán chạy nhất shop", en: "⭐ #1 Best seller" },
+      badge: { vi: "Bán chạy nhất", en: "Best seller" },
       details: {
         vi: [
-          "Chỉ cần gửi email là hoàn tất — không cần log in",
-          "Full bảo hành trong suốt thời gian sử dụng",
-          "✨ DEAL nhóm: 2 acc $110 · 3 acc $150 · 4 acc $180",
-          "💙 Mua kèm Spotify hoặc Netflix được giá ưu đãi năm đầu"
+          "Chỉ cần gửi email, không cần cung cấp thông tin đăng nhập",
+          "Bảo hành trong suốt thời hạn gói",
+          "Gói nhóm: 2 tài khoản A$110 · 3 tài khoản A$150 · 4 tài khoản A$180",
+          "Mua kèm Spotify hoặc Netflix để nhận giá combo năm đầu"
         ],
         en: [
           "Just send us your email — no login needed",
           "Full warranty for the entire duration",
-          "✨ Group DEAL: 2 accounts $110 · 3 accounts $150 · 4 accounts $180",
-          "💙 Bundle with Spotify or Netflix for first-year discount"
+          "Group pricing: 2 accounts A$110 · 3 accounts A$150 · 4 accounts A$180",
+          "Bundle with Spotify or Netflix for a first-year discount"
         ]
       },
       plans: [
         { label: { vi: "1 tháng", en: "1 month" }, note: { vi: "Trải nghiệm trước", en: "Try it first" }, price: 9, oldPrice: 0 },
-        { label: { vi: "6 tháng", en: "6 months" }, note: { vi: "Full bảo hành", en: "Full warranty" }, price: 35, oldPrice: 0 },
-        { label: { vi: "12 tháng", en: "12 months" }, note: { vi: "Full bảo hành", en: "Full warranty" }, price: 59, oldPrice: 0, bestValue: true },
-        { label: { vi: "Deal 2 acc · 12 tháng", en: "Deal 2 accounts · 12 months" }, note: { vi: "Chỉ $55 mỗi acc", en: "Only $55 per account" }, price: 110, oldPrice: 118 },
-        { label: { vi: "Deal 3 acc · 12 tháng", en: "Deal 3 accounts · 12 months" }, note: { vi: "Chỉ $50 mỗi acc", en: "Only $50 per account" }, price: 150, oldPrice: 177 },
-        { label: { vi: "Deal 4 acc · 12 tháng", en: "Deal 4 accounts · 12 months" }, note: { vi: "Chỉ $45 mỗi acc", en: "Only $45 per account" }, price: 180, oldPrice: 236 }
+        { label: { vi: "6 tháng", en: "6 months" }, note: { vi: "Bảo hành trọn gói", en: "Full warranty" }, price: 35, oldPrice: 0 },
+        { label: { vi: "12 tháng", en: "12 months" }, note: { vi: "Bảo hành trọn gói", en: "Full warranty" }, price: 59, oldPrice: 0, bestValue: true },
+        { label: { vi: "Nhóm 2 tài khoản · 12 tháng", en: "2 accounts · 12 months" }, note: { vi: "A$55 mỗi tài khoản", en: "A$55 per account" }, price: 110, oldPrice: 118 },
+        { label: { vi: "Nhóm 3 tài khoản · 12 tháng", en: "3 accounts · 12 months" }, note: { vi: "A$50 mỗi tài khoản", en: "A$50 per account" }, price: 150, oldPrice: 177 },
+        { label: { vi: "Nhóm 4 tài khoản · 12 tháng", en: "4 accounts · 12 months" }, note: { vi: "A$45 mỗi tài khoản", en: "A$45 per account" }, price: 180, oldPrice: 236 }
       ]
     },
     {
@@ -1154,7 +1316,7 @@ const CONFIG = {
         vi: [
           "Up chính chủ trên account của khách hàng",
           "Giữ nguyên playlist, nghệ sĩ đã theo dõi",
-          "Full bảo hành trong suốt thời gian sử dụng"
+          "Bảo hành trong suốt thời hạn gói"
         ],
         en: [
           "Upgraded on your own account",
@@ -1171,26 +1333,26 @@ const CONFIG = {
       icon: "chatgpt",
       name: { vi: "ChatGPT", en: "ChatGPT" },
       desc: {
-        vi: "Gói share ít người dùng, chạy ổn định — cho học tập và công việc.",
-        en: "Low-share, stable plans — great for study and work."
+        vi: "Gói dùng chung giới hạn người dùng, phù hợp cho học tập và công việc.",
+        en: "Limited-user shared plans for study and work."
       },
-      badge: { vi: "Hot", en: "Hot" },
+      badge: { vi: "Phổ biến", en: "Popular" },
       details: {
         vi: [
-          "🌿 Gói VIP: share 4–5 người, ổn định",
-          "🌿 Gói PRO: share chỉ 1–2 người",
-          "Tháng đầu gói VIP $8, gia hạn tiếp theo chỉ $7",
+          "Gói VIP: dùng chung với 4–5 người",
+          "Gói PRO: dùng chung với 1–2 người",
+          "Tháng đầu gói VIP A$8, gia hạn tiếp theo A$7",
           "Hỗ trợ hướng dẫn sử dụng sau khi nâng cấp"
         ],
         en: [
-          "🌿 VIP plan: shared by 4–5 users, very stable",
-          "🌿 PRO plan: shared by only 1–2 users",
-          "VIP first month $8, renewals only $7",
+          "VIP plan: shared by 4–5 users",
+          "PRO plan: shared by only 1–2 users",
+          "VIP first month A$8, renewals A$7",
           "Free usage guide after upgrade"
         ]
       },
       plans: [
-        { label: { vi: "Gói VIP · tháng đầu", en: "VIP · first month" }, note: { vi: "Share 4–5 người · gia hạn $7", en: "Shared 4–5 users · renews at $7" }, price: 8, oldPrice: 0 },
+        { label: { vi: "Gói VIP · tháng đầu", en: "VIP · first month" }, note: { vi: "Dùng chung 4–5 người · gia hạn A$7", en: "Shared by 4–5 users · renews at A$7" }, price: 8, oldPrice: 0 },
         { label: { vi: "Gói PRO · mỗi tháng", en: "PRO · per month" }, note: { vi: "Share chỉ 1–2 người", en: "Shared by only 1–2 users" }, price: 14, oldPrice: 0 }
       ]
     },
@@ -1198,15 +1360,15 @@ const CONFIG = {
       icon: "meitu",
       name: { vi: "Meitu", en: "Meitu" },
       desc: {
-        vi: "Chỉnh ảnh & làm đẹp cao cấp. Cấp account riêng, không share với ai.",
+        vi: "Chỉnh ảnh và làm đẹp cao cấp với tài khoản riêng, không dùng chung.",
         en: "Premium photo & beauty editing. Private account, never shared."
       },
       badge: { vi: "", en: "" },
       details: {
         vi: [
-          "Cấp account riêng — 1 mình khách 1 acc",
-          "Không cần thay acc, không share với ai",
-          "Full bảo hành trong suốt thời gian sử dụng"
+          "Cấp tài khoản riêng cho từng khách",
+          "Không cần thay tài khoản và không dùng chung",
+          "Bảo hành trong suốt thời hạn gói"
         ],
         en: [
           "You get your own private account",
@@ -1224,15 +1386,15 @@ const CONFIG = {
       icon: "capcut",
       name: { vi: "CapCut Pro", en: "CapCut Pro" },
       desc: {
-        vi: "Hiệu ứng Pro, xuất video không logo. Cấp account riêng cho bạn.",
+        vi: "Hiệu ứng Pro, xuất video không logo và sử dụng tài khoản riêng.",
         en: "Pro effects, no-watermark exports. Your own private account."
       },
       badge: { vi: "", en: "" },
       details: {
         vi: [
-          "Cấp account riêng — 1 mình khách 1 acc",
-          "Không cần thay acc, không share với ai",
-          "Full bảo hành trong suốt thời gian sử dụng"
+          "Cấp tài khoản riêng cho từng khách",
+          "Không cần thay tài khoản và không dùng chung",
+          "Bảo hành trong suốt thời hạn gói"
         ],
         en: [
           "You get your own private account",
@@ -1353,7 +1515,7 @@ const CONFIG = {
     {
       icon: "quilbot",
       name: { vi: "QuillBot Premium", en: "QuillBot Premium" },
-      desc: { vi: "Tài khoản riêng, được đổi mật khẩu, không share với ai.", en: "Your own private account, change password freely, never shared." },
+      desc: { vi: "Tài khoản riêng, được đổi mật khẩu và không dùng chung.", en: "Your own private account, change password freely, never shared." },
       badge: { vi: "", en: "" },
       details: {
         vi: ["Tài khoản bên mình áp — 1 mình bạn 1 account","Bạn được phép đổi mật khẩu thoải mái","Không share với ai khác","Bảo hành full trong suốt thời gian sử dụng"],
@@ -1451,7 +1613,7 @@ const CONFIG = {
           "Luyện nghe, shadowing và nói theo câu mẫu để phản xạ tự nhiên hơn",
           "Phù hợp cho khách muốn cải thiện giao tiếp hằng ngày, đi học hoặc đi làm",
           "Up account chính chủ trên tài khoản của bạn",
-          "Gói cá nhân, không share với ai",
+          "Gói cá nhân, không dùng chung",
           "Bảo hành full 1 năm"
         ],
         en: [
@@ -1481,7 +1643,7 @@ const CONFIG = {
           "Luyện speaking, intonation và accent để nói rõ ràng, tự tin hơn",
           "Có bài học cá nhân hóa theo trình độ, phù hợp luyện phỏng vấn hoặc giao tiếp",
           "Up account chính chủ trên tài khoản của bạn",
-          "Gói cá nhân, không share với ai",
+          "Gói cá nhân, không dùng chung",
           "Bảo hành full 1 năm"
         ],
         en: [
@@ -1502,13 +1664,13 @@ const CONFIG = {
 
   /* ---------- QUYỀN LỢI KHI MUA BẤT KỲ SẢN PHẨM NÀO ---------- */
   benefits: [
-    { icon: "🤝", t: { vi: "Nâng cấp trước, trả sau", en: "Upgrade first, pay later" },
+    { icon: "01", t: { vi: "Nâng cấp trước, trả sau", en: "Upgrade first, pay later" },
       p: { vi: "Bạn chỉ thanh toán sau khi tài khoản đã nâng cấp thành công và tự kiểm tra xong.", en: "You only pay after your account is upgraded and you've checked it yourself." } },
-    { icon: "🛡️", t: { vi: "Full bảo hành trọn thời gian", en: "Full warranty, entire duration" },
-      p: { vi: "Có lỗi trong thời gian sử dụng — nhắn nhân viên là được xử lý ngay, không thu thêm phí.", en: "Any issue during your plan — message us and it's fixed right away, free of charge." } },
-    { icon: "💙", t: { vi: "Ưu đãi mua combo", en: "Bundle discounts" },
+    { icon: "02", t: { vi: "Bảo hành trong thời hạn gói", en: "Warranty for the plan term" },
+      p: { vi: "Lỗi thuộc phạm vi bảo hành sẽ được kiểm tra và xử lý trong thời hạn gói, không thu thêm phí.", en: "Covered issues are checked and resolved during the active plan term without an additional fee." } },
+    { icon: "03", t: { vi: "Ưu đãi mua combo", en: "Bundle discounts" },
       p: { vi: "Mua kèm YouTube + Netflix hoặc Spotify sẽ được tính giá ưu đãi cho năm đầu.", en: "Buy YouTube with Netflix or Spotify and get a discounted first year." } },
-    { icon: "⚡", t: { vi: "Hỗ trợ nhanh mỗi ngày", en: "Fast daily support" },
+    { icon: "04", t: { vi: "Hỗ trợ bằng tiếng Việt", en: "Vietnamese support" },
       p: { vi: "Nhân viên trực Facebook & Zalo, hướng dẫn cài đặt miễn phí từ A đến Z.", en: "Our team is on Facebook & Zalo daily, with free step-by-step setup help." } }
   ],
 
@@ -1518,7 +1680,7 @@ const CONFIG = {
     { icon: "2", t: { vi: "Ghép nhu cầu thành combo", en: "Smart bundle matching" },
       p: { vi: "YouTube, Netflix và Spotify được gợi ý mua kèm đúng lúc để khách tiết kiệm mà không bị ép mua.", en: "YouTube, Netflix and Spotify are bundled at the right moment so customers save without feeling pushed." } },
     { icon: "3", t: { vi: "Giữ quy trình gọn", en: "Lean order flow" },
-      p: { vi: "Khách tự chọn gói, nhận mã đơn và nhắn trực tiếp. Ít bước thừa hơn nên shop giữ được giá mềm.", en: "Customers choose a plan, get a code and message us directly. Fewer extra steps helps keep pricing softer." } }
+      p: { vi: "Khách tự chọn gói, nhận mã đơn và nhắn trực tiếp. Quy trình gọn giúp shop duy trì mức giá tốt.", en: "Customers choose a plan, get a code and message us directly. A lean process helps us maintain competitive pricing." } }
   ],
 
   warrantySteps: [
@@ -1536,18 +1698,53 @@ const CONFIG = {
       p: { vi: "Nhân viên xác nhận, nâng cấp trước cho khách kiểm tra rồi mới thanh toán.", en: "Our staff confirms, upgrades first, then the customer checks before paying." } }
   ],
 
+  policies: [
+    {
+      mark: "AUD",
+      t: { vi: "Giá và thanh toán", en: "Pricing and payment" },
+      p: {
+        vi: "Mọi mức giá trên website đều là đô-la Úc (AUD). Khách chỉ thanh toán sau khi shop hoàn tất nâng cấp và khách đã kiểm tra.",
+        en: "Every price on this website is in Australian dollars (AUD). Payment is due only after the upgrade is completed and checked."
+      }
+    },
+    {
+      mark: "5–30",
+      t: { vi: "Thời gian xử lý", en: "Processing time" },
+      p: {
+        vi: "Thời gian thông thường là 5–30 phút sau khi nhân viên xác nhận đã nhận mã đơn. Trường hợp cần kiểm tra thêm có thể lâu hơn.",
+        en: "Typical processing takes 5–30 minutes after our staff confirms receipt of the order code. Cases requiring extra checks may take longer."
+      }
+    },
+    {
+      mark: "BH",
+      t: { vi: "Bảo hành và đơn không thực hiện được", en: "Warranty and unfulfilled orders" },
+      p: {
+        vi: "Lỗi thuộc phạm vi gói sẽ được kiểm tra trong thời hạn sử dụng. Nếu shop không thể thực hiện đơn, khách không phải thanh toán.",
+        en: "Covered issues are checked during the active plan term. If we cannot fulfil the order, no payment is required."
+      }
+    },
+    {
+      mark: "DATA",
+      t: { vi: "Thông tin khách hàng", en: "Customer information" },
+      p: {
+        vi: "Tên, số điện thoại và email chỉ được dùng để xử lý đơn, liên hệ hỗ trợ và đối chiếu bảo hành; thông tin không hiển thị công khai.",
+        en: "Name, phone number and email are used for order processing, support and warranty lookup, and are not displayed publicly."
+      }
+    }
+  ],
+
   /* ---------- FAQ ---------- */
   faq: [
     { q: { vi: "Tôi thanh toán như thế nào và khi nào?", en: "How and when do I pay?" },
       a: { vi: "Bạn KHÔNG cần trả tiền trước. Sau khi nhân viên nâng cấp xong, bạn tự kiểm tra tài khoản, hài lòng rồi mới thanh toán qua chuyển khoản ngân hàng hoặc ví điện tử.", en: "You do NOT pay upfront. After we finish the upgrade, you check your account yourself, and only then pay via bank transfer or e-wallet." } },
     { q: { vi: "Bao lâu thì tài khoản được nâng cấp?", en: "How long does the upgrade take?" },
-      a: { vi: "Thông thường từ 5–30 phút trong giờ làm việc sau khi bạn gửi mã đơn cho nhân viên qua Facebook hoặc Zalo.", en: "Usually 5–30 minutes during working hours after you send your order code to our staff on Facebook or Zalo." } },
+      a: { vi: "Thông thường từ 5–30 phút sau khi nhân viên xác nhận đã nhận mã đơn qua Messenger hoặc Zalo. Trường hợp cần kiểm tra thêm có thể lâu hơn.", en: "Usually 5–30 minutes after our staff confirms receipt of the order code via Messenger or Zalo. Cases requiring extra checks may take longer." } },
     { q: { vi: "Tôi có cần đưa mật khẩu không?", en: "Do I need to share my password?" },
-      a: { vi: "Với YouTube Premium bạn CHỈ cần gửi email — không cần log in, không cần mật khẩu. Với gói cấp account riêng (Meitu, CapCut...) tụi mình đưa account mới cho bạn.", en: "For YouTube Premium you ONLY send your email — no login, no password needed. For private-account plans (Meitu, CapCut...) we give you a brand-new account." } },
+      a: { vi: "Với YouTube Premium, bạn chỉ cần gửi email và không cần cung cấp mật khẩu. Với các gói tài khoản riêng như Meitu hoặc CapCut, shop sẽ cấp tài khoản mới.", en: "For YouTube Premium you only send your email — no login or password is needed. For private-account plans such as Meitu or CapCut, we provide a new account." } },
     { q: { vi: "Bảo hành hoạt động thế nào?", en: "How does the warranty work?" },
-      a: { vi: "Full bảo hành trong suốt thời gian sử dụng. Nếu có lỗi, nhắn mã đơn của bạn cho nhân viên là được xử lý hoặc cấp lại ngay.", en: "Full warranty for your entire plan. If anything breaks, message us your order code and we fix or replace it right away." } },
+      a: { vi: "Gói được bảo hành trong thời hạn sử dụng. Khi có lỗi, hãy gửi mã đơn cho nhân viên để được kiểm tra và xử lý theo phạm vi bảo hành.", en: "Warranty applies throughout the plan term. If an issue occurs, send your order code so our staff can check and resolve covered issues." } },
     { q: { vi: "Mua nhiều có được giảm giá không?", en: "Any discount for buying more?" },
-      a: { vi: "Có! YouTube có deal nhóm 2–4 acc rẻ hơn nhiều, và mua combo YouTube + Netflix/Spotify được giá ưu đãi năm đầu. Để lại email khi vào trang còn được thêm mã giảm 10%.", en: "Yes! YouTube group deals (2–4 accounts) are much cheaper, and YouTube + Netflix/Spotify bundles get a first-year discount. Leave your email on the welcome popup for an extra 10% off code." } }
+      a: { vi: "Có. YouTube có gói nhóm 2–4 tài khoản và combo YouTube với Netflix hoặc Spotify. Mã giảm 10% cho đơn đầu tiên sẽ xuất hiện sau khi bạn xem qua bảng giá.", en: "Yes. YouTube offers group pricing for 2–4 accounts and bundles with Netflix or Spotify. A 10% first-order offer appears after you browse the pricing." } }
   ]
 };
 /* ##############################################################
@@ -1559,92 +1756,102 @@ const LOGO = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAYAAACHjumM
 /* ---------- chữ giao diện / UI strings ---------- */
 const T = {
   vi: {
-    navPrices:"Bảng giá", eyebrow:"Giá sỉ phần mềm bản quyền",
+    navPrices:"Bảng giá", eyebrow:"Phần mềm bản quyền cho người Việt tại Úc",
     heroTitle:'Uy tín để chọn,<br><span class="g">chất lượng để tin</span>',
-    ctaPrices:"Xem bảng giá ↓", ctaFb:"Nhắn Messenger", ctaPage:"Xem Facebook Page", footerPage:"Theo dõi Facebook Page mới",
+    ctaPrices:"Xem bảng giá", ctaFb:"Nhắn Messenger", ctaPage:"Xem Facebook Page", footerPage:"Facebook Page",
+    footerPolicy:"Chính sách mua hàng", footerFaq:"Câu hỏi thường gặp",
     s1t:"Chọn gói bạn cần", s1p:"Xem giá và chi tiết từng gói ngay trên trang, không cần đăng nhập.",
     s2t:"Nhận mã đơn hàng", s2p:"Điền tên và số điện thoại, hệ thống tạo mã đơn cho bạn trong 1 giây.",
     s3t:"Nhắn mã cho nhân viên", s3p:"Gửi mã đơn qua Facebook hoặc Zalo — nâng cấp trước, trả tiền sau.",
-    secProducts:"Bảng giá nâng cấp", secProductsSub:"Nâng cấp trước · Trả sau · Full bảo hành",
+    secProducts:"Bảng giá nâng cấp", secProductsSub:"Giá AUD · Nâng cấp trước · Thanh toán sau",
     secProcess:"Đơn hàng được xử lý thế nào?", secProcessSub:"Tạo mã trên web chỉ là bước đầu — shop bắt đầu xử lý khi bạn gửi mã qua Messenger hoặc Zalo",
     processAlert:"Lưu ý: nếu bạn chỉ tạo mã trên web mà chưa nhắn cho shop, nhân viên chưa nhận được đơn để nâng cấp.",
     secBenefits:"Quyền lợi khi mua hàng", secBenefitsSub:"Áp dụng cho mọi sản phẩm của shop",
-    secConfidence:"Minh bạch & bảo hành", secConfidenceSub:"Giá mềm nhưng quy trình vẫn rõ ràng",
+    secConfidence:"Minh bạch & bảo hành", secConfidenceSub:"Quy trình và phạm vi hỗ trợ được trình bày rõ ràng",
     whyCheapTitle:"Vì sao giá rẻ hơn?", whyCheapIntro:"Shop không làm giá rẻ bằng cách cắt bớt hỗ trợ. Giá tốt đến từ cách tối ưu gói, combo và quy trình đặt hàng.",
     warrantyClearTitle:"Bảo hành rõ ràng hơn", warrantyClearIntro:"Trong thời gian gói còn hiệu lực, nếu có lỗi sử dụng bạn chỉ cần nhắn lại mã đơn để được kiểm tra.",
     warrantyNote:"Không cần trả thêm phí cho lỗi thuộc gói bảo hành. Nhân viên sẽ hướng dẫn đến khi bạn dùng được.",
-    secFaq:"Câu hỏi thường gặp", secTestimonials:"Khách hàng nói gì", secTestimonialsSub:"Chỉ hiển thị đánh giá thật đã được bạn nhập",
-    searchPh:"Tìm Netflix, YouTube, Spotify...", navSearch:"Tìm ứng dụng", sortDefault:"Sắp xếp mặc định", sortLow:"Giá thấp đến cao", sortHigh:"Giá cao đến thấp", productCount:"Hiển thị {n}/{total} sản phẩm", noResults:"Không tìm thấy ứng dụng phù hợp. Thử từ khóa khác hoặc nhắn shop để hỏi thêm.",
+    secPolicies:"Chính sách mua hàng", secPoliciesSub:"Thông tin quan trọng trước khi gửi mã đơn",
+    policyNote:"Website sử dụng công cụ phân tích truy cập để cải thiện trải nghiệm. Thông tin đơn hàng được gửi về hệ thống của shop để xử lý và đối chiếu bảo hành.",
+    secFaq:"Câu hỏi thường gặp", secTestimonials:"Khách hàng nói gì", secTestimonialsSub:"Chỉ hiển thị đánh giá thật đã được xác nhận",
+    searchPh:"Tìm Netflix, YouTube, Spotify...", navSearch:"Tìm ứng dụng", collapseFilters:"Thu gọn tìm kiếm và bộ lọc", expandFilters:"Mở tìm kiếm và bộ lọc", sortDefault:"Sắp xếp mặc định", sortLow:"Giá thấp đến cao", sortHigh:"Giá cao đến thấp", productCount:"Hiển thị {n}/{total} sản phẩm", noResults:"Không tìm thấy ứng dụng phù hợp. Thử từ khóa khác hoặc nhắn shop để hỏi thêm.",
     needAll:"Tất cả", needMovies:"Xem phim", needMusic:"Nghe nhạc", needEnglish:"Học tiếng Anh", needAi:"AI / học tập", needCreative:"Edit ảnh/video", needOffice:"Làm việc",
     save:"Tiết kiệm", mobilePrices:"Xem bảng giá", mobileChat:"Nhắn tư vấn",
-    from:"Chỉ từ", order:"Đặt nâng cấp", choosePlan:"Chọn gói", cont:"Tiếp tục →",
-    bestValue:"Best value", bestCombo:"Tiết kiệm nhất",
+    from:"Chỉ từ", order:"Đặt nâng cấp", choosePlan:"Chọn gói", cont:"Tiếp tục",
+    bestValue:"Nên chọn", bestCombo:"Tiết kiệm nhất",
+    progressLabel:"Tiến trình đặt hàng", progressPlan:"Chọn gói", progressInfo:"Thông tin", progressSend:"Gửi shop",
     payLater:"<b>Nâng cấp trước, trả sau:</b> bạn chưa cần thanh toán bây giờ. Nhân viên nâng cấp xong, bạn kiểm tra rồi mới trả tiền.",
     yourInfo:"Thông tin của bạn", fullName:"Họ và tên", namePh:"Ví dụ: Nguyễn Văn A",
-    phone:"Số điện thoại", phonePh:"Ví dụ: 0901 234 567",
+    phone:"Số điện thoại", phonePh:"Ví dụ: 0412 345 678",
     noteLb:"Ghi chú (không bắt buộc)", notePh:"Ví dụ: email cần nâng cấp, thời gian rảnh...",
-    getCode:"Nhận mã đơn hàng 🎫", privacy:"Thông tin chỉ dùng để nhân viên xác nhận đơn của bạn.",
+    getCode:"Nhận mã đơn hàng", privacy:"Thông tin được dùng để xử lý đơn và đối chiếu bảo hành; không hiển thị công khai.",
     errName:"Vui lòng nhập họ tên.", errPhone:"Vui lòng nhập số điện thoại hợp lệ (9–11 số).",
-    ready:"Đơn của bạn đã sẵn sàng 🎉", readySub:"Bước cuối: gửi mã đơn cho nhân viên để được nâng cấp.",
+    ready:"Phiếu đơn hàng đã được tạo", readySub:"Bước cuối: sao chép nội dung và gửi cho nhân viên để bắt đầu xử lý.",
     summaryTitle:"Phiếu xác nhận đơn", summarySub:"Đã tạo mã, chờ gửi cho nhân viên", summaryStatus:"Sẵn sàng gửi", totalDue:"Tổng cần thanh toán", warrantyMini:"Đơn này được giữ mã để đối chiếu bảo hành trong suốt thời gian gói.",
     sendGuideTitle:"Chưa hoàn tất đơn đâu nhé", sendGuideIntro:"Bạn cần gửi phiếu này cho nhân viên qua Messenger hoặc Zalo thì shop mới xác nhận và bắt đầu nâng cấp.",
     sendStep1:"Bấm “Sao chép nội dung tin nhắn” ở trên.", sendStep2:"Chọn Messenger hoặc Zalo bên dưới.", sendStep3:"Dán tin nhắn vừa sao chép và gửi cho nhân viên.",
     sendGuideAlert:"Nếu chỉ dừng ở màn hình này mà chưa nhắn cho shop, nhân viên sẽ chưa nhận được đơn để xử lý.",
-    orderCode:"Mã đơn hàng", copy:"📋 Sao chép nội dung tin nhắn", copied:"✅ Đã sao chép!", copyHint:"Nhấp vào đây", copyToast:"Đã sao chép nội dung tin nhắn",
-    msgFb:"💬 Nhắn qua Facebook Messenger", msgZalo:"💬 Nhắn qua Zalo", msgPage:"📘 Xem Facebook Page",
-    finalHint:'Bấm "Sao chép" → mở Facebook hoặc Zalo → dán tin nhắn và gửi.<br>Nhân viên sẽ nâng cấp trước, bạn kiểm tra rồi mới thanh toán.',
+    orderCode:"Mã đơn hàng", copy:"Sao chép nội dung tin nhắn", copied:"Đã sao chép", copyHint:"Nhấp vào đây", copyToast:"Đã sao chép nội dung tin nhắn",
+    msgFb:"Nhắn qua Facebook Messenger", msgZalo:"Nhắn qua Zalo", msgPage:"Xem Facebook Page",
+    finalHint:'Sao chép nội dung, mở Messenger hoặc Zalo, sau đó dán và gửi cho nhân viên.<br>Shop nâng cấp trước; bạn kiểm tra rồi mới thanh toán.',
     mProduct:"Sản phẩm", mName:"Họ tên", mPhone:"SĐT", mNote:"Ghi chú", mCode:"Mã đơn", mDiscount:"Mã giảm giá",
-    discountStrip:"🎁 Mã giảm {p}% của bạn: {c} — tự động áp dụng khi đặt hàng",
+    discountStrip:"Mã giảm {p}% của bạn: {c} · Tự động áp dụng khi đặt hàng",
     discountApplied:"Đã áp dụng giảm {p}%",
-    wOffer:"🎁 Để lại email để nhận ngay mã <b>giảm {p}%</b> cho đơn đầu tiên!",
+    welcomeTitle:"Ưu đãi cho đơn đầu tiên", welcomeSub:"Nhận mã giảm giá sau khi bạn đã xem qua bảng giá.",
+    wOffer:"Để lại email để nhận mã <b>giảm {p}%</b> cho đơn đầu tiên.",
     wGet:"Nhận mã giảm {p}%", wSkip:"Bỏ qua, vào xem trang trước",
     wErr:"Email chưa đúng, bạn kiểm tra lại nhé.",
     wGiftLabel:"Mã giảm giá của bạn:", wGiftNote:"Mã sẽ tự động áp dụng khi bạn đặt hàng trên trang.",
-    wEnter:"Vào trang ngay →"
+    wEnter:"Quay lại trang"
   },
   en: {
-    navPrices:"Pricing", eyebrow:"Wholesale premium subscriptions",
+    navPrices:"Pricing", eyebrow:"Premium subscriptions in Australia",
     heroTitle:'Trusted choice,<br><span class="g">proven quality</span>',
-    ctaPrices:"See pricing ↓", ctaFb:"Message on Messenger", ctaPage:"View Facebook Page", footerPage:"Follow our new Facebook Page",
+    ctaPrices:"See pricing", ctaFb:"Message on Messenger", ctaPage:"View Facebook Page", footerPage:"Facebook Page",
+    footerPolicy:"Purchase policy", footerFaq:"Frequently asked questions",
     s1t:"Pick the plan you need", s1p:"Browse prices and details right on the page — no sign-up needed.",
     s2t:"Get your order code", s2p:"Enter your name and phone number; we generate your code instantly.",
     s3t:"Message us the code", s3p:"Send your code via Facebook or Zalo — we upgrade first, you pay after.",
-    secProducts:"Upgrade pricing", secProductsSub:"Upgrade first · Pay later · Full warranty",
+    secProducts:"Upgrade pricing", secProductsSub:"AUD pricing · Upgrade first · Pay after checking",
     secProcess:"How is your order processed?", secProcessSub:"Creating a code on the site is only the first step — we start processing after you send the code via Messenger or Zalo",
     processAlert:"Note: if you only create a code on the site and do not message us, our staff has not received the order yet.",
     secBenefits:"What every order includes", secBenefitsSub:"Applies to every product in the shop",
-    secConfidence:"Transparent pricing & warranty", secConfidenceSub:"Soft prices with a clear support process",
+    secConfidence:"Transparent pricing & warranty", secConfidenceSub:"Clear process and support coverage",
     whyCheapTitle:"Why is it cheaper?", whyCheapIntro:"We do not lower prices by cutting support. Better pricing comes from optimized plans, bundles and a lean order flow.",
     warrantyClearTitle:"Clearer warranty", warrantyClearIntro:"While your plan is active, message us your order code whenever something needs checking.",
     warrantyNote:"No extra fee for covered issues. Our staff will guide you until the plan works properly.",
-    secFaq:"Frequently asked questions", secTestimonials:"What customers say", secTestimonialsSub:"Only real reviews you add are displayed",
-    searchPh:"Search Netflix, YouTube, Spotify...", navSearch:"Search apps", sortDefault:"Default sorting", sortLow:"Price: low to high", sortHigh:"Price: high to low", productCount:"Showing {n}/{total} products", noResults:"No matching app found. Try another keyword or message us for more options.",
+    secPolicies:"Purchase policy", secPoliciesSub:"Important information before sending your order code",
+    policyNote:"This website uses visit analytics to improve the experience. Order information is sent to the shop's system for processing and warranty lookup.",
+    secFaq:"Frequently asked questions", secTestimonials:"What customers say", secTestimonialsSub:"Only verified reviews are displayed",
+    searchPh:"Search Netflix, YouTube, Spotify...", navSearch:"Search apps", collapseFilters:"Collapse search and filters", expandFilters:"Open search and filters", sortDefault:"Default sorting", sortLow:"Price: low to high", sortHigh:"Price: high to low", productCount:"Showing {n}/{total} products", noResults:"No matching app found. Try another keyword or message us for more options.",
     needAll:"All", needMovies:"Movies", needMusic:"Music", needEnglish:"English learning", needAi:"AI / study", needCreative:"Photo/video editing", needOffice:"Work",
     save:"Save", mobilePrices:"See pricing", mobileChat:"Chat with us",
-    from:"From", order:"Order upgrade", choosePlan:"Choose a plan", cont:"Continue →",
+    from:"From", order:"Order upgrade", choosePlan:"Choose a plan", cont:"Continue",
     bestValue:"Best value", bestCombo:"Best saving",
+    progressLabel:"Order progress", progressPlan:"Choose plan", progressInfo:"Your details", progressSend:"Send to shop",
     payLater:"<b>Upgrade first, pay later:</b> no payment needed now. We upgrade your account, you check it, then you pay.",
     yourInfo:"Your details", fullName:"Full name", namePh:"e.g. John Smith",
-    phone:"Phone number", phonePh:"e.g. 0901 234 567",
+    phone:"Phone number", phonePh:"e.g. 0412 345 678",
     noteLb:"Note (optional)", notePh:"e.g. email to upgrade, best time to reach you...",
-    getCode:"Get my order code 🎫", privacy:"Your details are only used to confirm your order.",
+    getCode:"Get my order code", privacy:"Your details are used to process the order and look up warranty support, and are not displayed publicly.",
     errName:"Please enter your name.", errPhone:"Please enter a valid phone number (9–11 digits).",
-    ready:"Your order is ready 🎉", readySub:"Last step: send your code to our staff to get upgraded.",
+    ready:"Your order confirmation is ready", readySub:"Last step: copy the message and send it to our staff to begin processing.",
     summaryTitle:"Order confirmation", summarySub:"Code created, ready to send to staff", summaryStatus:"Ready to send", totalDue:"Total due", warrantyMini:"This order code is kept for warranty lookup throughout your plan.",
     sendGuideTitle:"Your order is not finished yet", sendGuideIntro:"Please send this confirmation to our staff on Messenger or Zalo so we can confirm and start the upgrade.",
     sendStep1:"Tap “Copy message” above.", sendStep2:"Choose Messenger or Zalo below.", sendStep3:"Paste the copied message and send it to our staff.",
     sendGuideAlert:"If you stop on this screen without messaging us, our staff will not receive the order yet.",
-    orderCode:"Order code", copy:"📋 Copy message", copied:"✅ Copied!", copyHint:"Tap here", copyToast:"Message copied",
-    msgFb:"💬 Message us on Messenger", msgZalo:"💬 Message us on Zalo", msgPage:"📘 View Facebook Page",
-    finalHint:'Tap "Copy" → open Facebook or Zalo → paste and send.<br>We upgrade first — you check, then you pay.',
+    orderCode:"Order code", copy:"Copy message", copied:"Copied", copyHint:"Tap here", copyToast:"Message copied",
+    msgFb:"Message us on Messenger", msgZalo:"Message us on Zalo", msgPage:"View Facebook Page",
+    finalHint:'Copy the message, open Messenger or Zalo, then paste and send it to our staff.<br>We upgrade first; you check before paying.',
     mProduct:"Product", mName:"Name", mPhone:"Phone", mNote:"Note", mCode:"Order code", mDiscount:"Discount code",
-    discountStrip:"🎁 Your {p}% off code: {c} — applied automatically at checkout",
+    discountStrip:"Your {p}% discount code: {c} · Applied automatically at checkout",
     discountApplied:"{p}% discount applied",
-    wOffer:"🎁 Leave your email to get an instant <b>{p}% off</b> code for your first order!",
+    welcomeTitle:"First-order offer", welcomeSub:"Get a discount code after browsing the pricing.",
+    wOffer:"Leave your email to receive a <b>{p}% discount</b> code for your first order.",
     wGet:"Get my {p}% off code", wSkip:"Skip, browse the site first",
     wErr:"That email doesn't look right — please check it.",
     wGiftLabel:"Your discount code:", wGiftNote:"It will be applied automatically when you order.",
-    wEnter:"Enter the site →"
+    wEnter:"Return to the site"
   }
 };
 
@@ -1699,18 +1906,52 @@ $("#floatingMessenger").href = CONFIG.facebookLink;
 $("#floatingZalo").href = CONFIG.zaloLink;
 $("#mobileChat").href = CONFIG.facebookLink;
 
+/* ---------- thu gọn tìm kiếm trên điện thoại ---------- */
+const productToolsPanel = $("#productToolsPanel");
+const productToolsToggle = $("#productToolsToggle");
+const productToolsMobile = window.matchMedia("(max-width: 900px)");
+let productToolsCollapsed = false;
+function updateProductToolsToggle(){
+  productToolsToggle.textContent = productToolsCollapsed ? "›" : "‹";
+  productToolsToggle.setAttribute("aria-expanded", String(!productToolsCollapsed));
+  const label = t(productToolsCollapsed ? "expandFilters" : "collapseFilters");
+  productToolsToggle.setAttribute("aria-label", label);
+  productToolsToggle.title = label;
+}
+function setProductToolsCollapsed(collapsed){
+  productToolsCollapsed = productToolsMobile.matches && collapsed;
+  productToolsPanel.classList.toggle("is-collapsed", productToolsCollapsed);
+  updateProductToolsToggle();
+}
+function syncProductToolsToggle(){
+  if (!productToolsMobile.matches){
+    setProductToolsCollapsed(false);
+    productToolsToggle.classList.remove("visible");
+    return;
+  }
+  const sectionRect = $("#sanpham").getBoundingClientRect();
+  const insideProducts = sectionRect.top <= 86 && sectionRect.bottom > 120;
+  productToolsToggle.classList.toggle("visible", insideProducts);
+}
+productToolsToggle.addEventListener("click", () => {
+  setProductToolsCollapsed(!productToolsCollapsed);
+});
+window.addEventListener("scroll", syncProductToolsToggle, { passive:true });
+window.addEventListener("resize", syncProductToolsToggle);
+
 /* ---------- vẽ giao diện theo ngôn ngữ / render language ---------- */
 function renderLang(){
   document.documentElement.lang = lang;
   document.querySelectorAll("[data-t]").forEach(el => { el.innerHTML = t(el.dataset.t); });
   $("#heroTitle").innerHTML = t("heroTitle");
   $("#taglineText").textContent = CONFIG.tagline[lang];
-  $("#langToggle").textContent = lang === "vi" ? "🌐 EN" : "🌐 VI";
+  $("#langToggle").textContent = lang === "vi" ? "EN" : "VI";
   $("#navSearch").setAttribute("aria-label", t("navSearch"));
   $("#navSearch").title = t("navSearch");
   $(".nav-search-text").textContent = lang === "vi" ? "Tìm" : "Search";
+  updateProductToolsToggle();
   $("#footText").textContent = "© " + new Date().getFullYear() + " " + CONFIG.shopName + " · " + CONFIG.footerText[lang];
-  renderProductTools(); renderProducts(); renderOrderProcess(); renderBenefits(); renderConfidence(); renderFaq(); renderDiscountStrip();
+  renderProductTools(); renderProducts(); renderOrderProcess(); renderBenefits(); renderConfidence(); renderPolicies(); renderFaq(); renderDiscountStrip();
   renderHeroStats(); renderMarquee(); renderTestimonials();
   observeReveals();
 }
@@ -1718,6 +1959,7 @@ $("#langToggle").onclick = () => { lang = lang === "vi" ? "en" : "vi"; store.set
 $("#navSearch").onclick = () => {
   const search = $("#productSearch");
   const tools = document.querySelector(".product-tools");
+  setProductToolsCollapsed(false);
   (tools || $("#sanpham")).scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
   window.setTimeout(() => {
     search.focus({ preventScroll: true });
@@ -1782,13 +2024,13 @@ function trustLabels(product){
   if (product.icon === "youtube") add("Up chính chủ", "Own account");
   if (text.includes("chính chủ") || text.includes("own account")) add("Up chính chủ", "Own account");
   if (text.includes("không cần log") || text.includes("no login") || text.includes("không cần mật khẩu") || text.includes("no password")) add("Không cần mật khẩu", "No password");
-  if (text.includes("account riêng") || text.includes("private account") || text.includes("không share")) add("Tài khoản riêng", "Private account");
-  if (text.includes("bảo hành full") || text.includes("full warranty") || text.includes("bảo hành 1 năm")) add("Full bảo hành", "Full warranty");
+  if (text.includes("account riêng") || text.includes("tài khoản riêng") || text.includes("private account") || text.includes("không share") || text.includes("không dùng chung")) add("Tài khoản riêng", "Private account");
+  if (text.includes("bảo hành full") || text.includes("full warranty") || text.includes("bảo hành 1 năm") || text.includes("bảo hành trong suốt")) add("Bảo hành trọn gói", "Full warranty");
   if (text.includes("mã pin") || text.includes("pin")) add("Có mã PIN", "PIN protected");
   if (text.includes("2tb") || text.includes("1tb")) add("Kèm lưu trữ", "Storage included");
   if (text.includes("5 thiết bị") || text.includes("multiple devices")) add("Nhiều thiết bị", "Multi-device");
   if (!tags.length) add("Shop hỗ trợ", "Shop support");
-  return tags.slice(0, 3);
+  return tags.slice(0, 2);
 }
 function trustTagHtml(product){
   return `<div class="trust-tags">${trustLabels(product).map(tag => `<span class="trust-tag">${tag[lang]}</span>`).join("")}</div>`;
@@ -1858,14 +2100,14 @@ function renderProducts(){
     banner.className = "more-banner reveal";
     banner.innerHTML = lang === "vi"
       ? `<div class="more-inner">
-          <div class="more-icon">✨</div>
-          <div><b>Còn nhiều app khác chưa hiển thị hết!</b><p>Shop còn nhiều dịch vụ khác: LinkedIn Premium, Adobe, Canva, Amazon Prime... Nhắn cho tụi mình để được tư vấn và báo giá chi tiết nhé.</p></div>
-          <div class="more-btns"><a class="pillbtn fb" href="${CONFIG.facebookLink}" target="_blank" rel="noopener">💬 Nhắn Messenger</a><a class="pillbtn zalo" href="${CONFIG.zaloLink}" target="_blank" rel="noopener">💬 Nhắn Zalo</a></div>
+          <div class="more-icon">+</div>
+          <div><b>Bạn chưa thấy ứng dụng cần tìm?</b><p>Shop còn cung cấp LinkedIn Premium, Adobe, Canva, Amazon Prime và nhiều dịch vụ khác. Liên hệ để nhận thông tin và báo giá bằng AUD.</p></div>
+          <div class="more-btns"><a class="pillbtn fb" href="${CONFIG.facebookLink}" target="_blank" rel="noopener">Messenger</a><a class="pillbtn zalo" href="${CONFIG.zaloLink}" target="_blank" rel="noopener">Zalo</a></div>
         </div>`
       : `<div class="more-inner">
-          <div class="more-icon">✨</div>
-          <div><b>Even more apps available!</b><p>We also offer LinkedIn Premium, Adobe, Canva, Amazon Prime and many more. Message us for the full list and pricing.</p></div>
-          <div class="more-btns"><a class="pillbtn fb" href="${CONFIG.facebookLink}" target="_blank" rel="noopener">💬 Messenger</a><a class="pillbtn zalo" href="${CONFIG.zaloLink}" target="_blank" rel="noopener">💬 Zalo</a></div>
+          <div class="more-icon">+</div>
+          <div><b>Cannot find the app you need?</b><p>We also offer LinkedIn Premium, Adobe, Canva, Amazon Prime and more. Contact us for details and AUD pricing.</p></div>
+          <div class="more-btns"><a class="pillbtn fb" href="${CONFIG.facebookLink}" target="_blank" rel="noopener">Messenger</a><a class="pillbtn zalo" href="${CONFIG.zaloLink}" target="_blank" rel="noopener">Zalo</a></div>
         </div>`;
     grid.parentElement.appendChild(banner);
   }
@@ -1902,7 +2144,7 @@ function renderOrderProcess(){
 
 function renderBenefits(){
   $("#benefitGrid").innerHTML = CONFIG.benefits.map(b =>
-    `<div class="t reveal"><b>${b.icon} ${b.t[lang]}</b><p>${b.p[lang]}</p></div>`).join("");
+    `<div class="t reveal"><span class="benefit-index">${b.icon}</span><b>${b.t[lang]}</b><p>${b.p[lang]}</p></div>`).join("");
 }
 
 function renderConfidence(){
@@ -1912,7 +2154,15 @@ function renderConfidence(){
       <div><b>${r.t[lang]}</b><span>${r.p[lang]}</span></div>
     </div>`).join("");
   $("#warrantySteps").innerHTML = CONFIG.warrantySteps.map((step, idx) => `
-    <div class="warranty-step"><i>${idx + 1}</i><span>${step[lang]}</span></div>`).join("");
+      <div class="warranty-step"><i>${idx + 1}</i><span>${step[lang]}</span></div>`).join("");
+}
+
+function renderPolicies(){
+  $("#policyGrid").innerHTML = (CONFIG.policies || []).map(item => `
+    <article class="policy-item reveal">
+      <div class="policy-mark">${item.mark}</div>
+      <div><h3>${item.t[lang]}</h3><p>${item.p[lang]}</p></div>
+    </article>`).join("");
 }
 
 /* ---------- testimonials ---------- */
@@ -1949,7 +2199,7 @@ const COMBO_DEALS = {
   netflixPremium: {
     triggers: ["youtube", "netflix"],
     title: { vi: "Thêm Netflix Premium", en: "Add Netflix Premium" },
-    note: { vi: "YouTube còn $55 · Netflix Premium còn $55", en: "YouTube becomes $55 · Netflix Premium becomes $55" },
+    note: { vi: "YouTube còn A$55 · Netflix Premium còn A$55", en: "YouTube becomes A$55 · Netflix Premium becomes A$55" },
     plan: { vi: "Combo YouTube 12 tháng + Netflix Premium 12 tháng", en: "Combo YouTube 12 months + Netflix Premium 12 months" },
     product: "YouTube Premium + Netflix",
     items: [
@@ -1961,7 +2211,7 @@ const COMBO_DEALS = {
   netflixVip: {
     triggers: ["youtube", "netflix"],
     title: { vi: "Thêm Netflix VIP", en: "Add Netflix VIP" },
-    note: { vi: "YouTube còn $55 · Netflix VIP còn $35", en: "YouTube becomes $55 · Netflix VIP becomes $35" },
+    note: { vi: "YouTube còn A$55 · Netflix VIP còn A$35", en: "YouTube becomes A$55 · Netflix VIP becomes A$35" },
     plan: { vi: "Combo YouTube 12 tháng + Netflix VIP 12 tháng", en: "Combo YouTube 12 months + Netflix VIP 12 months" },
     product: "YouTube Premium + Netflix",
     items: [
@@ -1973,7 +2223,7 @@ const COMBO_DEALS = {
   spotifyYoutube: {
     triggers: ["youtube", "spotify"],
     title: { vi: "Thêm Spotify Premium", en: "Add Spotify Premium" },
-    note: { vi: "Spotify 12 tháng còn $35 · YouTube 12 tháng còn $55", en: "Spotify 12 months becomes $35 · YouTube 12 months becomes $55" },
+    note: { vi: "Spotify 12 tháng còn A$35 · YouTube 12 tháng còn A$55", en: "Spotify 12 months becomes A$35 · YouTube 12 months becomes A$55" },
     plan: { vi: "Combo Spotify 12 tháng + YouTube 12 tháng", en: "Combo Spotify 12 months + YouTube 12 months" },
     product: "Spotify Premium + YouTube Premium",
     items: [
@@ -2032,7 +2282,7 @@ function comboHtml(){
   if (!deals.length) return "";
   const bestSave = Math.max(...deals.map(([, deal]) => deal.original - deal.items.reduce((sum, item) => sum + item.price, 0)));
   const intro = lang === "vi"
-    ? { title:"Gợi ý combo tiết kiệm", sub:"Nếu khách đang dùng thêm app khác, chọn kèm để cả 2 gói đều có giá mềm hơn.", badge:"Ưu đãi nhẹ" }
+    ? { title:"Gợi ý combo tiết kiệm", sub:"Nếu bạn dùng thêm ứng dụng khác, chọn kèm để nhận mức giá tốt hơn cho cả hai gói.", badge:"Giá combo" }
     : { title:"Suggested bundle", sub:"If you also use another app, add it and both plans get a softer price.", badge:"Soft upsell" };
   return `<div class="combo-box" id="comboBox">
     <div class="combo-top">
@@ -2089,15 +2339,30 @@ function orderPricing(plan){
   };
 }
 
+function orderProgress(step){
+  const labels = [t("progressPlan"), t("progressInfo"), t("progressSend")];
+  return `<div class="order-progress" aria-label="${t("progressLabel")}">
+    ${labels.map((label, idx) => {
+      const number = idx + 1;
+      const state = number < step ? "done" : number === step ? "active" : "";
+      return `<div class="order-progress-step ${state}">
+        <span class="progress-dot">${number < step ? "✓" : number}</span>
+        <span class="progress-label">${label}</span>
+      </div>`;
+    }).join("")}
+  </div>`;
+}
+
 function renderStep1(){
   mBody.innerHTML = `
+    ${orderProgress(1)}
     <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px">
       ${iconTile(cur.icon)}
       <h3 id="mTitle" style="margin:0">${cur.name[lang]}</h3>
     </div>
     <p class="sub">${cur.desc[lang]}</p>
     <div class="modal-trust">${trustLabels(cur).map(tag => `<span class="trust-tag">${tag[lang]}</span>`).join("")}</div>
-    ${cur.details[lang].map(d => `<p class="dline">✔️ ${d}</p>`).join("")}
+    ${cur.details[lang].map(d => `<p class="dline"><span class="dline-check" aria-hidden="true">✓</span><span>${d}</span></p>`).join("")}
     <label style="margin-top:18px">${t("choosePlan")}</label>
     ${cur.plans.map((pl, idx) => `
       <label class="plan ${idx===curPlan?"sel":""} ${pl.bestValue ? "best-value" : ""}" data-idx="${idx}">
@@ -2106,7 +2371,7 @@ function renderStep1(){
         <span class="pl-price">${money(pl.price)}${pl.oldPrice?`<br><span class="oldprice">${money(pl.oldPrice)}</span><br><span class="saving">${t("save")} ${money(pl.oldPrice-pl.price)}</span>`:""}</span>
       </label>
       ${idx === curPlan ? `<div id="comboMount">${comboHtml()}</div>` : ""}`).join("")}
-    <div class="note-box">🤝 ${t("payLater")}</div>
+    <div class="note-box">${t("payLater")}</div>
     <button class="pillbtn gold wide" id="toStep2">${t("cont")}</button>`;
   mBody.querySelectorAll(".plan").forEach(pl => pl.addEventListener("click", () => {
     mBody.querySelectorAll(".plan").forEach(x => x.classList.remove("sel"));
@@ -2123,6 +2388,7 @@ function renderStep2(){
   const pl = cur.plans[curPlan];
   const pricing = orderPricing(pl);
   mBody.innerHTML = `
+    ${orderProgress(2)}
     <h3 id="mTitle">${t("yourInfo")}</h3>
     <p class="sub">${pricing.summary} · <b style="color:var(--gold)">${money(pricing.total)}</b>${pricing.original > pricing.total ? ` <span class="oldprice">${money(pricing.original)}</span>` : ""}</p>
     <label for="fName">${t("fullName")}</label>
@@ -2210,6 +2476,7 @@ ${t("mPhone")}: ${phone}${note ? `\n${t("mNote")}: ${note}` : ""}`;
   });
 
   mBody.innerHTML = `
+    ${orderProgress(3)}
     <h3 id="mTitle">${t("ready")}</h3>
     <p class="sub">${t("readySub")}</p>
     <div class="order-summary">
@@ -2223,7 +2490,7 @@ ${t("mPhone")}: ${phone}${note ? `\n${t("mNote")}: ${note}` : ""}`;
         <div class="tk-body">
           <span><b>${pricing.productLabel}</b></span>
           <span>${pricing.planLabel}</span>
-          ${hasDisc ? `<span>🎁 ${t("mDiscount")}: <b>${discountCode}</b></span>` : ""}
+          ${hasDisc ? `<span>${t("mDiscount")}: <b>${discountCode}</b></span>` : ""}
         </div>
       </div>
       <div class="summary-lines">
@@ -2257,20 +2524,23 @@ ${t("mPhone")}: ${phone}${note ? `\n${t("mNote")}: ${note}` : ""}`;
     <p class="mini">${t("finalHint")}</p>`;
 
   $("#copyMsg").onclick = async (e) => {
+    const button = e.currentTarget;
     try { await navigator.clipboard.writeText(msg); }
     catch { const ta = document.createElement("textarea"); ta.value = msg; document.body.appendChild(ta); ta.select(); document.execCommand("copy"); ta.remove(); }
-    e.target.textContent = t("copied");
+    button.textContent = t("copied");
     showCopyToast();
-    setTimeout(() => e.target.textContent = t("copy"), 2200);
+    setTimeout(() => button.textContent = t("copy"), 2200);
   };
 }
 
 /* ---------- popup chào mừng / welcome popup ---------- */
 const welcome = $("#welcome");
 function renderWelcomeText(){
+  $("#wTitle").textContent = t("welcomeTitle");
+  $("#wSub").textContent = t("welcomeSub");
   $("#wOffer").innerHTML = t("wOffer").replace("{p}", CONFIG.discountPercent);
   $("#wGet").textContent = t("wGet").replace("{p}", CONFIG.discountPercent);
-  $("#wSkip").textContent = t("wSkip");
+  $("#wSkip").textContent = $("#wGift").classList.contains("show") ? t("wEnter") : t("wSkip");
   $("#wErr").textContent = t("wErr");
   $("#wGiftLabel").textContent = t("wGiftLabel");
   $("#wGiftNote").textContent = t("wGiftNote");
@@ -2288,6 +2558,7 @@ $("#wGet").onclick = () => {
   discountCode = makeCode(CONFIG.invoicePrefix + CONFIG.discountPercent);
   store.set("hzn_discount", discountCode);
   store.set("hzn_email", email);
+  store.set("hzn_offer_dismissed_at", String(Date.now()));
   sendToSheet({
     type: "email",
     email,
@@ -2302,7 +2573,11 @@ $("#wGet").onclick = () => {
   $("#wSkip").textContent = t("wEnter");
   renderDiscountStrip();
 };
-$("#wSkip").onclick = () => { welcome.classList.remove("open"); document.body.style.overflow = ""; store.set("hzn_seen","1"); };
+$("#wSkip").onclick = () => {
+  welcome.classList.remove("open");
+  document.body.style.overflow = "";
+  store.set("hzn_offer_dismissed_at", String(Date.now()));
+};
 
 /* ---------- scroll animation / back to top ---------- */
 let revealObserver = null;
@@ -2330,33 +2605,33 @@ const backTop = $("#backTop");
 window.addEventListener("scroll", () => backTop.classList.toggle("show", window.scrollY > 650), { passive:true });
 backTop.addEventListener("click", () => window.scrollTo({ top:0, behavior:reduceMotion ? "auto" : "smooth" }));
 
-/* ---------- mini social proof badge ---------- */
-const recentNames = ["Minh A.", "Thảo N.", "Gia B.", "Quang H.", "Linh P.", "Khánh V."];
-let recentIndex = 0;
-function showRecentOrder(){
-  if (document.body.style.overflow === "hidden") return;
-  const box = $("#recentOrder");
-  const product = CONFIG.products[(recentIndex * 3 + 1) % CONFIG.products.length];
-  const name = recentNames[recentIndex % recentNames.length];
-  const plan = cheapestPlan(product);
-  $("#recentDot").textContent = name.replace(".", "").split(/\s+/).map(x => x[0]).join("").slice(0,2).toUpperCase();
-  $("#recentTitle").textContent = lang === "vi" ? `${name} vừa đặt ${product.name[lang]}` : `${name} just ordered ${product.name[lang]}`;
-  $("#recentMeta").textContent = lang === "vi"
-    ? `${plan.label[lang]} · shop đang xử lý`
-    : `${plan.label[lang]} · processing now`;
-  box.classList.add("show");
-  recentIndex++;
-  setTimeout(() => box.classList.remove("show"), 5200);
-}
-setTimeout(showRecentOrder, 9000);
-setInterval(showRecentOrder, 26000);
-
 /* ---------- khởi động / boot ---------- */
 renderLang();
 renderWelcomeText();
-if (!store.get("hzn_seen")){
+syncProductToolsToggle();
+
+const OFFER_DELAY_MS = 20000;
+const OFFER_COOLDOWN_MS = 7 * 24 * 60 * 60 * 1000;
+let offerOpenedThisVisit = false;
+let offerRetryTimer = null;
+function shouldShowWelcomeOffer(){
+  if (discountCode || store.get("hzn_email")) return false;
+  const dismissedAt = Number(store.get("hzn_offer_dismissed_at") || 0);
+  return !dismissedAt || Date.now() - dismissedAt > OFFER_COOLDOWN_MS;
+}
+function openWelcomeOffer(){
+  if (offerOpenedThisVisit || !shouldShowWelcomeOffer()) return;
+  if (document.hidden || overlay.classList.contains("open") || document.body.style.overflow === "hidden"){
+    clearTimeout(offerRetryTimer);
+    offerRetryTimer = setTimeout(openWelcomeOffer, 5000);
+    return;
+  }
+  offerOpenedThisVisit = true;
   welcome.classList.add("open");
   document.body.style.overflow = "hidden";
+}
+if (shouldShowWelcomeOffer()){
+  setTimeout(openWelcomeOffer, OFFER_DELAY_MS);
 }
 </script>
 </body>

@@ -445,7 +445,6 @@ section+section{border-top:1px solid rgba(255,255,255,.07)}
 
 /* Hero */
 .hero{padding:76px 0 54px}
-.hero-media{display:none}
 .coin{
   width:122px;
   height:122px;
@@ -925,69 +924,18 @@ footer{padding:38px 0 108px;border-color:rgba(255,255,255,.09)}
   section{padding:50px 0}
   .topbar .wrap{min-height:60px;padding:9px 14px}
   .brand img{width:34px;height:34px}
-  .hero{padding:0 0 42px;text-align:left}
-  .hero-media{
-    position:relative;
-    isolation:isolate;
-    display:flex;
-    align-items:flex-end;
-    width:calc(100% + 32px);
-    min-height:238px;
-    margin:0 -16px 28px;
-    overflow:hidden;
-    background:#0D0E11 url("assets/hero-premium-apps.jpg") center center/cover no-repeat;
-    border-bottom:1px solid rgba(215,174,97,.28);
-  }
-  .hero-media:after{
-    content:"";
-    position:absolute;
-    inset:0;
-    z-index:-1;
-    background:linear-gradient(180deg,rgba(8,9,11,.03) 25%,rgba(8,9,11,.90) 100%);
-  }
-  .hero-media-copy{
-    width:100%;
-    padding:72px 22px 20px;
-    text-shadow:0 2px 14px rgba(0,0,0,.75);
-  }
-  .hero-media-label{
-    display:block;
-    max-width:290px;
-    padding-left:11px;
-    border-left:3px solid var(--gold);
-    color:var(--cream);
-    font-size:.84rem;
-    font-weight:750;
-    line-height:1.35;
-  }
-  .hero-media-sub{
-    display:block;
-    margin-top:7px;
-    padding-left:14px;
-    color:#D4D6DC;
-    font-size:.72rem;
-    font-weight:600;
-  }
-  .hero > .coin,
-  .hero > .eyebrow{display:none}
+  .hero{padding:54px 0 42px;text-align:center}
+  .coin{width:106px;height:106px;margin-bottom:22px}
   .hero h1{
     font-size:clamp(2rem,10vw,2.75rem);
     line-height:1.25;
-    text-align:left;
+    text-align:center;
   }
   .hero h1 .g{
     display:inline-block;
     padding-top:4px;
   }
-  .tagline{font-size:.92rem;line-height:1.7;text-align:left;margin:16px 0 24px}
-  .hero-cta{
-    display:grid;
-    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-    gap:9px;
-  }
-  .hero-cta .pillbtn{justify-content:center;text-align:center;padding:10px 12px}
-  .hero-cta .pillbtn:last-child{grid-column:1/-1}
-  .discount-strip{text-align:center}
+  .tagline{font-size:.92rem;line-height:1.75}
   .hero-stats{margin-top:30px}
   .steps{border-bottom:0}
   .step{
@@ -1107,12 +1055,6 @@ footer{padding:38px 0 108px;border-color:rgba(255,255,255,.09)}
 <div class="wrap">
 	  <!-- ================= HERO ================= -->
 	  <section class="hero">
-	    <div class="hero-media" aria-hidden="true">
-	      <div class="hero-media-copy">
-	        <span class="hero-media-label" data-t="eyebrow"></span>
-	        <span class="hero-media-sub" data-t="heroMediaSub"></span>
-	      </div>
-	    </div>
 	    <img class="coin" id="logoHero" alt="HAZELNUTTUNES">
 	    <div class="eyebrow" data-t="eyebrow"></div>
     <h1 id="heroTitle"></h1>
@@ -1826,7 +1768,7 @@ const LOGO = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAYAAACHjumM
 /* ---------- chữ giao diện / UI strings ---------- */
 const T = {
   vi: {
-	    navPrices:"Bảng giá", eyebrow:"Dành cho người Việt tại Úc", heroMediaSub:"Giá AUD · Hỗ trợ tiếng Việt",
+	    navPrices:"Bảng giá", eyebrow:"Dành cho người Việt tại Úc",
     heroTitle:'Uy tín để chọn,<br><span class="g">chất lượng để tin</span>',
     ctaPrices:"Xem bảng giá", ctaFb:"Nhắn Messenger", ctaPage:"Xem Facebook Page", footerPage:"Facebook Page",
     footerPolicy:"Chính sách mua hàng", footerFaq:"Câu hỏi thường gặp",
@@ -1875,7 +1817,7 @@ const T = {
     wEnter:"Quay lại trang"
   },
   en: {
-	    navPrices:"Pricing", eyebrow:"Premium apps for customers across Australia", heroMediaSub:"AUD pricing · Vietnamese support",
+	    navPrices:"Pricing", eyebrow:"Premium apps for customers across Australia",
     heroTitle:'Trusted choice,<br><span class="g">proven quality</span>',
     ctaPrices:"See pricing", ctaFb:"Message on Messenger", ctaPage:"View Facebook Page", footerPage:"Facebook Page",
     footerPolicy:"Purchase policy", footerFaq:"Frequently asked questions",

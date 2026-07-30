@@ -1911,6 +1911,7 @@ const productToolsPanel = $("#productToolsPanel");
 const productToolsToggle = $("#productToolsToggle");
 const productToolsMobile = window.matchMedia("(max-width: 900px)");
 let productToolsCollapsed = false;
+let productToolsAutoCollapsed = false;
 function updateProductToolsToggle(){
   productToolsToggle.textContent = productToolsCollapsed ? "›" : "‹";
   productToolsToggle.setAttribute("aria-expanded", String(!productToolsCollapsed));
@@ -1925,12 +1926,17 @@ function setProductToolsCollapsed(collapsed){
 }
 function syncProductToolsToggle(){
   if (!productToolsMobile.matches){
+    productToolsAutoCollapsed = false;
     setProductToolsCollapsed(false);
     productToolsToggle.classList.remove("visible");
     return;
   }
   const sectionRect = $("#sanpham").getBoundingClientRect();
   const insideProducts = sectionRect.top <= 86 && sectionRect.bottom > 120;
+  if (insideProducts && !productToolsAutoCollapsed){
+    productToolsAutoCollapsed = true;
+    setProductToolsCollapsed(true);
+  }
   productToolsToggle.classList.toggle("visible", insideProducts);
 }
 productToolsToggle.addEventListener("click", () => {
@@ -1959,6 +1965,7 @@ $("#langToggle").onclick = () => { lang = lang === "vi" ? "en" : "vi"; store.set
 $("#navSearch").onclick = () => {
   const search = $("#productSearch");
   const tools = document.querySelector(".product-tools");
+  productToolsAutoCollapsed = true;
   setProductToolsCollapsed(false);
   (tools || $("#sanpham")).scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
   window.setTimeout(() => {

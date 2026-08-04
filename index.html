@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
 
    <script async defer src="https://tools.luckyorange.com/core/lo.js?site-id=4c9d6a18"></script>
    
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HAZELNUTTUNES — Phần mềm bản quyền cho người Việt tại Úc</title>
-<meta name="description" content="Nâng cấp YouTube Premium, Netflix, ChatGPT và Spotify cho người Việt tại Úc. Giá niêm yết bằng AUD, nâng cấp trước và thanh toán sau khi kiểm tra.">
+<title>HAZELNUTTUNES — Premium apps for customers across Australia</title>
+<meta name="description" content="Upgrade YouTube Premium, Netflix, ChatGPT, Spotify and more with AUD pricing, friendly support and payment after checking.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -1097,8 +1097,8 @@ footer{padding:38px 0 108px;border-color:rgba(255,255,255,.09)}
     <span class="brand"><img id="logoTop" alt="Logo HAZELNUTTUNES"><span class="navtext">HAZELNUTTUNES</span></span>
     <nav>
       <a class="pillbtn faq-nav" href="#faq">FAQ</a>
-      <button class="nav-search-btn" id="navSearch" type="button" aria-label="Tìm ứng dụng"><span class="nav-search-icon" aria-hidden="true"></span><span class="nav-search-text">Search</span></button>
-      <button class="langbtn" id="langToggle" type="button" aria-label="Switch to English"><span class="lang-flag" aria-hidden="true">🇬🇧</span><span class="lang-code">EN</span></button>
+      <button class="nav-search-btn" id="navSearch" type="button" aria-label="Search apps"><span class="nav-search-icon" aria-hidden="true"></span><span class="nav-search-text">Search</span></button>
+	      <button class="langbtn" id="langToggle" type="button" aria-label="Chuyển sang tiếng Việt"><span class="lang-flag" aria-hidden="true">🇻🇳</span><span class="lang-code">VI</span></button>
       <a class="pillbtn gold" id="zaloTop" href="#" target="_blank" rel="noopener">Zalo</a>
     </nav>
   </div>
@@ -1229,11 +1229,11 @@ footer{padding:38px 0 108px;border-color:rgba(255,255,255,.09)}
 <div class="welcome" id="welcome" role="dialog" aria-modal="true" aria-labelledby="wTitle" aria-describedby="wSub">
   <div class="wbox">
     <img id="logoWelcome" alt="HAZELNUTTUNES">
-    <h3 id="wTitle">Ưu đãi cho đơn đầu tiên</h3>
-    <p id="wSub">Nhận mã giảm giá qua email khi bạn đã xem qua bảng giá.</p>
-	    <div class="langpick">
-	      <button id="pickVi" class="sel" type="button"><span class="flag" aria-hidden="true">🇻🇳</span><span>Tiếng Việt</span></button>
-	      <button id="pickEn" type="button"><span class="flag" aria-hidden="true">🇬🇧</span><span>English</span></button>
+	    <h3 id="wTitle">First-order offer</h3>
+	    <p id="wSub">Get a discount code after browsing the pricing.</p>
+		    <div class="langpick">
+		      <button id="pickVi" type="button"><span class="flag" aria-hidden="true">🇻🇳</span><span>Tiếng Việt</span></button>
+		      <button id="pickEn" class="sel" type="button"><span class="flag" aria-hidden="true">🇬🇧</span><span>English</span></button>
 	    </div>
     <div id="wEmailBlock">
       <p id="wOffer" style="margin-bottom:10px"></p>
@@ -1957,7 +1957,8 @@ const store = {
   get(k){ try { return localStorage.getItem(k); } catch(e){ return null; } },
   set(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
 };
-let lang = store.get("hzn_lang") || "vi";
+const savedLang = store.get("hzn_lang");
+let lang = savedLang === "vi" || savedLang === "en" ? savedLang : "en";
 let discountCode = store.get("hzn_discount") || "";
 const t = k => T[lang][k];
 

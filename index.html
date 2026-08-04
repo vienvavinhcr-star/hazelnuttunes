@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
 
    <script async defer src="https://tools.luckyorange.com/core/lo.js?site-id=4c9d6a18"></script>
@@ -8,6 +8,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HAZELNUTTUNES — Premium apps for customers across Australia</title>
 <meta name="description" content="Upgrade YouTube Premium, Netflix, ChatGPT, Spotify and more with AUD pricing, friendly support and payment after checking.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://hazelnuttunes.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HAZELNUTTUNES">
+<meta property="og:locale" content="en_AU">
+<meta property="og:url" content="https://hazelnuttunes.com/">
+<meta property="og:title" content="HAZELNUTTUNES — Premium apps for customers across Australia">
+<meta property="og:description" content="Upgrade YouTube Premium, Netflix, ChatGPT, Spotify and more with AUD pricing, friendly support and payment after checking.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HAZELNUTTUNES — Premium apps for customers across Australia">
+<meta name="twitter:description" content="Upgrade YouTube Premium, Netflix, ChatGPT, Spotify and more with AUD pricing, friendly support and payment after checking.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "HAZELNUTTUNES",
+  "url": "https://hazelnuttunes.com/",
+  "inLanguage": "en-AU",
+  "description": "Premium apps and subscriptions for customers across Australia with AUD pricing and friendly support."
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -2006,7 +2027,7 @@ window.addEventListener("resize", syncProductToolsToggle);
 
 /* ---------- vẽ giao diện theo ngôn ngữ / render language ---------- */
 function renderLang(){
-  document.documentElement.lang = lang;
+  document.documentElement.lang = lang === "en" ? "en-AU" : "vi";
   document.querySelectorAll("[data-t]").forEach(el => { el.innerHTML = t(el.dataset.t); });
   $("#heroTitle").innerHTML = t("heroTitle");
   $("#taglineText").textContent = CONFIG.tagline[lang];

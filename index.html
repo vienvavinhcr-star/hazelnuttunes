@@ -332,6 +332,7 @@ label{display:block;font-weight:600;font-size:.88rem;margin:14px 0 6px}
 .contact-btns .pillbtn{justify-content:center;padding:13px;font-size:.98rem}
 .fb{background:#1877F2;color:#fff;border:none}.fb:hover{filter:brightness(1.08);background:#1877F2}
 .zalo{background:#0068FF;color:#fff;border:none}.zalo:hover{filter:brightness(1.08);background:#0068FF}
+.whatsapp{background:#25D366;color:#071A0F;border:none}.whatsapp:hover{filter:brightness(1.06);background:#25D366}
 .mini{color:var(--muted);font-size:.8rem;text-align:center;margin-top:12px}
 
 /* ---------- welcome popup ---------- */
@@ -1281,7 +1282,7 @@ footer{padding:38px 0 108px;border-color:rgba(255,255,255,.09)}
    Mọi nội dung có 2 bản: vi (tiếng Việt) và en (English).
    Every text has two versions: vi and en.
 
-   • Link Facebook / Zalo  → facebookLink / zaloLink
+   • Link liên hệ          → facebookLink / whatsappLink / zaloLink
    • Giá cả                → price / oldPrice trong plans (USD)
    • Giảm giá email        → discountPercent
    • Nhận email khách      → emailWebhook (dán link Formspree/Google Form)
@@ -1294,6 +1295,7 @@ const CONFIG = {
   // LINK LIÊN HỆ — đổi thành link thật (change to your real links)
   facebookLink: "https://m.me/61576748497882",
   facebookPageLink: "https://www.facebook.com/profile.php?id=61591800332459",
+  whatsappLink: "https://wa.me/qr/KBI3XPZPNKP6J1",
   zaloLink: "https://zalo.me/g/ozvrwy812",
 
   // Nơi nhận email khách đăng ký (để "" nếu chưa có).
@@ -1881,7 +1883,7 @@ const T = {
     sendStep1:"Bấm “Sao chép tin nhắn” ở trên.", sendStep2:"Chọn Messenger hoặc Zalo bên dưới.", sendStep3:"Dán tin nhắn vừa sao chép và gửi cho nhân viên.",
     sendGuideAlert:"Nếu chỉ dừng ở màn hình này mà chưa nhắn cho shop, nhân viên sẽ chưa nhận được đơn để xử lý.",
     orderCode:"Mã đơn hàng", copy:"Sao chép tin nhắn", copied:"Đã sao chép", copyHint:"Nhấp vào đây", copyToast:"Đã sao chép nội dung tin nhắn",
-    msgFb:"Nhắn qua Facebook Messenger", msgZalo:"Nhắn qua Zalo", msgPage:"Xem Facebook Page",
+    msgFb:"Nhắn qua Facebook Messenger", msgWhatsapp:"Nhắn qua WhatsApp", msgZalo:"Nhắn qua Zalo", msgPage:"Xem Facebook Page",
     finalHint:'Sao chép nội dung, mở Messenger hoặc Zalo, sau đó dán và gửi cho nhân viên.<br>Shop nâng cấp trước; bạn kiểm tra rồi mới thanh toán.',
     mProduct:"Sản phẩm", mName:"Họ tên", mPhone:"SĐT", mNote:"Ghi chú", mCode:"Mã đơn", mDiscount:"Mã giảm giá",
     discountStrip:"Mã giảm {p}% của bạn: {c} · Tự động áp dụng khi đặt hàng",
@@ -1930,7 +1932,7 @@ const T = {
     sendStep1:"Tap “Copy message” above.", sendStep2:"Choose Messenger or Zalo below.", sendStep3:"Paste the copied message and send it to our staff.",
     sendGuideAlert:"If you stop on this screen without messaging us, our staff will not receive the order yet.",
     orderCode:"Order code", copy:"Copy message", copied:"Copied", copyHint:"Tap here", copyToast:"Message copied",
-    msgFb:"Message us on Messenger", msgZalo:"Message us on Zalo", msgPage:"View Facebook Page",
+    msgFb:"Message us on Messenger", msgWhatsapp:"Message us on WhatsApp", msgZalo:"Message us on Zalo", msgPage:"View Facebook Page",
     finalHint:'Copy the message, open Messenger or Zalo, then paste and send it to our staff.<br>We upgrade first; you check before paying.',
     mProduct:"Product", mName:"Name", mPhone:"Phone", mNote:"Note", mCode:"Order code", mDiscount:"Discount code",
     discountStrip:"Your {p}% discount code: {c} · Applied automatically at checkout",
@@ -2613,6 +2615,7 @@ ${t("mPhone")}: ${phone}${note ? `\n${t("mNote")}: ${note}` : ""}`;
     </div>
     <div class="contact-btns">
       <a class="pillbtn fb" href="${CONFIG.facebookLink}" target="_blank" rel="noopener">${t("msgFb")}</a>
+      <a class="pillbtn whatsapp" href="${CONFIG.whatsappLink}" target="_blank" rel="noopener">${t("msgWhatsapp")}</a>
       <a class="pillbtn zalo" href="${CONFIG.zaloLink}" target="_blank" rel="noopener">${t("msgZalo")}</a>
       <a class="pillbtn" href="${CONFIG.facebookPageLink}" target="_blank" rel="noopener">${t("msgPage")}</a>
     </div>

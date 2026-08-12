@@ -332,6 +332,7 @@ label{display:block;font-weight:600;font-size:.88rem;margin:14px 0 6px}
 .contact-btns .pillbtn{justify-content:center;padding:13px;font-size:.98rem}
 .fb{background:#1877F2;color:#fff;border:none}.fb:hover{filter:brightness(1.08);background:#1877F2}
 .zalo{background:#0068FF;color:#fff;border:none}.zalo:hover{filter:brightness(1.08);background:#0068FF}
+.whatsapp{background:#25D366;color:#071A0F;border:none}.whatsapp:hover{filter:brightness(1.06);background:#25D366}
 .mini{color:var(--muted);font-size:.8rem;text-align:center;margin-top:12px}
 
 /* ---------- welcome popup ---------- */
@@ -1281,7 +1282,7 @@ footer{padding:38px 0 108px;border-color:rgba(255,255,255,.09)}
    Mọi nội dung có 2 bản: vi (tiếng Việt) và en (English).
    Every text has two versions: vi and en.
 
-   • Link Facebook / Zalo  → facebookLink / zaloLink
+   • Link liên hệ          → facebookLink / whatsappLink / zaloLink
    • Giá cả                → price / oldPrice trong plans (USD)
    • Giảm giá email        → discountPercent
    • Nhận email khách      → emailWebhook (dán link Formspree/Google Form)
@@ -1294,6 +1295,7 @@ const CONFIG = {
   // LINK LIÊN HỆ — đổi thành link thật (change to your real links)
   facebookLink: "https://m.me/61576748497882",
   facebookPageLink: "https://www.facebook.com/profile.php?id=61591800332459",
+  whatsappLink: "https://wa.me/qr/KBI3XPZPNKP6J1",
   zaloLink: "https://zalo.me/g/ozvrwy812",
 
   // Nơi nhận email khách đăng ký (để "" nếu chưa có).
@@ -1827,7 +1829,7 @@ const CONFIG = {
     { q: { vi: "Tôi thanh toán như thế nào và khi nào?", en: "How and when do I pay?" },
       a: { vi: "Bạn KHÔNG cần trả tiền trước. Sau khi nhân viên nâng cấp xong, bạn tự kiểm tra tài khoản, hài lòng rồi mới thanh toán qua chuyển khoản ngân hàng hoặc ví điện tử.", en: "You do NOT pay upfront. After we finish the upgrade, you check your account yourself, and only then pay via bank transfer or e-wallet." } },
     { q: { vi: "Bao lâu thì tài khoản được nâng cấp?", en: "How long does the upgrade take?" },
-      a: { vi: "Thông thường từ 5–30 phút sau khi nhân viên xác nhận đã nhận mã đơn qua Messenger hoặc Zalo. Trường hợp cần kiểm tra thêm có thể lâu hơn.", en: "Usually 5–30 minutes after our staff confirms receipt of the order code via Messenger or Zalo. Cases requiring extra checks may take longer." } },
+      a: { vi: "Thông thường từ 5–30 phút sau khi nhân viên xác nhận đã nhận mã đơn qua Messenger, WhatsApp hoặc Zalo. Trường hợp cần kiểm tra thêm có thể lâu hơn.", en: "Usually 5–30 minutes after our staff confirms receipt of the order code via Messenger, WhatsApp or Zalo. Cases requiring extra checks may take longer." } },
     { q: { vi: "Tôi có cần đưa mật khẩu không?", en: "Do I need to share my password?" },
       a: { vi: "Với YouTube Premium, bạn chỉ cần gửi email và không cần cung cấp mật khẩu. Với các gói tài khoản riêng như Meitu hoặc CapCut, shop sẽ cấp tài khoản mới.", en: "For YouTube Premium you only send your email — no login or password is needed. For private-account plans such as Meitu or CapCut, we provide a new account." } },
     { q: { vi: "Bảo hành hoạt động thế nào?", en: "How does the warranty work?" },
@@ -1851,9 +1853,9 @@ const T = {
     footerPolicy:"Chính sách mua hàng", footerFaq:"Câu hỏi thường gặp",
     s1t:"Chọn gói bạn cần", s1p:"Xem giá và chi tiết từng gói ngay trên trang, không cần đăng nhập.",
     s2t:"Nhận mã đơn hàng", s2p:"Điền tên và số điện thoại, hệ thống tạo mã đơn cho bạn trong 1 giây.",
-    s3t:"Nhắn mã cho nhân viên", s3p:"Gửi mã đơn qua Facebook hoặc Zalo — nâng cấp trước, trả tiền sau.",
+    s3t:"Nhắn mã cho nhân viên", s3p:"Gửi mã đơn qua Messenger, WhatsApp hoặc Zalo — nâng cấp trước, trả tiền sau.",
     secProducts:"Bảng giá nâng cấp", secProductsSub:"Giá AUD · Nâng cấp trước · Thanh toán sau",
-    secProcess:"Đơn hàng được xử lý thế nào?", secProcessSub:"Tạo mã trên web chỉ là bước đầu — shop bắt đầu xử lý khi bạn gửi mã qua Messenger hoặc Zalo",
+    secProcess:"Đơn hàng được xử lý thế nào?", secProcessSub:"Tạo mã trên web chỉ là bước đầu — shop bắt đầu xử lý khi bạn gửi mã qua Messenger, WhatsApp hoặc Zalo",
     processAlert:"Lưu ý: nếu bạn chỉ tạo mã trên web mà chưa nhắn cho shop, nhân viên chưa nhận được đơn để nâng cấp.",
     secBenefits:"Quyền lợi khi mua hàng", secBenefitsSub:"Áp dụng cho mọi sản phẩm của shop",
     secConfidence:"Minh bạch & bảo hành", secConfidenceSub:"Quy trình và phạm vi hỗ trợ được trình bày rõ ràng",
@@ -1877,12 +1879,12 @@ const T = {
     errName:"Vui lòng nhập họ tên.", errPhone:"Vui lòng nhập số điện thoại hợp lệ (9–11 số).",
     ready:"Phiếu đơn hàng đã được tạo", readySub:"Bước cuối: sao chép nội dung và gửi cho nhân viên để bắt đầu xử lý.",
     summaryTitle:"Phiếu xác nhận đơn", summarySub:"Đã tạo mã, chờ gửi cho nhân viên", summaryStatus:"Sẵn sàng gửi", totalDue:"Tổng cần thanh toán", warrantyMini:"Đơn này được giữ mã để đối chiếu bảo hành trong suốt thời gian gói.",
-    sendGuideTitle:"Chưa hoàn tất đơn đâu nhé", sendGuideIntro:"Bạn cần gửi phiếu này cho nhân viên qua Messenger hoặc Zalo thì shop mới xác nhận và bắt đầu nâng cấp.",
-    sendStep1:"Bấm “Sao chép tin nhắn” ở trên.", sendStep2:"Chọn Messenger hoặc Zalo bên dưới.", sendStep3:"Dán tin nhắn vừa sao chép và gửi cho nhân viên.",
+    sendGuideTitle:"Chưa hoàn tất đơn đâu nhé", sendGuideIntro:"Bạn cần gửi phiếu này cho nhân viên qua Messenger, WhatsApp hoặc Zalo thì shop mới xác nhận và bắt đầu nâng cấp.",
+    sendStep1:"Bấm “Sao chép tin nhắn” ở trên.", sendStep2:"Chọn Messenger, WhatsApp hoặc Zalo bên dưới.", sendStep3:"Dán tin nhắn vừa sao chép và gửi cho nhân viên.",
     sendGuideAlert:"Nếu chỉ dừng ở màn hình này mà chưa nhắn cho shop, nhân viên sẽ chưa nhận được đơn để xử lý.",
     orderCode:"Mã đơn hàng", copy:"Sao chép tin nhắn", copied:"Đã sao chép", copyHint:"Nhấp vào đây", copyToast:"Đã sao chép nội dung tin nhắn",
-    msgFb:"Nhắn qua Facebook Messenger", msgZalo:"Nhắn qua Zalo", msgPage:"Xem Facebook Page",
-    finalHint:'Sao chép nội dung, mở Messenger hoặc Zalo, sau đó dán và gửi cho nhân viên.<br>Shop nâng cấp trước; bạn kiểm tra rồi mới thanh toán.',
+    msgFb:"Nhắn qua Facebook Messenger", msgWhatsapp:"Nhắn qua WhatsApp", msgZalo:"Nhắn qua Zalo", msgPage:"Xem Facebook Page",
+    finalHint:'Sao chép nội dung, mở Messenger, WhatsApp hoặc Zalo, sau đó dán và gửi cho nhân viên.<br>Shop nâng cấp trước; bạn kiểm tra rồi mới thanh toán.',
     mProduct:"Sản phẩm", mName:"Họ tên", mPhone:"SĐT", mNote:"Ghi chú", mCode:"Mã đơn", mDiscount:"Mã giảm giá",
     discountStrip:"Mã giảm {p}% của bạn: {c} · Tự động áp dụng khi đặt hàng",
     discountApplied:"Đã áp dụng giảm {p}%",
@@ -1900,9 +1902,9 @@ const T = {
     footerPolicy:"Purchase policy", footerFaq:"Frequently asked questions",
     s1t:"Pick the plan you need", s1p:"Browse prices and details right on the page — no sign-up needed.",
     s2t:"Get your order code", s2p:"Enter your name and phone number; we generate your code instantly.",
-    s3t:"Message us the code", s3p:"Send your code via Facebook or Zalo — we upgrade first, you pay after.",
+    s3t:"Message us the code", s3p:"Send your code via Messenger, WhatsApp or Zalo — we upgrade first, you pay after.",
     secProducts:"Upgrade pricing", secProductsSub:"AUD pricing · Upgrade first · Pay after checking",
-    secProcess:"How is your order processed?", secProcessSub:"Creating a code on the site is only the first step — we start processing after you send the code via Messenger or Zalo",
+    secProcess:"How is your order processed?", secProcessSub:"Creating a code on the site is only the first step — we start processing after you send the code via Messenger, WhatsApp or Zalo",
     processAlert:"Note: if you only create a code on the site and do not message us, our staff has not received the order yet.",
     secBenefits:"What every order includes", secBenefitsSub:"Applies to every product in the shop",
     secConfidence:"Transparent pricing & warranty", secConfidenceSub:"Clear process and support coverage",
@@ -1926,12 +1928,12 @@ const T = {
     errName:"Please enter your name.", errPhone:"Please enter a valid phone number (9–11 digits).",
     ready:"Your order confirmation is ready", readySub:"Last step: copy the message and send it to our staff to begin processing.",
     summaryTitle:"Order confirmation", summarySub:"Code created, ready to send to staff", summaryStatus:"Ready to send", totalDue:"Total due", warrantyMini:"This order code is kept for warranty lookup throughout your plan.",
-    sendGuideTitle:"Your order is not finished yet", sendGuideIntro:"Please send this confirmation to our staff on Messenger or Zalo so we can confirm and start the upgrade.",
-    sendStep1:"Tap “Copy message” above.", sendStep2:"Choose Messenger or Zalo below.", sendStep3:"Paste the copied message and send it to our staff.",
+    sendGuideTitle:"Your order is not finished yet", sendGuideIntro:"Please send this confirmation to our staff on Messenger, WhatsApp or Zalo so we can confirm and start the upgrade.",
+    sendStep1:"Tap “Copy message” above.", sendStep2:"Choose Messenger, WhatsApp or Zalo below.", sendStep3:"Paste the copied message and send it to our staff.",
     sendGuideAlert:"If you stop on this screen without messaging us, our staff will not receive the order yet.",
     orderCode:"Order code", copy:"Copy message", copied:"Copied", copyHint:"Tap here", copyToast:"Message copied",
-    msgFb:"Message us on Messenger", msgZalo:"Message us on Zalo", msgPage:"View Facebook Page",
-    finalHint:'Copy the message, open Messenger or Zalo, then paste and send it to our staff.<br>We upgrade first; you check before paying.',
+    msgFb:"Message us on Messenger", msgWhatsapp:"Message us on WhatsApp", msgZalo:"Message us on Zalo", msgPage:"View Facebook Page",
+    finalHint:'Copy the message, open Messenger, WhatsApp or Zalo, then paste and send it to our staff.<br>We upgrade first; you check before paying.',
     mProduct:"Product", mName:"Name", mPhone:"Phone", mNote:"Note", mCode:"Order code", mDiscount:"Discount code",
     discountStrip:"Your {p}% discount code: {c} · Applied automatically at checkout",
     discountApplied:"{p}% discount applied",
@@ -2613,6 +2615,7 @@ ${t("mPhone")}: ${phone}${note ? `\n${t("mNote")}: ${note}` : ""}`;
     </div>
     <div class="contact-btns">
       <a class="pillbtn fb" href="${CONFIG.facebookLink}" target="_blank" rel="noopener">${t("msgFb")}</a>
+      <a class="pillbtn whatsapp" href="${CONFIG.whatsappLink}" target="_blank" rel="noopener">${t("msgWhatsapp")}</a>
       <a class="pillbtn zalo" href="${CONFIG.zaloLink}" target="_blank" rel="noopener">${t("msgZalo")}</a>
       <a class="pillbtn" href="${CONFIG.facebookPageLink}" target="_blank" rel="noopener">${t("msgPage")}</a>
     </div>

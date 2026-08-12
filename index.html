@@ -1977,6 +1977,8 @@ function iconTile(key){
 /* ---------- tiện ích / helpers ---------- */
 const $ = s => document.querySelector(s);
 const money = n => CONFIG.currency + (Number.isInteger(n) ? n : n.toFixed(2));
+const HTML_ENTITIES = { "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" };
+const escapeHtml = value => String(value).replace(/[&<>"']/g, char => HTML_ENTITIES[char]);
 const store = {
   get(k){ try { return localStorage.getItem(k); } catch(e){ return null; } },
   set(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
@@ -2570,6 +2572,13 @@ ${t("mPhone")}: ${phone}${note ? `\n${t("mNote")}: ${note}` : ""}`;
     date: melbourneTimestamp()
   });
 
+  const safeOrder = {
+    name: escapeHtml(name),
+    phone: escapeHtml(phone),
+    note: escapeHtml(note),
+    discountCode: escapeHtml(discountCode)
+  };
+
   mBody.innerHTML = `
     ${orderProgress(3)}
     <h3 id="mTitle">${t("ready")}</h3>
@@ -2585,14 +2594,14 @@ ${t("mPhone")}: ${phone}${note ? `\n${t("mNote")}: ${note}` : ""}`;
         <div class="tk-body">
           <span><b>${pricing.productLabel}</b></span>
           <span>${pricing.planLabel}</span>
-          ${hasDisc ? `<span>${t("mDiscount")}: <b>${discountCode}</b></span>` : ""}
+          ${hasDisc ? `<span>${t("mDiscount")}: <b>${safeOrder.discountCode}</b></span>` : ""}
         </div>
       </div>
       <div class="summary-lines">
         <div class="summary-row"><span>${t("mProduct")}</span><b>${pricing.productLabel}</b></div>
         <div class="summary-row"><span>${t("choosePlan")}</span><b>${pricing.planLabel}</b></div>
-        <div class="summary-row"><span>${t("mName")}</span><b>${name} · ${phone}</b></div>
-        ${note ? `<div class="summary-row"><span>${t("mNote")}</span><b>${note}</b></div>` : ""}
+        <div class="summary-row"><span>${t("mName")}</span><b>${safeOrder.name} · ${safeOrder.phone}</b></div>
+        ${note ? `<div class="summary-row"><span>${t("mNote")}</span><b>${safeOrder.note}</b></div>` : ""}
       </div>
       <div class="summary-total"><span>${t("totalDue")}</span><b>${priceLine}</b></div>
       <div class="summary-warranty">✓ ${t("warrantyMini")}</div>

@@ -1424,27 +1424,32 @@ const CONFIG = {
       icon: "chatgpt",
       name: { vi: "ChatGPT", en: "ChatGPT" },
       desc: {
-        vi: "Gói dùng chung giới hạn người dùng, phù hợp cho học tập và công việc.",
-        en: "Limited-user shared plans for study and work."
+        vi: "Chọn gói dùng chung VIP/PRO hoặc gói chính chủ 4 tháng cho học tập và công việc.",
+        en: "Choose a shared VIP/PRO plan or a 4-month own-account plan for study and work."
       },
       badge: { vi: "Phổ biến", en: "Popular" },
       details: {
         vi: [
-          "Gói VIP: dùng chung với 4–5 người",
+          "Gói VIP: A$8/tháng · dùng chung với 4–5 người",
           "Gói PRO: dùng chung với 1–2 người",
-          "Tháng đầu gói VIP A$8, gia hạn tiếp theo A$7",
+          "Gói chính chủ: A$92/4 tháng · tương đương A$23/tháng",
+          "Gói chính chủ: sử dụng trên tài khoản của bạn, đầy đủ quyền lợi của gói được kích hoạt",
+          "Gói chính chủ: bảo hành trong suốt 4 tháng sử dụng",
           "Hỗ trợ hướng dẫn sử dụng sau khi nâng cấp"
         ],
         en: [
-          "VIP plan: shared by 4–5 users",
+          "VIP plan: A$8/month · shared by 4–5 users",
           "PRO plan: shared by only 1–2 users",
-          "VIP first month A$8, renewals A$7",
+          "Own-account plan: A$92 for 4 months · equivalent to A$23/month",
+          "Own-account plan: use your own account with the benefits of the activated plan",
+          "Own-account plan: warranty throughout all 4 months",
           "Free usage guide after upgrade"
         ]
       },
       plans: [
-        { label: { vi: "Gói VIP · tháng đầu", en: "VIP · first month" }, note: { vi: "Dùng chung 4–5 người · gia hạn A$7", en: "Shared by 4–5 users · renews at A$7" }, price: 8, oldPrice: 0 },
-        { label: { vi: "Gói PRO · mỗi tháng", en: "PRO · per month" }, note: { vi: "Share chỉ 1–2 người", en: "Shared by only 1–2 users" }, price: 14, oldPrice: 0 }
+        { label: { vi: "Gói VIP · mỗi tháng", en: "VIP · per month" }, note: { vi: "Dùng chung 4–5 người · A$8/tháng", en: "Shared by 4–5 users · A$8/month" }, price: 8, oldPrice: 0 },
+        { label: { vi: "Gói PRO · mỗi tháng", en: "PRO · per month" }, note: { vi: "Share chỉ 1–2 người", en: "Shared by only 1–2 users" }, price: 14, oldPrice: 0 },
+        { label: { vi: "Gói chính chủ · 4 tháng", en: "Own account · 4 months" }, note: { vi: "Tài khoản của bạn · tương đương A$23/tháng · bảo hành đủ 4 tháng", en: "Your own account · equivalent to A$23/month · 4-month warranty" }, price: 92, oldPrice: 0 }
       ]
     },
     {
@@ -2112,6 +2117,10 @@ function productNeeds(product){
   return needs;
 }
 function trustLabels(product){
+  if (product.icon === "chatgpt") return [
+    { vi: "Dùng chung / chính chủ", en: "Shared / own account" },
+    { vi: "Shop hỗ trợ", en: "Shop support" }
+  ];
   const text = [
     product.name.vi, product.name.en, product.desc.vi, product.desc.en,
     ...(product.details?.vi || []), ...(product.details?.en || [])

@@ -1345,15 +1345,13 @@ const CONFIG = {
           "Netflix VIP: dùng chung profile với một người khác",
           "Netflix Premium: profile riêng có mã PIN",
           "Chất lượng xem phim cả 2 gói đều như nhau",
-          "Đăng nhập được trên mọi thiết bị",
-          "Mua kèm YouTube để nhận giá combo"
+          "Đăng nhập được trên mọi thiết bị"
         ],
         en: [
           "Netflix VIP: shared profile with one other person",
           "Netflix Premium: your own private profile with PIN lock",
           "Both plans stream at the same quality",
-          "Log in on any device",
-          "Bundle with YouTube for a lower combined price"
+          "Log in on any device"
         ]
       },
       plans: [
@@ -1368,31 +1366,29 @@ const CONFIG = {
       featured: true,            // true = thẻ nổi bật to hơn, viền đỏ-vàng (best seller)
       name: { vi: "YouTube Premium", en: "YouTube Premium" },
       desc: {
-        vi: "Không quảng cáo, phát trong nền, kèm YouTube Music. Chỉ cần gửi email.",
-        en: "Ad-free, background play, YouTube Music included. Just send your email."
+        vi: "Đầy đủ tính năng YouTube Premium. Chấp nhận lời mời Family khi có thông báo từ shop.",
+        en: "Full YouTube Premium features. Accept the Family invitation when notified by the shop."
       },
       badge: { vi: "Bán chạy nhất", en: "Best seller" },
       details: {
         vi: [
-          "Chỉ cần gửi email, không cần cung cấp thông tin đăng nhập",
-          "Bảo hành trong suốt thời hạn gói",
-          "Gói nhóm: 2 tài khoản A$110 · 3 tài khoản A$150 · 4 tài khoản A$180",
-          "Mua kèm Spotify hoặc Netflix để nhận giá combo năm đầu"
+          "YouTube Premium: A$35/6 tháng · gói 1 tháng A$9",
+          "Đầy đủ tính năng: xem không quảng cáo, phát trong nền, tải video và YouTube Music",
+          "Bạn chỉ cần chấp nhận lời mời Family khi có thông báo từ shop",
+          "Chỉ cần gửi email, không cần cung cấp mật khẩu",
+          "Bảo hành trong suốt thời hạn gói"
         ],
         en: [
-          "Just send us your email — no login needed",
-          "Full warranty for the entire duration",
-          "Group pricing: 2 accounts A$110 · 3 accounts A$150 · 4 accounts A$180",
-          "Bundle with Spotify or Netflix for a first-year discount"
+          "YouTube Premium: A$35 for 6 months · 1-month plan A$9",
+          "Full features: ad-free viewing, background play, video downloads and YouTube Music",
+          "Simply accept the Family invitation when notified by the shop",
+          "Just send your email — no password needed",
+          "Full warranty for the entire duration"
         ]
       },
       plans: [
         { label: { vi: "1 tháng", en: "1 month" }, note: { vi: "Trải nghiệm trước", en: "Try it first" }, price: 9, oldPrice: 0 },
-        { label: { vi: "6 tháng", en: "6 months" }, note: { vi: "Bảo hành trọn gói", en: "Full warranty" }, price: 35, oldPrice: 0 },
-        { label: { vi: "12 tháng", en: "12 months" }, note: { vi: "Bảo hành trọn gói", en: "Full warranty" }, price: 59, oldPrice: 0, bestValue: true },
-        { label: { vi: "Nhóm 2 tài khoản · 12 tháng", en: "2 accounts · 12 months" }, note: { vi: "A$55 mỗi tài khoản", en: "A$55 per account" }, price: 110, oldPrice: 118 },
-        { label: { vi: "Nhóm 3 tài khoản · 12 tháng", en: "3 accounts · 12 months" }, note: { vi: "A$50 mỗi tài khoản", en: "A$50 per account" }, price: 150, oldPrice: 177 },
-        { label: { vi: "Nhóm 4 tài khoản · 12 tháng", en: "4 accounts · 12 months" }, note: { vi: "A$45 mỗi tài khoản", en: "A$45 per account" }, price: 180, oldPrice: 236 }
+        { label: { vi: "6 tháng", en: "6 months" }, note: { vi: "Nhận lời mời Family khi có thông báo · bảo hành trọn gói", en: "Accept Family invitations when notified · full warranty" }, price: 35, oldPrice: 0 }
       ]
     },
     {
@@ -1764,17 +1760,17 @@ const CONFIG = {
       p: { vi: "Bạn chỉ thanh toán sau khi tài khoản đã nâng cấp thành công và tự kiểm tra xong.", en: "You only pay after your account is upgraded and you've checked it yourself." } },
     { icon: "02", t: { vi: "Bảo hành trong thời hạn gói", en: "Warranty for the plan term" },
       p: { vi: "Lỗi thuộc phạm vi bảo hành sẽ được kiểm tra và xử lý trong thời hạn gói, không thu thêm phí.", en: "Covered issues are checked and resolved during the active plan term without an additional fee." } },
-    { icon: "03", t: { vi: "Ưu đãi mua combo", en: "Bundle discounts" },
-      p: { vi: "Mua kèm YouTube + Netflix hoặc Spotify sẽ được tính giá ưu đãi cho năm đầu.", en: "Buy YouTube with Netflix or Spotify and get a discounted first year." } },
+    { icon: "03", t: { vi: "Ưu đãi đơn đầu tiên", en: "First-order discount" },
+      p: { vi: "Để lại email để nhận mã giảm 10% cho đơn đầu tiên sau khi xem bảng giá.", en: "Leave your email after browsing the pricing to receive a 10% discount code for your first order." } },
     { icon: "04", t: { vi: "Hỗ trợ bằng tiếng Việt", en: "Vietnamese support" },
       p: { vi: "Nhân viên trực Facebook & Zalo, hướng dẫn cài đặt miễn phí từ A đến Z.", en: "Our team is on Facebook & Zalo daily, with free step-by-step setup help." } }
   ],
 
   priceReasons: [
     { icon: "1", t: { vi: "Tối ưu theo gói dài hạn", en: "Long-term plan savings" },
-      p: { vi: "Shop ưu tiên các gói 6–12 tháng và combo nên chi phí mỗi tháng thấp hơn mua lẻ từng tháng.", en: "We focus on 6–12 month plans and bundles, so the monthly cost is lower than buying month by month." } },
-    { icon: "2", t: { vi: "Ghép nhu cầu thành combo", en: "Smart bundle matching" },
-      p: { vi: "YouTube, Netflix và Spotify được gợi ý mua kèm đúng lúc để khách tiết kiệm mà không bị ép mua.", en: "YouTube, Netflix and Spotify are bundled at the right moment so customers save without feeling pushed." } },
+      p: { vi: "Shop có các gói dài hạn để khách chọn mức chi phí phù hợp với nhu cầu sử dụng.", en: "We offer longer-term plans so customers can choose a price that fits their usage." } },
+    { icon: "2", t: { vi: "Tư vấn theo nhu cầu", en: "Plans for your needs" },
+      p: { vi: "Nhân viên hỗ trợ chọn ứng dụng và thời hạn gói phù hợp với nhu cầu của bạn.", en: "Our staff helps you choose the app and plan duration that fit your needs." } },
     { icon: "3", t: { vi: "Giữ quy trình gọn", en: "Lean order flow" },
       p: { vi: "Khách tự chọn gói, nhận mã đơn và nhắn trực tiếp. Quy trình gọn giúp shop duy trì mức giá tốt.", en: "Customers choose a plan, get a code and message us directly. A lean process helps us maintain competitive pricing." } }
   ],
@@ -1787,7 +1783,7 @@ const CONFIG = {
 
   orderProcess: [
     { t: { vi: "Tạo mã đơn", en: "Create order code" },
-      p: { vi: "Khách chọn app, chọn gói/combo rồi nhập tên và số điện thoại để lấy phiếu xác nhận.", en: "Customer picks an app, plan or bundle, then enters name and phone to get a confirmation ticket." } },
+      p: { vi: "Khách chọn app, chọn gói rồi nhập tên và số điện thoại để lấy phiếu xác nhận.", en: "Customer picks an app and plan, then enters name and phone to get a confirmation ticket." } },
     { t: { vi: "Gửi mã cho shop", en: "Send code to us" },
       p: { vi: "Bấm sao chép nội dung, mở Messenger/Zalo và gửi mã đơn cho nhân viên.", en: "Copy the message, open Messenger/Zalo and send the order code to our staff." } },
     { t: { vi: "Shop nâng cấp & bảo hành", en: "We upgrade & support" },
@@ -1836,11 +1832,11 @@ const CONFIG = {
     { q: { vi: "Bao lâu thì tài khoản được nâng cấp?", en: "How long does the upgrade take?" },
       a: { vi: "Thông thường từ 5–30 phút sau khi nhân viên xác nhận đã nhận mã đơn qua Messenger, WhatsApp hoặc Zalo. Trường hợp cần kiểm tra thêm có thể lâu hơn.", en: "Usually 5–30 minutes after our staff confirms receipt of the order code via Messenger, WhatsApp or Zalo. Cases requiring extra checks may take longer." } },
     { q: { vi: "Tôi có cần đưa mật khẩu không?", en: "Do I need to share my password?" },
-      a: { vi: "Với YouTube Premium, bạn chỉ cần gửi email và không cần cung cấp mật khẩu. Với các gói tài khoản riêng như Meitu hoặc CapCut, shop sẽ cấp tài khoản mới.", en: "For YouTube Premium you only send your email — no login or password is needed. For private-account plans such as Meitu or CapCut, we provide a new account." } },
+      a: { vi: "Với YouTube Premium, bạn gửi email và chấp nhận lời mời Family khi có thông báo từ shop; không cần cung cấp mật khẩu. Với các gói tài khoản riêng như Meitu hoặc CapCut, shop sẽ cấp tài khoản mới.", en: "For YouTube Premium, send your email and accept the Family invitation when notified by the shop; no password is needed. For private-account plans such as Meitu or CapCut, we provide a new account." } },
     { q: { vi: "Bảo hành hoạt động thế nào?", en: "How does the warranty work?" },
       a: { vi: "Gói được bảo hành trong thời hạn sử dụng. Khi có lỗi, hãy gửi mã đơn cho nhân viên để được kiểm tra và xử lý theo phạm vi bảo hành.", en: "Warranty applies throughout the plan term. If an issue occurs, send your order code so our staff can check and resolve covered issues." } },
     { q: { vi: "Mua nhiều có được giảm giá không?", en: "Any discount for buying more?" },
-      a: { vi: "Có. YouTube có gói nhóm 2–4 tài khoản và combo YouTube với Netflix hoặc Spotify. Mã giảm 10% cho đơn đầu tiên sẽ xuất hiện sau khi bạn xem qua bảng giá.", en: "Yes. YouTube offers group pricing for 2–4 accounts and bundles with Netflix or Spotify. A 10% first-order offer appears after you browse the pricing." } }
+      a: { vi: "Hiện YouTube Premium có gói 1 tháng và 6 tháng. Mã giảm 10% cho đơn đầu tiên sẽ xuất hiện sau khi bạn xem qua bảng giá; liên hệ shop nếu cần mua nhiều tài khoản.", en: "YouTube Premium currently offers 1-month and 6-month plans. A 10% first-order offer appears after you browse the pricing; contact the shop if you need multiple accounts." } }
   ]
 };
 /* ##############################################################
@@ -1864,7 +1860,7 @@ const T = {
     processAlert:"Lưu ý: nếu bạn chỉ tạo mã trên web mà chưa nhắn cho shop, nhân viên chưa nhận được đơn để nâng cấp.",
     secBenefits:"Quyền lợi khi mua hàng", secBenefitsSub:"Áp dụng cho mọi sản phẩm của shop",
     secConfidence:"Minh bạch & bảo hành", secConfidenceSub:"Quy trình và phạm vi hỗ trợ được trình bày rõ ràng",
-    whyCheapTitle:"Vì sao giá rẻ hơn?", whyCheapIntro:"Shop không làm giá rẻ bằng cách cắt bớt hỗ trợ. Giá tốt đến từ cách tối ưu gói, combo và quy trình đặt hàng.",
+    whyCheapTitle:"Vì sao giá rẻ hơn?", whyCheapIntro:"Shop không làm giá rẻ bằng cách cắt bớt hỗ trợ. Giá tốt đến từ cách tối ưu gói và quy trình đặt hàng.",
     warrantyClearTitle:"Bảo hành rõ ràng hơn", warrantyClearIntro:"Trong thời gian gói còn hiệu lực, nếu có lỗi sử dụng bạn chỉ cần nhắn lại mã đơn để được kiểm tra.",
     warrantyNote:"Không cần trả thêm phí cho lỗi thuộc gói bảo hành. Nhân viên sẽ hướng dẫn đến khi bạn dùng được.",
     secPolicies:"Chính sách mua hàng", secPoliciesSub:"Thông tin quan trọng trước khi gửi mã đơn",
@@ -1913,7 +1909,7 @@ const T = {
     processAlert:"Note: if you only create a code on the site and do not message us, our staff has not received the order yet.",
     secBenefits:"What every order includes", secBenefitsSub:"Applies to every product in the shop",
     secConfidence:"Transparent pricing & warranty", secConfidenceSub:"Clear process and support coverage",
-    whyCheapTitle:"Why is it cheaper?", whyCheapIntro:"We do not lower prices by cutting support. Better pricing comes from optimized plans, bundles and a lean order flow.",
+    whyCheapTitle:"Why is it cheaper?", whyCheapIntro:"We do not lower prices by cutting support. Better pricing comes from optimized plans and a lean order flow.",
     warrantyClearTitle:"Clearer warranty", warrantyClearIntro:"While your plan is active, message us your order code whenever something needs checking.",
     warrantyNote:"No extra fee for covered issues. Our staff will guide you until the plan works properly.",
     secPolicies:"Purchase policy", secPoliciesSub:"Important information before sending your order code",
@@ -2301,74 +2297,16 @@ function renderFaq(){
 const overlay = $("#overlay"), mBody = $("#mBody");
 let cur = null, curPlan = 0, selectedCombo = "";
 let copyToastTimer = null;
-const COMBO_DEALS = {
-  netflixPremium: {
-    triggers: ["youtube", "netflix"],
-    title: { vi: "Thêm Netflix Premium", en: "Add Netflix Premium" },
-    note: { vi: "YouTube còn A$55 · Netflix Premium còn A$55", en: "YouTube becomes A$55 · Netflix Premium becomes A$55" },
-    plan: { vi: "Combo YouTube 12 tháng + Netflix Premium 12 tháng", en: "Combo YouTube 12 months + Netflix Premium 12 months" },
-    product: "YouTube Premium + Netflix",
-    items: [
-      { name: "YouTube", price: 55 },
-      { name: "Netflix Premium", price: 55 }
-    ],
-    original: 118
-  },
-  netflixVip: {
-    triggers: ["youtube", "netflix"],
-    title: { vi: "Thêm Netflix VIP", en: "Add Netflix VIP" },
-    note: { vi: "YouTube còn A$55 · Netflix VIP còn A$35", en: "YouTube becomes A$55 · Netflix VIP becomes A$35" },
-    plan: { vi: "Combo YouTube 12 tháng + Netflix VIP 12 tháng", en: "Combo YouTube 12 months + Netflix VIP 12 months" },
-    product: "YouTube Premium + Netflix",
-    items: [
-      { name: "YouTube", price: 55 },
-      { name: "Netflix VIP", price: 35 }
-    ],
-    original: 98
-  },
-  spotifyYoutube: {
-    triggers: ["youtube", "spotify"],
-    title: { vi: "Thêm Spotify Premium", en: "Add Spotify Premium" },
-    note: { vi: "Spotify 12 tháng còn A$35 · YouTube 12 tháng còn A$55", en: "Spotify 12 months becomes A$35 · YouTube 12 months becomes A$55" },
-    plan: { vi: "Combo Spotify 12 tháng + YouTube 12 tháng", en: "Combo Spotify 12 months + YouTube 12 months" },
-    product: "Spotify Premium + YouTube Premium",
-    items: [
-      { name: "Spotify", price: 35 },
-      { name: "YouTube", price: 55 }
-    ],
-    original: 98
-  }
-};
+// Annual YouTube bundles are no longer offered.
+const COMBO_DEALS = {};
 function openOrder(i){ cur = CONFIG.products[i]; curPlan = 0; selectedCombo = ""; renderStep1(); overlay.classList.add("open"); document.body.style.overflow = "hidden"; }
 function closeModal(){ overlay.classList.remove("open"); document.body.style.overflow = ""; }
 $("#mClose").onclick = closeModal;
 overlay.addEventListener("click", e => { if (e.target === overlay) closeModal(); });
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
 
-function isYoutubeAnnual(){
-  const plan = cur?.plans?.[curPlan];
-  return cur?.icon === "youtube" && Number(plan?.price) === 59 && /12/.test(plan?.label?.vi || "");
-}
-function isSpotifyAnnual(){
-  const plan = cur?.plans?.[curPlan];
-  return cur?.icon === "spotify" && Number(plan?.price) === 39 && /12/.test(plan?.label?.vi || "");
-}
-function isNetflixAnnual(){
-  const plan = cur?.plans?.[curPlan];
-  return cur?.icon === "netflix" && /12/.test(plan?.label?.vi || "");
-}
 function availableComboDeals(){
-  if (!isYoutubeAnnual() && !isSpotifyAnnual() && !isNetflixAnnual()) return [];
-  const planLabel = cur?.plans?.[curPlan]?.label?.vi || "";
-  return Object.entries(COMBO_DEALS).filter(([key, deal]) => {
-    if (!deal.triggers.includes(cur.icon)) return false;
-    if (cur.icon === "netflix") {
-      if (/Premium/.test(planLabel)) return key === "netflixPremium";
-      if (/VIP/.test(planLabel)) return key === "netflixVip";
-      return false;
-    }
-    return true;
-  });
+  return [];
 }
 function showCopyToast(){
   const toast = $("#copyToast");
